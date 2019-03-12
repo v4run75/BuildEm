@@ -1,0 +1,56 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="PinDialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="HolyBlack" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryDark">#000000</item>
+    </style>
+    <style name="PrimaryApproveButton" parent="Theme.AppCompat.Light">
+        <!--<item name="android:buttonStyle">@style/Widget.AppCompat.Button.Borderless.Colored</item>-->
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorButtonNormal">#00FF00</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+    <style name="PrimaryRejectButton" parent="Theme.AppCompat.Light">
+        <!--<item name="android:buttonStyle">@style/Widget.AppCompat.Button.Borderless.Colored</item>-->
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorButtonNormal">#FF0000</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+    <style name="PrimaryReviewButton" parent="Theme.AppCompat.Light">
+        <!--<item name="android:buttonStyle">@style/Widget.AppCompat.Button.Borderless.Colored</item>-->
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorButtonNormal">@color/c2</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+    <!--<style name="PrimaryReadButton" parent="Theme.AppCompat.Light">-->
+        <!--&lt;!&ndash;<item name="android:buttonStyle">@style/Widget.AppCompat.Button.Borderless.Colored</item>&ndash;&gt;-->
+        <!--<item name="colorControlHighlight">@color/colorAccent</item>-->
+        <!--<item name="colorAccent">@color/colorPrimary</item>-->
+        <!--<item name="colorButtonNormal">#ffff66</item>-->
+        <!--<item name="android:textColor">#ffffff</item>-->
+    <!--</style>-->
+
+
+
+</resources>
