@@ -32,6 +32,7 @@ import buildnlive.com.buildem.App;
 import buildnlive.com.buildem.Interfaces;
 import buildnlive.com.buildem.R;
 import buildnlive.com.buildem.activities.LocalPurchaseForm;
+import buildnlive.com.buildem.activities.LocalPurchaseFormLoc;
 import buildnlive.com.buildem.adapters.LocalPurchaseListAdapter;
 import buildnlive.com.buildem.console;
 import buildnlive.com.buildem.elements.Item;
@@ -53,7 +54,7 @@ public class LocalPurchaseListFragment extends Fragment {
 
 
     LocalPurchaseListAdapter.OnItemClickListener listener= (item, pos, view) -> {
-        Intent intent=new Intent(getActivity(), LocalPurchaseForm.class);
+        Intent intent=new Intent(getActivity(), LocalPurchaseFormLoc.class);
         Bundle bundle= new Bundle();
         bundle.putSerializable("Items",item);
         intent.putExtras(bundle);

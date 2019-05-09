@@ -28,6 +28,7 @@ import buildnlive.com.buildem.App;
 import buildnlive.com.buildem.Interfaces;
 import buildnlive.com.buildem.R;
 import buildnlive.com.buildem.activities.ManageLabour;
+import buildnlive.com.buildem.activities.ManageLabourReportLoc;
 import buildnlive.com.buildem.adapters.ContractorAdapter;
 import buildnlive.com.buildem.console;
 import buildnlive.com.buildem.elements.Contractor;
@@ -56,7 +57,7 @@ public class ManageLabourFragment extends Fragment {
         public void onItemClick(Contractor contractor, int pos, View view) {
             name_s= contractor.getContractor_name();
             user_id_s=contractor.getContractor_id();
-            startActivity(new Intent(getActivity(),ManageLabour.class));
+            startActivity(new Intent(getActivity(), ManageLabourReportLoc.class));
         }
     };
 

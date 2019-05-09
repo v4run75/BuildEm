@@ -32,6 +32,7 @@ import buildnlive.com.buildem.App;
 import buildnlive.com.buildem.Interfaces;
 import buildnlive.com.buildem.R;
 import buildnlive.com.buildem.activities.IssuedItemsForm;
+import buildnlive.com.buildem.activities.IssuedItemsFormLoc;
 import buildnlive.com.buildem.adapters.IssueItemListAdapter;
 import buildnlive.com.buildem.console;
 import buildnlive.com.buildem.elements.Item;
@@ -53,7 +54,7 @@ public class IssueItemListFragment extends Fragment {
 
 
     IssueItemListAdapter.OnItemClickListener listener= (item, pos, view) -> {
-        Intent intent=new Intent(getActivity(), IssuedItemsForm.class);
+        Intent intent=new Intent(getActivity(), IssuedItemsFormLoc.class);
         Bundle bundle= new Bundle();
         bundle.putSerializable("Items",item);
         intent.putExtras(bundle);

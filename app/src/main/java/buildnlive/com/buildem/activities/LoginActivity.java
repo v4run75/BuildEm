@@ -28,7 +28,7 @@ import buildnlive.com.buildem.elements.Project;
 import buildnlive.com.buildem.utils.Config;
 import io.realm.Realm;
 
-import static buildnlive.com.buildem.activities.HomeActivity.PREF_KEY_LOGGED_IN;
+//import static buildnlive.com.buildem.activities.HomeActivity.PREF_KEY_LOGGED_IN;
 
 public class LoginActivity extends AppCompatActivity {
     private App app;
@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                         JSONObject obj = new JSONObject(response);
                         String id = obj.getString("id");
                         String perm= obj.getString("role");
-                        pref.edit().putBoolean(PREF_KEY_LOGGED_IN, true).apply();
+                        pref.edit().putBoolean(HomeActivity.Companion.getPREF_KEY_LOGGED_IN(), true).apply();
                         pref.edit().putString(PREF_KEY_USER_ID, id).apply();
                         pref.edit().putString(PREF_KEY_EMAIL, obj.getString("login_name")).apply();
                         pref.edit().putString(PREF_KEY_NAME, obj.getString("first_name") + " " + obj.getString("last_name")).apply();

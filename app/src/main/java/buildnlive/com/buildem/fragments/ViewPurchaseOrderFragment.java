@@ -22,7 +22,8 @@ import java.util.List;
 import buildnlive.com.buildem.App;
 import buildnlive.com.buildem.Interfaces;
 import buildnlive.com.buildem.R;
-import buildnlive.com.buildem.activities.PurchaseOrderListing;
+//import buildnlive.com.buildem.activities.PurchaseOrderListing;
+import buildnlive.com.buildem.activities.PurchaseOrderListingLoc;
 import buildnlive.com.buildem.adapters.ViewPurchaseOrderAdapter;
 import buildnlive.com.buildem.console;
 import buildnlive.com.buildem.elements.Order;
@@ -58,7 +59,7 @@ public class ViewPurchaseOrderFragment extends Fragment {
         adapter = new ViewPurchaseOrderAdapter(getContext(), orders, new ViewPurchaseOrderAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Order item, int pos, View view) {
-                Intent intent = new Intent(getContext(), PurchaseOrderListing.class);
+                Intent intent = new Intent(getContext(), PurchaseOrderListingLoc.class);
                 intent.putExtra("id", item.getOrderId());
                 startActivity(intent);
             }

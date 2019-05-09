@@ -36,7 +36,6 @@
         <activity android:name="buildnlive.com.buildem.activities.WorkProgress" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
         <activity android:name="buildnlive.com.buildem.activities.DailyWorkProgressActivities" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name="buildnlive.com.buildem.activities.PurchaseOrder" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
-        <activity android:name="buildnlive.com.buildem.activities.NotificationActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name="buildnlive.com.buildem.activities.IndentItems" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name="buildnlive.com.buildem.activities.LocalPurchase" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name="buildnlive.com.buildem.activities.LabourActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
@@ -50,7 +49,7 @@
             android:screenOrientation="portrait" />
         <activity android:name="buildnlive.com.buildem.activities.PreviewImage" />
         <activity android:name="buildnlive.com.buildem.activities.LoginActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
-        <activity android:name="buildnlive.com.buildem.activities.PurchaseOrderListing" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
+        <!--<activity android:name="buildnlive.com.buildem.activities.PurchaseOrderListing" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />-->
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -66,7 +65,7 @@
         <activity android:name="buildnlive.com.buildem.activities.LabourReportActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name="buildnlive.com.buildem.activities.ManageLabour"  android:screenOrientation="portrait" />
         <activity android:name="buildnlive.com.buildem.activities.ManageLabourReport" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
-        <activity android:name="buildnlive.com.buildem.activities.Planning" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <!--<activity android:name="buildnlive.com.buildem.activities.Planning" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>-->
         <activity android:name="buildnlive.com.buildem.activities.BillImageView" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
         <activity android:name="buildnlive.com.buildem.activities.ReturnIssuedItem" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name="buildnlive.com.buildem.activities.Inventory"  android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
@@ -76,7 +75,40 @@
         <activity android:name="buildnlive.com.buildem.activities.LocalPurchaseForm" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
         <activity android:name="buildnlive.com.buildem.activities.MachineList"  android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name="buildnlive.com.buildem.activities.MachineListForm" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
-        <activity android:name=".activities.MarkAttendanceKotlin" />
+        <activity android:name=".activities.MarkAttendanceKotlin" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"  />
+        <activity android:name=".activities.IssuedItemsFormLoc" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"  />
+        <activity android:name=".activities.LocalPurchaseFormLoc" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"  />
+        <activity android:name=".activities.LocalPurchaseKotlin" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
+        <activity android:name=".activities.ManageLabourReportLoc" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.PurchaseOrderListingLoc" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.MachineListFormLoc" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.WorkProgressLoc" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.PlanningLoc" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+
+
+        <activity android:name="buildnlive.com.buildem.activities.NotificationActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+
+        <activity android:name=".activities.FcmNotificationActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="NOTIFICATION_BUILD" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <service android:name=".Notifications.FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher_foreground" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
 
         <service
             android:name=".FetchAddressIntentService"

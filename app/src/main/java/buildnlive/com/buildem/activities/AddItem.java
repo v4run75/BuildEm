@@ -17,6 +17,7 @@ import buildnlive.com.buildem.App;
 import buildnlive.com.buildem.R;
 import buildnlive.com.buildem.elements.Item;
 import buildnlive.com.buildem.fragments.AddItemFragment;
+import buildnlive.com.buildem.fragments.AddItemLocFragment;
 import buildnlive.com.buildem.fragments.ViewItemFragment;
 
 public class AddItem extends AppCompatActivity {
@@ -58,6 +59,7 @@ public class AddItem extends AppCompatActivity {
             public void onClick(View v) {
                 enableView();
                 disableEdit();
+//                fragment = AddItemFragment.newInstance();
                 fragment = AddItemFragment.newInstance();
                 changeScreen();
             }

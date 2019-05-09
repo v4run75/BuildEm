@@ -197,7 +197,7 @@ class MarkAttendanceLocFragment : Fragment(), Interfaces.SyncListener {
                     if(lastLocation!=null){
                         PrefernceFile.getInstance(mConetxt!!).setString("Lat",lastLocation!!.latitude.toString())
                         PrefernceFile.getInstance(mConetxt!!).setString("Long",lastLocation!!.longitude.toString())
-                        fetchAddressButtonHander()
+//                        fetchAddressButtonHander()
                     }
                     console.log("Location LatLang: $lastLocation")
                 }
@@ -312,7 +312,7 @@ class MarkAttendanceLocFragment : Fragment(), Interfaces.SyncListener {
                 val params = HashMap<String, String>()
                 params["user_id"] = App.userId
                 params["project_id"] = App.projectId
-                params["latitude"] = lastLocation!!.longitude.toString()
+                params["latitude"] = lastLocation!!.latitude.toString()
                 params["longitude"] = lastLocation!!.longitude.toString()
                 params["project_id"] = App.projectId
                 params["attendence"] = checkIn.toString() // TODO PLEASE CHECK SPELLING MISTAKES
@@ -364,7 +364,7 @@ class MarkAttendanceLocFragment : Fragment(), Interfaces.SyncListener {
                 val params = HashMap<String, String>()
                 params["user_id"] = App.userId
                 params["project_id"] = App.projectId
-                params["latitude"] = lastLocation!!.longitude.toString()
+                params["latitude"] = lastLocation!!.latitude.toString()
                 params["longitude"] = lastLocation!!.longitude.toString()
                 params["attendence"] = checkOut.toString() // TODO PLEASE CHECK SPELLING MISTAKES
                 app!!.sendNetworkRequest(Config.REQ_POST_CHECK_OUT, Request.Method.POST, params, object : Interfaces.NetworkInterfaceListener {

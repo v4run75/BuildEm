@@ -32,13 +32,16 @@ import buildnlive.com.buildem.activities.IssuedItems;
 import buildnlive.com.buildem.activities.LabourActivity;
 import buildnlive.com.buildem.activities.LabourReportActivity;
 import buildnlive.com.buildem.activities.LocalPurchase;
+import buildnlive.com.buildem.activities.LocalPurchaseKotlin;
 import buildnlive.com.buildem.activities.MachineList;
 import buildnlive.com.buildem.activities.MarkAttendance;
 import buildnlive.com.buildem.activities.MarkAttendanceKotlin;
-import buildnlive.com.buildem.activities.Planning;
+//import buildnlive.com.buildem.activities.Planning;
+import buildnlive.com.buildem.activities.PlanningLoc;
 import buildnlive.com.buildem.activities.PurchaseOrder;
 import buildnlive.com.buildem.activities.RequestItems;
 import buildnlive.com.buildem.activities.WorkProgress;
+import buildnlive.com.buildem.activities.WorkProgressLoc;
 import buildnlive.com.buildem.console;
 import buildnlive.com.buildem.elements.Project;
 import buildnlive.com.buildem.elements.ProjectMember;
@@ -50,7 +53,7 @@ import static buildnlive.com.buildem.utils.Config.PREF_NAME;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 //    private TextView title;
-    private LinearLayout markAttendance, manageInventory, issuedItems, requestItems, workProgress, purchaseOrder,siteRequest,localPurchase,labour,labourReport,planning,machine;
+    private LinearLayout markAttendance, manageInventory, issuedItems, requestItems, workProgress, purchaseOrder,localPurchase,labourReport,planning,machine;
     private SharedPreferences pref;
     private Spinner projects;
     private static App app;
@@ -80,9 +83,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         issuedItems = view.findViewById(R.id.issued_items);
         requestItems = view.findViewById(R.id.request_items);
         projects = view.findViewById(R.id.projects);
-        siteRequest=view.findViewById(R.id.request_list);
+//        siteRequest=view.findViewById(R.id.request_list);
         localPurchase=view.findViewById(R.id.local_purchase);
-        labour=view.findViewById(R.id.labour);
+//        labour=view.findViewById(R.id.labour);
         labourReport=view.findViewById(R.id.manage_labour);
         planning=view.findViewById(R.id.planning);
         machine=view.findViewById(R.id.machine);
@@ -121,17 +124,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         requestItems.setOnClickListener(this);
         workProgress.setOnClickListener(this);
         purchaseOrder.setOnClickListener(this);
-        siteRequest.setOnClickListener(this);
+//        siteRequest.setOnClickListener(this);
         localPurchase.setOnClickListener(this);
-        labour.setOnClickListener(this);
+//        labour.setOnClickListener(this);
         labourReport.setOnClickListener(this);
         planning.setOnClickListener(this);
         machine.setOnClickListener(this);
 
         switch (App.permissions) {
             case "Storekeeper":
-                labour.setVisibility(View.GONE);
-                siteRequest.setVisibility(View.GONE);
+//                labour.setVisibility(View.GONE);
+//                siteRequest.setVisibility(View.GONE);
                 workProgress.setVisibility(View.GONE);
                 break;
             case "Siteengineer":
@@ -143,17 +146,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
                 break;
             case "Siteadmin":
-                siteRequest.setVisibility(View.GONE);
+//                siteRequest.setVisibility(View.GONE);
                 issuedItems.setVisibility(View.GONE);
                 purchaseOrder.setVisibility(View.GONE);
                 manageInventory.setVisibility(View.GONE);
                 workProgress.setVisibility(View.GONE);
-                labour.setVisibility(View.GONE);
+//                labour.setVisibility(View.GONE);
 
                 break;
             case "Siteincharge":
-                siteRequest.setVisibility(View.GONE);
-                labour.setVisibility(View.GONE);
+//                siteRequest.setVisibility(View.GONE);
+//                labour.setVisibility(View.GONE);
                 break;
             case "labourmanager":
                 workProgress.setVisibility(View.GONE);
@@ -164,9 +167,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 requestItems.setVisibility(View.GONE);
                 workProgress.setVisibility(View.GONE);
                 purchaseOrder.setVisibility(View.GONE);
-                siteRequest.setVisibility(View.GONE);
+//                siteRequest.setVisibility(View.GONE);
                 localPurchase.setVisibility(View.GONE);
-                labour.setVisibility(View.GONE);
+//                labour.setVisibility(View.GONE);
                 break;
 
         }
@@ -236,25 +239,25 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getContext(), RequestItems.class));
                 break;
             case R.id.work_progress:
-                startActivity(new Intent(getContext(), WorkProgress.class));
+                startActivity(new Intent(getContext(), WorkProgressLoc.class));
                 break;
             case R.id.purchase:
                 startActivity(new Intent(getContext(), PurchaseOrder.class));
                 break;
-            case R.id.request_list:
-                startActivity(new Intent(getContext(),IndentItems.class));
-                break;
+//            case R.id.request_list:
+//                startActivity(new Intent(getContext(),IndentItems.class));
+//                break;
             case R.id.local_purchase:
-                startActivity(new Intent(getContext(),LocalPurchase.class));
+                startActivity(new Intent(getContext(), LocalPurchaseKotlin.class));
                 break;
-            case R.id.labour:
-                startActivity(new Intent(getContext(),LabourActivity.class));
-                break;
+//            case R.id.labour:
+//                startActivity(new Intent(getContext(),LabourActivity.class));
+//                break;
             case R.id.manage_labour:
                 startActivity(new Intent(getContext(),LabourReportActivity.class));
                 break;
             case R.id.planning:
-                startActivity(new Intent(getContext(),Planning.class));
+                startActivity(new Intent(getContext(), PlanningLoc.class));
                 break;
             case R.id.machine:
                 startActivity(new Intent(getContext(), MachineList.class));

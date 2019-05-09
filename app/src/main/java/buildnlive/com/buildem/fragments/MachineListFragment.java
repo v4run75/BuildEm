@@ -27,6 +27,7 @@ import buildnlive.com.buildem.App;
 import buildnlive.com.buildem.Interfaces;
 import buildnlive.com.buildem.R;
 import buildnlive.com.buildem.activities.MachineListForm;
+import buildnlive.com.buildem.activities.MachineListFormLoc;
 import buildnlive.com.buildem.adapters.MachineListAdapter;
 import buildnlive.com.buildem.console;
 import buildnlive.com.buildem.elements.Machine;
@@ -44,7 +45,7 @@ public class MachineListFragment extends Fragment {
 
 
     MachineListAdapter.OnItemClickListener listener= (item, pos, view) -> {
-        Intent intent=new Intent(getActivity(), MachineListForm.class);
+        Intent intent=new Intent(getActivity(), MachineListFormLoc.class);
         Bundle bundle= new Bundle();
         bundle.putSerializable("Items",item);
         intent.putExtras(bundle);

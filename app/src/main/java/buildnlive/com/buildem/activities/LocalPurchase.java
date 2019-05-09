@@ -17,6 +17,7 @@ import buildnlive.com.buildem.R;
 import buildnlive.com.buildem.console;
 import buildnlive.com.buildem.fragments.LocalPurchaseListFragment;
 import buildnlive.com.buildem.fragments.PaymentFragment;
+import buildnlive.com.buildem.fragments.PaymentFragmentLoc;
 import io.realm.Realm;
 
 public class LocalPurchase extends AppCompatActivity {
@@ -62,7 +63,7 @@ public class LocalPurchase extends AppCompatActivity {
             public void onClick(View v) {
                 enableView();
                 disableEdit();
-                fragment = PaymentFragment.newInstance();
+                fragment = PaymentFragmentLoc.Companion.newInstance();
                 changeScreen();
             }
         });

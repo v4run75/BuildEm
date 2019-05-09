@@ -62,4 +62,5 @@ public class Config {
     public static final String GET_MACHINE_LIST ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/SendMachineList&user_id=[0]&project_id=[1]";
     public static final String VIEW_MACHINE_LIST ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ViewJobSheet&user_id=[0]&project_id=[1]";
     public static final String SEND_MACHINE_LIST ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/AssetJobSheet";
+    public static final String UPDATE_FCM_KEY ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/UpdateFCMKey";
 }
