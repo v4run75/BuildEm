@@ -20,7 +20,7 @@
         android:layout_below="@+id/title"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:background="#e8e8e8"></View>
+        android:background="#e8e8e8"/>
 
     <TextView
         android:id="@+id/title"
@@ -30,7 +30,7 @@
         android:layout_marginTop="30dp"
         android:text="Welcome XYZ"
         android:textAlignment="center"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <RelativeLayout
@@ -66,7 +66,7 @@
                     android:padding="10dp"
                     android:text="Mark Attendance"
                     android:textAlignment="center"
-                    android:textSize="22dp" />
+                    android:textSize="22sp" />
 
                 <TextView
                     android:id="@+id/manage_inventory"
@@ -80,7 +80,7 @@
                     android:padding="20dp"
                     android:text="Manage Inventory"
                     android:textAlignment="center"
-                    android:textSize="22dp" />
+                    android:textSize="22sp" />
 
             </LinearLayout>
 
@@ -104,7 +104,7 @@
                     android:padding="20dp"
                     android:text="Request Items"
                     android:textAlignment="center"
-                    android:textSize="22dp" />
+                    android:textSize="22sp" />
 
                 <TextView
                     android:id="@+id/issued_items"
@@ -118,7 +118,7 @@
                     android:padding="20dp"
                     android:text="Issued Items"
                     android:textAlignment="center"
-                    android:textSize="22dp" />
+                    android:textSize="22sp" />
 
             </LinearLayout>
 
@@ -140,7 +140,7 @@
                     android:padding="20dp"
                     android:text="Update Work Progress"
                     android:textAlignment="center"
-                    android:textSize="22dp" />
+                    android:textSize="22sp" />
 
             </LinearLayout>
         </LinearLayout>

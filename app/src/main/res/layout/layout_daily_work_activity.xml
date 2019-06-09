@@ -21,7 +21,7 @@
             android:layout_toLeftOf="@+id/status"
             android:layout_toStartOf="@+id/status"
             android:text="Title"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
@@ -45,7 +45,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:drawableLeft="@drawable/ic_access_alarm_black_24dp"
-                android:text="50 days" />
+                android:text="50 days"
+                android:drawableStart="@drawable/ic_access_alarm_black_24dp" />
 
             <TextView
                 android:id="@+id/quantity"
@@ -53,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:drawableLeft="@drawable/ic_equalizer_black_24dp"
-                android:text="50 days" />
+                android:text="50 days"
+                android:drawableStart="@drawable/ic_equalizer_black_24dp" />
 
             <TextView
                 android:id="@+id/start"
@@ -61,7 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:drawableLeft="@drawable/ic_date_range_black_24dp"
-                android:text="50 days" />
+                android:text="50 days"
+                android:drawableStart="@drawable/ic_date_range_black_24dp" />
 
             <TextView
                 android:id="@+id/end"
@@ -80,6 +83,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/role"
-        android:background="#e8e8e8"></View>
+        android:background="#e8e8e8"/>
 
 </LinearLayout>

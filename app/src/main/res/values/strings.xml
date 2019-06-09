@@ -94,6 +94,15 @@
     <string name="profession">Profession</string>
     <string name="select_vendor">Vendor</string>
     <string name="return_item"><u>Return</u></string>
+    <string name="no_content">No Content</string>
+    <string name="no_services">No Services</string>
+    <string name="buildo_site_app">Buildo Site App</string>
+    <string name="customer_details">Customer Details</string>
+    <string name="attach_images">Attach Images</string>
+    <string name="comment_here">Comment here</string>
+    <string name="close">Close</string>
+    <string name="submit">Submit</string>
+    <string name="discount">Discount</string>
 
 
 </resources>

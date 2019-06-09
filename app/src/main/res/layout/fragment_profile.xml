@@ -55,7 +55,7 @@
         android:hint="Your First Name"
         android:inputType="phone"
         android:padding="10dp"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
     <EditText
         android:id="@+id/last_name"
         android:layout_width="match_parent"
@@ -68,7 +68,7 @@
         android:hint="Your Last Name"
         android:inputType="phone"
         android:padding="10dp"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/mobile"
@@ -82,7 +82,7 @@
         android:hint="Your Mobile Number"
         android:inputType="phone"
         android:padding="10dp"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/old_password"
@@ -96,7 +96,7 @@
         android:hint="Your Old Password"
         android:inputType="textPassword"
         android:padding="10dp"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/new_password"
@@ -110,7 +110,7 @@
         android:hint="Your New Password"
         android:inputType="textPassword"
         android:padding="10dp"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
 
     <ProgressBar
@@ -126,8 +126,6 @@
         android:id="@+id/hider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/submit"
-        android:layout_below="@+id/top_bar"
         android:alpha="0.7"
         android:background="#ffffff"
         android:visibility="gone" />
@@ -140,6 +138,6 @@
         android:background="@color/color3"
         android:text="Change Password"
         android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
 </RelativeLayout>

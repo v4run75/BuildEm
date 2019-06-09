@@ -28,8 +28,6 @@
         android:id="@+id/hider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/submit"
-        android:layout_below="@+id/top_bar"
         android:alpha="0.6"
         android:background="#ffffff"
         android:visibility="gone" />
@@ -43,5 +41,5 @@
         android:padding="5dp"
         android:text="Build&amp;Live © 2018"
         android:textAlignment="center"
-        android:textSize="16dp" />
+        android:textSize="16sp" />
 </RelativeLayout>

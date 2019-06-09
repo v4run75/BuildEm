@@ -8,7 +8,6 @@
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/separator"
         android:layout_marginTop="15dp"
         android:padding="5dp">
 
@@ -20,7 +19,10 @@
             android:gravity="center"
             android:textAlignment="center"
             android:text="Item"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:paddingStart="5dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -76,7 +78,6 @@
         android:id="@+id/hider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/submit"
         android:layout_below="@+id/top_bar"
         android:alpha="0.6"
         android:background="#ffffff"

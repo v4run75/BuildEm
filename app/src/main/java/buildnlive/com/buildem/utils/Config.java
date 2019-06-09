@@ -63,4 +63,11 @@ public class Config {
     public static final String VIEW_MACHINE_LIST ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ViewJobSheet&user_id=[0]&project_id=[1]";
     public static final String SEND_MACHINE_LIST ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/AssetJobSheet";
     public static final String UPDATE_FCM_KEY ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/UpdateFCMKey";
+    public static final String CHECK_IN ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/CheckIn&user_id=[0]&latitude=[1]&longitude=[2]";
+    public static final String CHECK_OUT ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/CheckOut&user_id=[0]&attendence_id=[1]&latitude=[2]&longitude=[3]";
+    public static final String GET_ATTENDANCE ="https://buildnlive.com/app/mobileapp_em/index.php?r=site/GetAttendence&user_id=[0]";
+    public static final String GET_MODEL ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/GetModel&user_id=[0]&text=[1]&discount=[2]";
+    public static final String SERVICES_DETAILS ="https://buildnlive.com/app/mobileapp_em/index.php?r=site/ServicesDetails";
+    public static final String SERVICES_ACTIVITIES ="https://buildnlive.com/app/mobileapp_em/index.php?r=site/ServicesActivities";
+    public static final String GET_SERVICE_UPDATES ="https://buildnlive.com/app/mobileapp_em/index.php?r=site/GetServiceUpdates";
 }

@@ -49,7 +49,7 @@
                 android:ellipsize="marquee"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="20dp" />
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/view"
@@ -63,7 +63,7 @@
                 android:singleLine="true"
                 android:ellipsize="marquee"
                 android:textColor="@color/color2"
-                android:textSize="20dp" />
+                android:textSize="20sp"/>
 
 
 
@@ -87,6 +87,5 @@
     <FrameLayout
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/action" />
+        android:layout_height="match_parent" />
 </LinearLayout>

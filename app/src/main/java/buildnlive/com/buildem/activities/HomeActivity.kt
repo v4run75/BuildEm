@@ -1,6 +1,7 @@
 package buildnlive.com.buildem.activities
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
@@ -37,16 +38,14 @@ import buildnlive.com.buildem.Interfaces
 import buildnlive.com.buildem.Notifications.FirebaseMessagingService
 import buildnlive.com.buildem.R
 import buildnlive.com.buildem.console
-import buildnlive.com.buildem.fragments.AboutUsFragment
-import buildnlive.com.buildem.fragments.HomeFragment
-import buildnlive.com.buildem.fragments.PlansFragment
-import buildnlive.com.buildem.fragments.ProfileFragment
 import buildnlive.com.buildem.utils.Config
 import io.realm.Realm
 
 import buildnlive.com.buildem.activities.LoginActivity.PREF_KEY_EMAIL
 import buildnlive.com.buildem.activities.LoginActivity.PREF_KEY_NAME
+import buildnlive.com.buildem.fragments.*
 import buildnlive.com.buildem.utils.Helper
+import buildnlive.com.buildem.utils.PrefernceFile
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -57,8 +56,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private var fragment: Fragment? = null
     private var pref: SharedPreferences? = null
     private var app: App? = null
-    private var appCompatActivity:AppCompatActivity?=this
-    private var helper:Helper?=null
+    private var appCompatActivity: AppCompatActivity? = this
+    private var helper: Helper? = null
+    private var context: Context? = null
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -69,22 +69,34 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 } else {
                     helper = Helper.instance
-                    helper?.moveFragment(HomeFragment(), null, R.id.container, appCompatActivity!!)
+                    helper?.moveFragment(HomeFragment.newInstance(app), null, R.id.container, appCompatActivity!!)
+                    return@OnNavigationItemSelectedListener true
+                }
+            }
+            R.id.search -> {
+
+                val currentFragment = supportFragmentManager.findFragmentById(R.id.container)
+
+                if (currentFragment is SearchFragment) {
+
+                } else {
+                    helper = Helper.instance
+                    helper?.moveFragment(SearchFragment.newInstance(app!!), null, R.id.container, appCompatActivity!!)
                     return@OnNavigationItemSelectedListener true
                 }
             }
             R.id.services -> {
-
                 val currentFragment = supportFragmentManager.findFragmentById(R.id.container)
 
-                if (currentFragment is HomeFragment) {
+                if (currentFragment is ServiceFragment) {
 
                 } else {
                     helper = Helper.instance
-                    helper?.moveFragment(HomeFragment(), null, R.id.container, appCompatActivity!!)
+                    helper?.moveFragment(ServiceFragment.newInstance(app!!), null, R.id.container, appCompatActivity!!)
                     return@OnNavigationItemSelectedListener true
                 }
             }
+
         }
 
         return@OnNavigationItemSelectedListener false
@@ -124,6 +136,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+        context = this
 
         val realm = Realm.getDefaultInstance()
 
@@ -199,7 +214,14 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_home -> fragment = HomeFragment.newInstance(app)
+            R.id.nav_home -> {
+                navigation.visibility = View.VISIBLE
+                fragment = HomeFragment.newInstance(app)
+            }
+            R.id.nav_attendance -> {
+                navigation.visibility = View.INVISIBLE
+                fragment = CheckAttendanceLoc.newInstance(app!!)
+            }
             R.id.nav_plans -> fragment = PlansFragment.newInstance(application as App)
             R.id.nav_about -> fragment = AboutUsFragment.newInstance()
             R.id.nav_logout -> logout()
@@ -230,6 +252,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             override fun onNetworkRequestComplete(response: String) {
 
                 pref!!.edit().clear().commit()
+                PrefernceFile.getInstance(context!!).clearData()
                 val realm = Realm.getDefaultInstance()
                 realm.executeTransaction { realm -> realm.deleteAll() }
 
@@ -244,7 +267,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun changeFragment() {
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.content_frame, fragment!!)
+                .replace(R.id.container, fragment!!)
                 .commit()
     }
 

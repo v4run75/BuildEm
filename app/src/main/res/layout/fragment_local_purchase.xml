@@ -17,7 +17,6 @@
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/separator"
         android:orientation="vertical">
         <LinearLayout
         android:layout_width="match_parent"
@@ -322,7 +321,7 @@
         android:layout_centerHorizontal="true"
         android:text="Submit"
         android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
 
 

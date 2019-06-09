@@ -38,7 +38,8 @@
                     android:textSize="20sp"
                     android:scaleType="centerCrop"
                     android:text="Buildo Site App"
-                    />
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="10dp" />
 
                 <ImageButton
                     android:id="@+id/notification"
@@ -64,7 +65,8 @@
                     android:visibility="gone"
                     android:textColor="#FFF"
                     android:textSize="10sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_alignEnd="@id/notification" />
 
             </RelativeLayout>
 

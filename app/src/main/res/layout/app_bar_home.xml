@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/white"-->
+    <!--tools:context=".activities.HomeActivity">-->
+
+    <!--<android.support.design.widget.AppBarLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:theme="@style/AppTheme.AppBarOverlay">-->
+
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".activities.HomeActivity">
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:background="@color/color1"
-            app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
+    android:layout_height="?actionBarSize"
+    android:background="@color/color1"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    android:theme="@style/AppTheme.Toolbar"
+    app:popupTheme="@style/AppTheme.PopupOverlay"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -37,7 +40,8 @@
                     android:textSize="20sp"
                     android:scaleType="centerCrop"
                     android:text="Buildo Site App"
-                     />
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="15dp" />
 
                 <ImageButton
                     android:id="@+id/notification"
@@ -62,14 +66,14 @@
                     android:visibility="gone"
                     android:textColor="#FFF"
                     android:textSize="10sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_alignEnd="@id/notification" />
 
             </RelativeLayout>
 
         </android.support.v7.widget.Toolbar>
 
-    </android.support.design.widget.AppBarLayout>
+    <!--</android.support.design.widget.AppBarLayout>-->
 
-    <include layout="@layout/content_home" />
 
-</android.support.design.widget.CoordinatorLayout>
+<!--</android.support.design.widget.CoordinatorLayout>-->

@@ -30,6 +30,7 @@ public class App extends Application {
     public static String projectId;
     public static String belongsTo;
     public static String permissions;
+    public static String projectName;
 
     @Override
     public void onCreate() {
@@ -44,6 +45,7 @@ public class App extends Application {
         pref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         userId = pref.getString(PREF_KEY_USER_ID, "dummy");
         projectId = pref.getString(PREF_KEY_PROJECTS, "{}");
+        projectName = pref.getString(PREF_KEY_PROJECTS, "{}");
         belongsTo = projectId + userId;
         permissions=pref.getString(PREF_KEY_PERMISSIONS,"");
     }

@@ -8,8 +8,6 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/submit"
-        android:layout_below="@+id/separator2"
         android:layout_margin="5dp" />
 
     <ProgressBar
@@ -25,8 +23,6 @@
         android:id="@+id/hider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/submit"
-        android:layout_below="@+id/top_bar"
         android:alpha="0.6"
         android:background="#ffffff"
         android:visibility="gone" />

@@ -38,7 +38,7 @@
                 android:ellipsize="marquee"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="20dp" />
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/view"
@@ -53,7 +53,7 @@
                 android:text="View Labour"
                 android:textAlignment="center"
                 android:textColor="@color/color2"
-                android:textSize="20dp" />
+                android:textSize="20sp"/>
 
         </LinearLayout>
 
@@ -76,6 +76,5 @@
     <FrameLayout
         android:id="@+id/site_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/action" />
+        android:layout_height="match_parent"/>
 </LinearLayout>

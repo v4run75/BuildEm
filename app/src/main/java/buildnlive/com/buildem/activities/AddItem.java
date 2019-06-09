@@ -19,6 +19,7 @@ import buildnlive.com.buildem.elements.Item;
 import buildnlive.com.buildem.fragments.AddItemFragment;
 import buildnlive.com.buildem.fragments.AddItemLocFragment;
 import buildnlive.com.buildem.fragments.ViewItemFragment;
+import buildnlive.com.buildem.utils.UtilityofActivity;
 
 public class AddItem extends AppCompatActivity {
     private List<Item> itemsList = new ArrayList<>();
@@ -26,6 +27,10 @@ public class AddItem extends AppCompatActivity {
     private TextView edit, view;
     private Fragment fragment;
     private ImageButton back;
+
+    private UtilityofActivity utilityofActivity;
+    private AppCompatActivity appCompatActivity=this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +38,14 @@ public class AddItem extends AppCompatActivity {
         app = (App) getApplication();
         edit = findViewById(R.id.edit);
         view = findViewById(R.id.view);
+
+//        utilityofActivity=new UtilityofActivity(appCompatActivity);
+//        utilityofActivity.configureToolbar(appCompatActivity);
+//
+//        TextView toolbar_title=findViewById(R.id.title);
+//        TextView toolbar_subtitle=findViewById(R.id.subtitle);
+//        toolbar_title.setText("Inventory");
+//        toolbar_subtitle.setText(App.projectName);
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

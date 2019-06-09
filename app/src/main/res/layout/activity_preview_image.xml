@@ -36,7 +36,8 @@
             android:backgroundTint="@color/color3"
             android:elevation="10dp"
             android:src="@drawable/ic_undo_black_24dp"
-            android:tint="@color/white" />
+            android:tint="@color/white"
+            android:layout_marginStart="10dp" />
 
         <ImageButton
             android:id="@+id/redo"
@@ -51,7 +52,8 @@
             android:backgroundTint="@color/color3"
             android:elevation="10dp"
             android:src="@drawable/ic_redo_black_24dp"
-            android:tint="@color/white" />
+            android:tint="@color/white"
+            android:layout_marginStart="10dp" />
 
         <!--<ImageButton
             android:id="@+id/zoomin"

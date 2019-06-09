@@ -105,6 +105,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 App.projectId = projects.get(position).getId();
                 App.belongsTo = App.projectId + App.userId;
+                App.projectName=projects.get(position).getName();
                 syncProject();
             }
 

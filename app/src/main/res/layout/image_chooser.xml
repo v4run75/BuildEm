@@ -42,7 +42,8 @@
                     android:text="Choose From Gallery"
                     android:textAlignment="center"
                     android:textColor="@color/color2"
-                    android:textSize="16dp" />
+                    android:textSize="16sp"
+                    android:focusable="true" />
 
                 <TextView
                     android:layout_below="@+id/gallery"
@@ -55,7 +56,8 @@
                     android:text="Click Image"
                     android:textAlignment="center"
                     android:textColor="@color/color2"
-                    android:textSize="16dp" />
+                    android:textSize="16sp"
+                    android:focusable="true" />
 
 
         <Button
@@ -70,7 +72,7 @@
             android:background="@color/transparent"
             android:text="Close"
             android:textColor="@color/black"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
 
     </RelativeLayout>

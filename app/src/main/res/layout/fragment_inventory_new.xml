@@ -27,43 +27,47 @@
             android:id="@+id/checkout_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="4"
             android:text="CheckOut Items"
             android:textAlignment="center"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:visibility="gone"/>
+            android:textSize="20sp"
+            android:visibility="gone" />
     </LinearLayout>
+
     <LinearLayout
-        android:layout_below="@+id/checkout_layout"
         android:id="@+id/search_view"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:weightSum="1"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkout_layout"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
         <ImageButton
             android:id="@+id/search"
-            android:layout_weight="0.2"
-            android:background="@color/transparent"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_search"/>
+            android:layout_weight="0.2"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_search" />
+
         <EditText
             android:id="@+id/search_text"
-            android:visibility="invisible"
-            android:layout_weight="0.6"
             android:layout_width="0dp"
-            android:inputType="text"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
             android:imeOptions="actionDone"
-            android:layout_height="wrap_content" />
+            android:inputType="text"
+            android:visibility="invisible" />
+
         <ImageButton
             android:id="@+id/search_close"
-            android:visibility="invisible"
-            android:layout_weight="0.2"
-            android:background="@color/transparent"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_close"/>
+            android:layout_weight="0.2"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_close"
+            android:visibility="invisible" />
 
     </LinearLayout>
 
@@ -81,17 +85,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="9"
+            android:paddingStart="5dp"
             android:paddingLeft="5dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
             android:text="Add"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="5"
+            android:paddingStart="5dp"
+
             android:paddingLeft="5dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
             android:text="Item"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -99,7 +110,7 @@
             android:layout_weight="6"
             android:text="Quantity"
             android:textAlignment="center"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 
@@ -109,7 +120,7 @@
         android:layout_height="1dp"
         android:layout_below="@id/top_bar"
         android:layout_marginTop="5dp"
-        android:background="@color/light_grey"/>
+        android:background="@color/light_grey" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/items"
@@ -145,7 +156,7 @@
         android:background="@color/color1"
         android:text="Next"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:visibility="gone" />
 
     <Button
@@ -156,7 +167,7 @@
         android:background="@color/color3"
         android:text="Submit"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:visibility="gone" />
 
 </RelativeLayout>

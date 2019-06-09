@@ -43,7 +43,7 @@
                 android:ellipsize="marquee"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="20dp" />
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/view"
@@ -57,7 +57,7 @@
                 android:text="View Job Sheet"
                 android:textAlignment="center"
                 android:textColor="@color/color2"
-                android:textSize="20dp" />
+                android:textSize="20sp"/>
         </LinearLayout>
     </LinearLayout>
     <!--<android.support.v7.widget.SearchView-->

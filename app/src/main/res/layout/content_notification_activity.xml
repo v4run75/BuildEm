@@ -13,8 +13,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/notifications"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/top" />
+        android:layout_height="match_parent" />
 
     <ProgressBar
         android:id="@+id/progress"

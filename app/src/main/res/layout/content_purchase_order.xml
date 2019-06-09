@@ -60,7 +60,6 @@
     <FrameLayout
         android:id="@+id/attendance_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/top" />
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

@@ -5,16 +5,15 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/white">
 
         <LinearLayout
             android:id="@+id/top_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/separator"
             android:layout_marginTop="20dp"
             android:orientation="vertical">
 
@@ -25,7 +24,7 @@
                 android:breakStrategy="high_quality"
                 android:text="Please specify your request here."
                 android:textAlignment="center"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -36,7 +35,7 @@
                 android:background="@drawable/border"
                 android:hint="Name"
                 android:padding="5dp"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -47,7 +46,6 @@
                     android:id="@+id/okok"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/project_title"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
@@ -66,7 +64,6 @@
                     android:id="@+id/oko"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/project_title"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
@@ -75,7 +72,7 @@
 
                     <Spinner
                         android:id="@+id/material"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:spinnerMode="dialog"
@@ -92,7 +89,7 @@
 
                 <EditText
                     android:id="@+id/quantity"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/border"
@@ -101,7 +98,7 @@
                     android:inputType="numberDecimal"
                     android:maxHeight="200dp"
                     android:padding="5dp"
-                    android:textSize="16dp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/unit"
@@ -112,7 +109,7 @@
                     android:layout_marginRight="10dp"
                     android:text="Units"
                     android:textColor="@color/color2"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <EditText
@@ -126,7 +123,7 @@
                 android:inputType="textMultiLine"
                 android:maxHeight="200dp"
                 android:padding="5dp"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -157,7 +154,7 @@
             android:background="@color/color3"
             android:text="Submit"
             android:textColor="@color/white"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
     </RelativeLayout>
 

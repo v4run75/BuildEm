@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/light_grey"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_mark_attendance"
-    tools:context=".activities.MarkAttendance">
+    tools:context=".activities.MarkAttendance"
+    tools:showIn="@layout/activity_mark_attendance">
 
     <LinearLayout
         android:id="@+id/top"
@@ -15,12 +15,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <!--<ImageButton-->
-            <!--android:id="@+id/back"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:src="@drawable/ic_back_black"-->
-            <!--android:background="@color/transparent"/>-->
+        <!--android:id="@+id/back"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:src="@drawable/ic_back_black"-->
+        <!--android:background="@color/transparent"/>-->
 
 
         <LinearLayout
@@ -36,28 +36,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_right_selected"
+                android:ellipsize="marquee"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:singleLine="true"
-                android:ellipsize="marquee"
                 android:text="Attendance"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="20dp" />
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:ellipsize="marquee"
                 android:background="@drawable/round_left"
+                android:ellipsize="marquee"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
+                android:singleLine="true"
                 android:text="View List"
                 android:textAlignment="center"
                 android:textColor="@color/color2"
-                android:textSize="20dp" />
+                android:textSize="20sp"/>
         </LinearLayout>
     </LinearLayout>
     <!--<android.support.v7.widget.SearchView-->
