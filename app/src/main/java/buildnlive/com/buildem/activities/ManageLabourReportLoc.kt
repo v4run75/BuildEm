@@ -14,15 +14,15 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.ResultReceiver
 import android.provider.Settings
-import android.support.design.widget.CoordinatorLayout
-import android.support.design.widget.Snackbar
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import com.google.android.material.snackbar.Snackbar
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.Toolbar
 import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
@@ -263,7 +263,7 @@ class ManageLabourReportLoc : AppCompatActivity() {
             if (!gps_enabled && !network_enabled) {
                 // notify user
 
-                val builder = android.support.v7.app.AlertDialog.Builder(context!!)
+                val builder = androidx.appcompat.app.AlertDialog.Builder(context!!)
 
                 // Set the alert dialog title
                 builder.setTitle("Location Settings")
@@ -288,7 +288,7 @@ class ManageLabourReportLoc : AppCompatActivity() {
 
 
                 // Finally, make the alert dialog using builder
-                val dialog: android.support.v7.app.AlertDialog = builder.create()
+                val dialog: androidx.appcompat.app.AlertDialog = builder.create()
 
                 // Display the alert dialog on app interface
                 dialog.show()

@@ -16,12 +16,12 @@ import android.net.Uri
 import android.os.*
 import android.provider.MediaStore
 import android.provider.Settings
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
-import android.support.v4.content.FileProvider
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.Toolbar
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.appcompat.widget.Toolbar
 import android.text.TextUtils
 import android.util.Base64
 import android.view.LayoutInflater
@@ -255,7 +255,7 @@ class LocalPurchaseFormLoc : AppCompatActivity() {
 
                 val inflater = layoutInflater
                 val dialogView = inflater.inflate(R.layout.image_chooser, null)
-                val dialogBuilder = android.support.v7.app.AlertDialog.Builder(context!!, R.style.PinDialog)
+                val dialogBuilder = androidx.appcompat.app.AlertDialog.Builder(context!!, R.style.PinDialog)
                 val alertDialog = dialogBuilder.setCancelable(false).setView(dialogView).create()
                 alertDialog.show()
                 val gallery = dialogView.findViewById<TextView>(R.id.gallery)
@@ -409,7 +409,7 @@ class LocalPurchaseFormLoc : AppCompatActivity() {
             if (!gps_enabled && !network_enabled) {
                 // notify user
 
-                val builder = android.support.v7.app.AlertDialog.Builder(context!!)
+                val builder = androidx.appcompat.app.AlertDialog.Builder(context!!)
 
                 // Set the alert dialog title
                 builder.setTitle("Location Settings")
@@ -434,7 +434,7 @@ class LocalPurchaseFormLoc : AppCompatActivity() {
 
 
                 // Finally, make the alert dialog using builder
-                val dialog: android.support.v7.app.AlertDialog = builder.create()
+                val dialog: androidx.appcompat.app.AlertDialog = builder.create()
 
                 // Display the alert dialog on app interface
                 dialog.show()

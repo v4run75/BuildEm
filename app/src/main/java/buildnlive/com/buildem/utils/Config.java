@@ -70,4 +70,6 @@ public class Config {
     public static final String SERVICES_DETAILS ="https://buildnlive.com/app/mobileapp_em/index.php?r=site/ServicesDetails";
     public static final String SERVICES_ACTIVITIES ="https://buildnlive.com/app/mobileapp_em/index.php?r=site/ServicesActivities";
     public static final String GET_SERVICE_UPDATES ="https://buildnlive.com/app/mobileapp_em/index.php?r=site/GetServiceUpdates";
+    public static final String ShowComplaints ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowComplaints&user_id=[0]";
+    public static final String ShowComplaintsDetails ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowComplaintDetails&user_id=[0]&complaint_id=[1]";
 }

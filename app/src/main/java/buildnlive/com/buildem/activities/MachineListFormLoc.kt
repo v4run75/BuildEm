@@ -15,10 +15,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.ResultReceiver
 import android.provider.Settings
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import android.text.TextUtils
 import android.view.View
 import android.widget.Button
@@ -387,7 +387,7 @@ class MachineListFormLoc : AppCompatActivity() {
             if (!gps_enabled && !network_enabled) {
                 // notify user
 
-                val builder = android.support.v7.app.AlertDialog.Builder(context!!)
+                val builder = androidx.appcompat.app.AlertDialog.Builder(context!!)
 
                 // Set the alert dialog title
                 builder.setTitle("Location Settings")
@@ -412,7 +412,7 @@ class MachineListFormLoc : AppCompatActivity() {
 
 
                 // Finally, make the alert dialog using builder
-                val dialog: android.support.v7.app.AlertDialog = builder.create()
+                val dialog: androidx.appcompat.app.AlertDialog = builder.create()
 
                 // Display the alert dialog on app interface
                 dialog.show()

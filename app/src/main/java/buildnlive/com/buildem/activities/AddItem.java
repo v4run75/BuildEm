@@ -1,11 +1,11 @@
 package buildnlive.com.buildem.activities;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -17,7 +17,6 @@ import buildnlive.com.buildem.App;
 import buildnlive.com.buildem.R;
 import buildnlive.com.buildem.elements.Item;
 import buildnlive.com.buildem.fragments.AddItemFragment;
-import buildnlive.com.buildem.fragments.AddItemLocFragment;
 import buildnlive.com.buildem.fragments.ViewItemFragment;
 import buildnlive.com.buildem.utils.UtilityofActivity;
 

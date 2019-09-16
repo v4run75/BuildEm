@@ -1,12 +1,12 @@
 package buildnlive.com.buildem.activities;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -16,7 +16,6 @@ import buildnlive.com.buildem.Interfaces;
 import buildnlive.com.buildem.R;
 import buildnlive.com.buildem.console;
 import buildnlive.com.buildem.fragments.LocalPurchaseListFragment;
-import buildnlive.com.buildem.fragments.PaymentFragment;
 import buildnlive.com.buildem.fragments.PaymentFragmentLoc;
 import io.realm.Realm;
 

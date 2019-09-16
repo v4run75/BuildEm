@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".activities.HomeActivity">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:id="@+id/installations"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/border_round"
+                            android:backgroundTint="@color/c1"
+                            android:backgroundTintMode="src_atop"
+                            android:padding="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_assignment_black_24dp"
+                            android:tint="@color/c1" />
+
+                        <TextView
+                            android:id="@+id/mark_attendance_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:breakStrategy="high_quality"
+                            android:padding="5dp"
+                            android:text="@string/installations"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/complaints"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/border_round"
+                            android:backgroundTint="@color/c2"
+                            android:backgroundTintMode="src_atop"
+                            android:padding="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_add_shopping_cart_black_24dp"
+                            android:tint="@color/c2" />
+
+                        <TextView
+                            android:id="@+id/manage_inventory_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:breakStrategy="high_quality"
+                            android:padding="5dp"
+                            android:text="@string/complaints"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/amc"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/border_round"
+                            android:backgroundTint="@color/color1"
+                            android:backgroundTintMode="src_atop"
+                            android:padding="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_shopping_cart_black_24dp"
+                            android:tint="@color/color1" />
+
+                        <TextView
+                            android:id="@+id/issued_items_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:breakStrategy="high_quality"
+                            android:padding="5dp"
+                            android:text="@string/amc"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/services"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/border_round"
+                            android:backgroundTint="@color/c3"
+                            android:backgroundTintMode="src_atop"
+                            android:padding="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_receipt_black_24dp"
+                            android:tint="@color/c3" />
+
+                        <TextView
+                            android:id="@+id/servicesText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:breakStrategy="high_quality"
+                            android:padding="5dp"
+                            android:text="@string/services"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+</ScrollView>

@@ -15,14 +15,14 @@ import android.net.Uri
 import android.os.*
 import android.provider.MediaStore
 import android.provider.Settings
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
-import android.support.v4.content.FileProvider
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.Toolbar
 import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
@@ -235,7 +235,7 @@ class PurchaseOrderListingLoc : AppCompatActivity() {
             if (!gps_enabled && !network_enabled) {
                 // notify user
 
-                val builder = android.support.v7.app.AlertDialog.Builder(context!!)
+                val builder = androidx.appcompat.app.AlertDialog.Builder(context!!)
 
                 // Set the alert dialog title
                 builder.setTitle("Location Settings")
@@ -260,7 +260,7 @@ class PurchaseOrderListingLoc : AppCompatActivity() {
 
 
                 // Finally, make the alert dialog using builder
-                val dialog: android.support.v7.app.AlertDialog = builder.create()
+                val dialog: androidx.appcompat.app.AlertDialog = builder.create()
 
                 // Display the alert dialog on app interface
                 dialog.show()

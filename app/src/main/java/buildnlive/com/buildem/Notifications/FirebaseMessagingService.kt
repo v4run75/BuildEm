@@ -7,8 +7,8 @@ import android.content.Context
 import android.content.Intent
 import android.media.RingtoneManager
 import android.os.Build
-import android.support.v4.app.NotificationCompat
-import android.support.v4.content.ContextCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat
 import buildnlive.com.buildem.R
 import buildnlive.com.buildem.activities.NotificationActivity
 import buildnlive.com.buildem.console
@@ -23,12 +23,12 @@ class FirebaseMessagingService : com.google.firebase.messaging.FirebaseMessaging
         super.onCreate()
     }
 
-    override fun onMessageReceived(remoteMessage: RemoteMessage?) {
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
         super.onMessageReceived(remoteMessage)
 
 
 //        if(remoteMessage!!.notification==null) {
-        if (remoteMessage!!.data.isNotEmpty()) {
+        if (remoteMessage.data.isNotEmpty()) {
 
 //                if (remoteMessage.data["notification_type"].equals("Reminder")) {
 
@@ -83,7 +83,7 @@ class FirebaseMessagingService : com.google.firebase.messaging.FirebaseMessaging
         super.onDeletedMessages()
     }
 
-    override fun onNewToken(s: String?) {
+    override fun onNewToken(s: String) {
         console.log("FCM Token $s")
         getSharedPreferences("Token", MODE_PRIVATE).edit().putString("FcmToken", s).apply();
     }

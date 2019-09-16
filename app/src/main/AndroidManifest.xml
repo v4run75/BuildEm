@@ -13,7 +13,6 @@
         android:required="true" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:name="buildnlive.com.buildem.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_buildnlive_logo"
@@ -52,7 +51,7 @@
         <!--<activity android:name="buildnlive.com.buildem.activities.PurchaseOrderListing" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />-->
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
@@ -90,11 +89,15 @@
 
         <activity android:name=".activities.FcmNotificationActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" >
             <intent-filter>
-                <action android:name="NOTIFICATION_BUILD" />
+                <action android:name="NOTIFICATION_BUILDEM" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".activities.ServiceDetailsActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.ServiceActivity" />
+        <activity android:name=".activities.InstallationActivity" />
+        <activity android:name=".activities.ComplaintActivity" />
+        <activity android:name=".activities.ComplaintDetailsActivity" />
 
 
         <service android:name=".Notifications.FirebaseMessagingService">

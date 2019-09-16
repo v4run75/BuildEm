@@ -103,6 +103,13 @@
     <string name="close">Close</string>
     <string name="submit">Submit</string>
     <string name="discount">Discount</string>
+    <string name="installations">Installations</string>
+    <string name="complaints">Complaints</string>
+    <string name="amc">AMC</string>
+    <string name="services">Services</string>
+    <string name="see_more">See More</string>
+    <string name="complaint_details">Complaint Details</string>
+    <string name="work_done">Work Done</string>
 
 
 </resources>
