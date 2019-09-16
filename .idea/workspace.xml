@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="237c447b-d7ab-47e6-9686-e8d9f2c32558" name="Default Changelist" comment="Refactored project structure">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/AddItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ComplaintActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ComplaintDetailsActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/CreateActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/CreateLabour.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/DailyWorkProgressActivities.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/FcmNotificationActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/IndentItems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/Inventory.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/IssuedItems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/IssuedItemsForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/IssuedItemsFormLoc.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/LabourActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/LabourReportActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/LocalPurchase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/LocalPurchaseKotlin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/LoginActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/MachineList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/MachineListForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/MachineListFormLoc.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ManageLabour.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ManageLabourReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ManageLabourReportLoc.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/MarkAttendance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/MarkAttendanceKotlin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/NotificationActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/Planning.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/PlanningLoc.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/PurchaseOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/PurchaseOrderListing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/PurchaseOrderListingLoc.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/RequestItems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ResetActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ReturnIssuedItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ServiceActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ServiceDetailsActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/WorkProgress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/WorkProgressLoc.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/AddItemFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/AddItemLocFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/InventoryFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/IssueItemFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/IssueItemListFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/LocalPurchaseFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/LocalPurchaseListFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/MachineListFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ManageLabourFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/MarkAttendanceFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/MarkAttendanceLocFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/PaymentFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/PaymentFragmentLoc.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/PlansFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/RequestLabourFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/SendIndentFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/SendRequestFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ServiceFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewAttendanceFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewIndentFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewIssueFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewItemFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewLabourFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewLabourReportFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewMachineFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewPurchaseOrderFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewRequestsFragment.java" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="ENU7N15A20006259" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BuildEm" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BuildEm" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BuildEm" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BuildEm" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_work_progress.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_purchase_order_listing.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="layoutResourceFile_vertical" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>firebase</find>
+      <find>items.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false))</find>
+      <find>items.setLayoutManager(new LinearLayoutManager(getContext()</find>
+      <find>status</find>
+      <find>android:id=&quot;@+id/statusIndicator&quot;</find>
+      <find>layout_compla</find>
+      <find>List</find>
+      <find>Complaint</find>
+      <find>ComplaintDetails</find>
+      <find>ComplaintDetailsAdapter</find>
+      <find>ComplaintListAdapter</find>
+      <find>addressHolder</find>
+      <find>labour</find>
+      <find>.activities.</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>ArrayList</replace>
+      <replace>CustomerData.Details</replace>
+      <replace>CustomerData</replace>
+      <replace>CustomerDataAdapter</replace>
+      <replace>buildnlive.com.buildem.</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>F:\BuildEm\app\src\main\res</dir>
+      <dir>F:\BuildEm\app\src\test\java</dir>
+      <dir>F:\BuildEm\app\src\main\java\buildnlive\com\buildem</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/AddItemFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/FcmNotificationActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/inactive_circle.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/active_circle.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ComplaintListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ComplaintDetailsAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_complaint_details_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_complaint_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_complaint_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/utils/Config.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_customer_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_customer_data.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/CustomerData.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/CustomerDataAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_customer_data.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ComplaintDetailsActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ReviewComplaint.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ReturnIssuedItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/Complaints/ComplaintDetailsActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/InstallationActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/Installations/InstallationActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/InstallationFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_service_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/WorkProgress/CreateActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/IssueItem/ViewIssueFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ViewCustomerData.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/FetchAddressIntentService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/HomeFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ServiceMenuFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_work_progress.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_purchase_order_listing.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/Complaints" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="not.eligible.for.single.variant.sync" value="true" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="buildnlive.com.buildem.activities" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\BuildEm\app\src\main\java\buildnlive\com\buildem\activities\WorkPlanning" />
+      <recent name="F:\BuildEm\app\src\main\java\buildnlive\com\buildem\activities\LocalPurchase" />
+      <recent name="F:\BuildEm\app\src\main\java\buildnlive\com\buildem\activities\MarkAttendance" />
+      <recent name="F:\BuildEm\app\src\main\java\buildnlive\com\buildem\activities\Inventory" />
+      <recent name="F:\BuildEm\app\src\main\java\buildnlive\com\buildem\activities\LabourReport" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="buildnlive.com.buildem.activities.Inventory" />
+      <recent name="buildnlive.com.buildem.activities.Installations" />
+      <recent name="buildnlive.com.buildem.activities.Complaints" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\BuildEm\app\src\main\res\drawable" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuildEm:app [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.BuildEm:app [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="237c447b-d7ab-47e6-9686-e8d9f2c32558" name="Default Changelist" comment="" />
+      <created>1568606855015</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568606855015</updated>
+    </task>
+    <task id="LOCAL-00001" summary="New Complaint section">
+      <created>1568616582776</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568616582776</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Refactored project structure">
+      <created>1568620301312</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568620301312</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.22104466" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Build Variants" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Designer" order="5" />
+      <window_info id="Resources Explorer" order="6" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Favorites" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.3289689" />
+      <window_info anchor="bottom" id="Find" order="0" weight="0.3289689" />
+      <window_info anchor="bottom" id="Logcat" order="1" />
+      <window_info anchor="bottom" id="TODO" order="2" />
+      <window_info anchor="bottom" id="Android Profiler" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Flutter Performance" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
+      <window_info anchor="bottom" id="Build" order="9" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="10" weight="0.44680852" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Flutter Inspector" order="4" />
+      <window_info anchor="right" id="Viewer" order="5" side_tool="true" />
+      <window_info anchor="right" id="Flutter Outline" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Preview" order="8" />
+      <window_info anchor="right" id="Json Parser" order="9" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New Complaint section" />
+    <MESSAGE value="Refactored project structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored project structure" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/WorkProgress/WorkProgress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="53" selection-start-column="53" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/WorkProgress/DailyWorkProgressActivities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/Main2Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/IssueItem/ReturnIssuedItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="34" column="54" lean-forward="true" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ReviewComplaint.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AssetJobSheet/MachineList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="60" column="32" lean-forward="true" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_service_menu.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/LabourReport/LabourActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="309" column="54" selection-start-line="309" selection-start-column="48" selection-end-line="309" selection-end-column="54" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/IndentItem/IndentItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/RequestItem/RequestItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/LabourReport/CreateLabour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Inventory/Inventory.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="44" column="66" selection-start-line="44" selection-start-column="66" selection-end-line="44" selection-end-column="66" />
+          <folding>
+            <element signature="e#1639#1662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/LoginAndReset/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/WorkProgress/CreateActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/LoginAndReset/ResetActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintDetailsActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Notifications/NotificationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Notifications/FcmNotificationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AssetJobSheet/ViewMachineFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AssetJobSheet/MachineListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/LabourReport/RequestLabourFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/LabourReport/ManageLabourFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/LabourReport/ViewLabourFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/IssueItem/IssueItemListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/IssueItem/IssueItemFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/IssueItem/ViewIssueFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" column="56" lean-forward="true" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/WorkPlanning/PlansFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/IndentItem/SendIndentFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/IndentItem/ViewIndentFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/RequestItem/ViewRequestsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/LabourReport/ViewLabourReportFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/PurchaseOrder/ViewPurchaseOrderFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ViewLabourReportAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ViewLabourAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/RequestLabourAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/LabourAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/LabourSpinAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/FetchAddressIntentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="33" column="61" lean-forward="true" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ViewCustomerData.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#43#1060#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/MarkAttendance/MarkAttendanceFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="44" column="26" lean-forward="true" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ServiceMenuFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="222" column="74" lean-forward="true" selection-start-line="222" selection-start-column="74" selection-end-line="222" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8915#8927#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/RequestItem/SendRequestFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="250" column="12" selection-start-line="250" selection-start-column="12" selection-end-line="250" selection-end-column="12" />
+          <folding>
+            <element signature="e#11422#11464#0" expanded="true" />
+            <element signature="e#11435#11463#0" expanded="true" />
+            <element signature="e#11435#11463#0" expanded="true" />
+            <element signature="e#11422#11464#0" expanded="true" />
+            <element signature="e#12062#12123#0" expanded="true" />
+            <element signature="e#12062#12123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Inventory/AddItemFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="362" column="43" lean-forward="true" selection-start-line="362" selection-start-column="43" selection-end-line="362" selection-end-column="43" />
+          <folding>
+            <element signature="e#13627#13639#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_work_progress.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_purchase_order_listing.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+  </component>
+</project>
