@@ -196,7 +196,7 @@ public class AddItemFragment extends Fragment{
         progress = view.findViewById(R.id.progress);
         hider = view.findViewById(R.id.hider);
 //        adapter = new AddItemAdapter(getContext(), itemsList, listener);
-//        items.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+//        items.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 //        items.setAdapter(adapter);
         if (LOADING) {
             progress.setVisibility(View.VISIBLE);
@@ -356,7 +356,7 @@ public class AddItemFragment extends Fragment{
                     }
                     console.log("data set changed");
                     adapter = new AddItemAdapter(getContext(), itemsList, listener);
-                    items.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+                    items.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
                     items.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                     console.log(""+adapter.getItemCount());
@@ -403,7 +403,7 @@ public class AddItemFragment extends Fragment{
                     }
                     console.log("data set changed");
                     adapter = new AddItemAdapter(getContext(), itemsList, listener);
-                    items.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+                    items.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
                     items.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                     console.log(""+adapter.getItemCount());
