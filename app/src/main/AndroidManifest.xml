@@ -94,10 +94,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.ServiceDetailsActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
-        <activity android:name=".activities.ServiceActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"  />
-        <activity android:name=".activities.ComplaintActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
-        <activity android:name=".activities.ComplaintDetailsActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
-        <activity android:name=".activities.ViewCustomerData" />
+        <activity android:name=".activities.ServiceActivity" />
+        <activity android:name=".activities.InstallationActivity" />
+        <activity android:name=".activities.ComplaintActivity" />
+        <activity android:name=".activities.ComplaintDetailsActivity" />
 
 
         <service android:name=".Notifications.FirebaseMessagingService">
