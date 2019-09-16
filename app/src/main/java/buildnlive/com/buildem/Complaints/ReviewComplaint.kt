@@ -3,13 +3,17 @@ package buildnlive.com.buildem.Complaints
 import android.content.Context
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import buildnlive.com.buildem.App
 import buildnlive.com.buildem.Interfaces
 import buildnlive.com.buildem.R
+import buildnlive.com.buildem.adapters.ComplaintDetailsAdapter
 import buildnlive.com.buildem.console
 import buildnlive.com.buildem.elements.ComplaintDetails
 import buildnlive.com.buildem.utils.Config
@@ -28,10 +32,25 @@ class ReviewComplaint : AppCompatActivity() {
     private var appCompatActivity: AppCompatActivity? = this
     private var utilityofActivity: UtilityofActivity? = null
     private var app: App? = null
+    private var listAdapter: ComplaintDetailsAdapter? = null
+    private var resultList: java.util.ArrayList<ComplaintDetails.Details> = java.util.ArrayList()
+
 
     companion object {
         var complaintId: String? = ""
         var workArray: ArrayList<ComplaintDetails.Details>? = ArrayList()
+    }
+
+
+    private var listener = object : ComplaintDetailsAdapter.OnItemClickListener {
+        override fun onItemClick(serviceItem: ComplaintDetails.Details, pos: Int, view: View) {
+        }
+
+        override fun onItemCheck(serviceItem: ComplaintDetails.Details, pos: Int, view: View, qty: TextView) {
+            serviceItem.qty = qty.text.toString()
+            resultList.add(serviceItem)
+        }
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +77,16 @@ class ReviewComplaint : AppCompatActivity() {
         toolbar_title.text = getString(R.string.reviewAndSave)
 
         comments.movementMethod = ScrollingMovementMethod()
+
+
+        val dividerItemDecoration = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
+
+        items!!.addItemDecoration(dividerItemDecoration)
+        items!!.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+        listAdapter = ComplaintDetailsAdapter(context!!, workArray!!, listener)
+        items!!.adapter = listAdapter
+
 
         save.setOnClickListener {
             saveComplaint()

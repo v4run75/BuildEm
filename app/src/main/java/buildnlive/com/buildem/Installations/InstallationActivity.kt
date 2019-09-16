@@ -67,7 +67,7 @@ class InstallationActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         val toolbar_title = findViewById<TextView>(R.id.toolbar_title)
-        toolbar_title.text = getString(R.string.services)
+        toolbar_title.text = getString(R.string.installations)
 
 
         val dividerItemDecoration = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)

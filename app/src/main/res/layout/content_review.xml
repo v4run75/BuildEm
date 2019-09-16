@@ -8,9 +8,14 @@
     tools:showIn="@layout/activity_review"
     android:background="@color/white">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/items"
+        android:layout_width="match_parent"
+        android:layout_height="180dp" />
 
     <LinearLayout
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/items"
+        android:layout_marginTop="10dp"
         android:id="@+id/container"
         android:orientation="horizontal"
         android:layout_width="match_parent"

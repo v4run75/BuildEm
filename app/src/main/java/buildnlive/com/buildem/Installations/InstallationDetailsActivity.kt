@@ -88,7 +88,7 @@ class InstallationDetailsActivity : AppCompatActivity() {
         app = application as App
 
         val textView = findViewById<TextView>(R.id.toolbar_title)
-        textView.text = "Services"
+        textView.text = getString(R.string.installations)
         val bundle = intent.extras
 
 

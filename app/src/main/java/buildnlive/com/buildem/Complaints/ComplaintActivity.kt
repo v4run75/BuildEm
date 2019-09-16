@@ -111,19 +111,8 @@ class ComplaintActivity : AppCompatActivity() {
 
                     listAdapter = ComplaintListAdapter(context!!, itemList, listener)
                     items!!.adapter = listAdapter
-/*
-                    val array = JSONArray(response)
-                    for (i in 0 until array.length()) {
-                        itemList.add(ServiceItem().parseFromJSON(array.getJSONObject(i)))
-                    }
-                    console.log("data set changed")
-                    if (itemList.isEmpty()) {
-//                        Toast.makeText(mContext, "No Results", Toast.LENGTH_LONG).show()
-                        no_content.visibility = View.VISIBLE
-                    } else {
-                        no_content.visibility = View.GONE
-                        listAdapter!!.addItems(itemList)
-                    }*/
+
+
                 } catch (e: JSONException) {
                     e.printStackTrace()
                 }

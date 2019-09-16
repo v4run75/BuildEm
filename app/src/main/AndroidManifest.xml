@@ -101,6 +101,11 @@
         <activity android:name=".Complaints.ComplaintDetailsActivity"  android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name=".activities.ViewCustomerData" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name=".Complaints.ReviewComplaint" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
+        <activity android:name=".Complaints.AddComplaint" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".AMC.AMCActivity" />
+        <activity android:name=".AMC.AMCDetailsActivity" />
+        <activity android:name=".AMC.AddAMC" />
+        <activity android:name=".AMC.ReviewAMC" />
 
 
         <service android:name=".Notifications.FirebaseMessagingService">

@@ -36,7 +36,7 @@ class ViewCustomerData : AppCompatActivity() {
 
     companion object {
         private var customerId: String? = null
-        private var complaintId: String? = null
+        private var id: String? = null
         private var type: String? = null
 
     }
@@ -71,7 +71,7 @@ class ViewCustomerData : AppCompatActivity() {
 
         if (intent != null) {
             customerId = intent.getStringExtra("customerId")
-            complaintId = intent.getStringExtra("complaintId")
+            id = intent.getStringExtra("id")
             type = intent.getStringExtra("type")
         }
 
@@ -92,7 +92,7 @@ class ViewCustomerData : AppCompatActivity() {
 
         requestUrl = requestUrl.replace("[0]", App.userId)
         requestUrl = requestUrl.replace("[1]", customerId!!)
-        requestUrl = requestUrl.replace("[2]", complaintId!!)
+        requestUrl = requestUrl.replace("[2]", id!!)
         requestUrl = requestUrl.replace("[3]", type!!)
 
 

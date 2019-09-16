@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import buildnlive.com.buildem.AMC.AddAMC
 import buildnlive.com.buildem.App
 import buildnlive.com.buildem.Interfaces
 import buildnlive.com.buildem.R
@@ -90,23 +91,16 @@ class ComplaintDetailsActivity : AppCompatActivity() {
         seeMore.setOnClickListener {
             val intent = Intent(context, ViewCustomerData::class.java)
             intent.putExtra("customerId", itemList!!.customerDetails.customerId)
-            intent.putExtra("complaintId", complaintId)
+            intent.putExtra("id", complaintId)
             intent.putExtra("type", "Complaint")
             startActivity(intent)
         }
 
-        next.setOnClickListener {
 
-            val intent = Intent(context, ReviewComplaint::class.java)
-            intent.putExtra("workArray", itemList!!.details)
-            intent.putExtra("complaintId", complaintId)
-            startActivity(intent)
-
-        }
 
         add.setOnClickListener {
 
-            val intent = Intent(context, ReviewComplaint::class.java)
+            val intent = Intent(context, AddComplaint::class.java)
             intent.putExtra("workArray", itemList!!.details)
             intent.putExtra("complaintId", complaintId)
             startActivity(intent)

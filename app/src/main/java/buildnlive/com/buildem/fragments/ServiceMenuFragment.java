@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Objects;
 
+import buildnlive.com.buildem.AMC.AMCActivity;
 import buildnlive.com.buildem.App;
 import buildnlive.com.buildem.Complaints.ComplaintActivity;
 import buildnlive.com.buildem.Installations.InstallationActivity;
@@ -25,7 +26,7 @@ import static buildnlive.com.buildem.utils.Config.PREF_NAME;
 
 public class ServiceMenuFragment extends Fragment implements View.OnClickListener {
 
-    private LinearLayout installations, complaints, amc;
+    private LinearLayout installations, complaints, amc, services;
     private SharedPreferences pref;
     private static App app;
 
@@ -49,9 +50,11 @@ public class ServiceMenuFragment extends Fragment implements View.OnClickListene
         installations = view.findViewById(R.id.installations);
         complaints = view.findViewById(R.id.complaints);
         amc = view.findViewById(R.id.amc);
+        services = view.findViewById(R.id.services);
         installations.setOnClickListener(this);
         complaints.setOnClickListener(this);
         amc.setOnClickListener(this);
+        services.setOnClickListener(this);
 
 
     }
@@ -66,6 +69,9 @@ public class ServiceMenuFragment extends Fragment implements View.OnClickListene
                 startActivity(new Intent(getContext(), ComplaintActivity.class));
                 break;
             case R.id.amc:
+                startActivity(new Intent(getContext(), AMCActivity.class));
+                break;
+            case R.id.services:
                 startActivity(new Intent(getContext(), AddItem.class));
                 break;
         }

@@ -116,7 +116,7 @@ public class ComplaintDetails {
         };
     }
 
-    public class CustomerDetails {
+    public static class CustomerDetails implements Parcelable {
         @Expose
         @SerializedName("status")
         private String status;
@@ -172,5 +172,42 @@ public class ComplaintDetails {
         public void setCustomerId(String customerId) {
             this.customerId = customerId;
         }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(this.status);
+            dest.writeString(this.customerId);
+            dest.writeString(this.customerName);
+            dest.writeString(this.mobileNo);
+            dest.writeString(this.address);
+        }
+
+        public CustomerDetails() {
+        }
+
+        protected CustomerDetails(Parcel in) {
+            this.status = in.readString();
+            this.customerId = in.readString();
+            this.customerName = in.readString();
+            this.mobileNo = in.readString();
+            this.address = in.readString();
+        }
+
+        public static final Parcelable.Creator<CustomerDetails> CREATOR = new Parcelable.Creator<CustomerDetails>() {
+            @Override
+            public CustomerDetails createFromParcel(Parcel source) {
+                return new CustomerDetails(source);
+            }
+
+            @Override
+            public CustomerDetails[] newArray(int size) {
+                return new CustomerDetails[size];
+            }
+        };
     }
 }
