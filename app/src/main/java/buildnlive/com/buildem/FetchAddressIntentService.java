@@ -1,7 +1,6 @@
 package buildnlive.com.buildem;
 
 import android.app.IntentService;
-import android.app.Service;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
@@ -16,7 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import buildnlive.com.buildem.fragments.MarkAttendanceLocFragment;
+import buildnlive.com.buildem.MarkAttendance.MarkAttendanceLocFragment;
+
 
 public class FetchAddressIntentService extends IntentService {
 

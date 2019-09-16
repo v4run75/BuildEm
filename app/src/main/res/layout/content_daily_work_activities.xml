@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_daily_work_activities"
-    tools:context=".activities.DailyWorkProgressActivities"
+    tools:context=".WorkProgress.DailyWorkProgressActivities"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 

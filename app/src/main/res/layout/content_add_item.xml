@@ -7,7 +7,7 @@
     android:background="@color/light_grey"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_add_item"
-    tools:context=".activities.AddItem">
+    tools:context=".Inventory.AddItem">
 
     <LinearLayout
         android:id="@+id/top"

@@ -4,9 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,19 +24,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import buildnlive.com.buildem.App;
+import buildnlive.com.buildem.AssetJobSheet.MachineList;
 import buildnlive.com.buildem.Interfaces;
+import buildnlive.com.buildem.Inventory.AddItem;
+import buildnlive.com.buildem.IssueItem.IssuedItems;
+import buildnlive.com.buildem.LabourReport.LabourReportActivity;
+import buildnlive.com.buildem.LocalPurchaseAndPayment.LocalPurchaseKotlin;
+import buildnlive.com.buildem.MarkAttendance.MarkAttendanceKotlin;
+import buildnlive.com.buildem.PurchaseOrder.PurchaseOrder;
 import buildnlive.com.buildem.R;
-import buildnlive.com.buildem.activities.AddItem;
-import buildnlive.com.buildem.activities.IssuedItems;
-import buildnlive.com.buildem.activities.LabourReportActivity;
-import buildnlive.com.buildem.activities.LocalPurchaseKotlin;
-import buildnlive.com.buildem.activities.MachineList;
-import buildnlive.com.buildem.activities.MarkAttendanceKotlin;
-//import buildnlive.com.buildem.activities.Planning;
-import buildnlive.com.buildem.activities.PlanningLoc;
-import buildnlive.com.buildem.activities.PurchaseOrder;
-import buildnlive.com.buildem.activities.RequestItems;
-import buildnlive.com.buildem.activities.WorkProgressLoc;
+import buildnlive.com.buildem.RequestItem.RequestItems;
+import buildnlive.com.buildem.WorkPlanning.PlanningLoc;
+import buildnlive.com.buildem.WorkProgress.WorkProgressLoc;
 import buildnlive.com.buildem.console;
 import buildnlive.com.buildem.elements.Project;
 import buildnlive.com.buildem.elements.ProjectMember;
@@ -45,6 +44,8 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 
 import static buildnlive.com.buildem.utils.Config.PREF_NAME;
+
+//import buildnlive.com.buildem.activities.Planning;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 //    private TextView title;

@@ -46,7 +46,7 @@
 //import buildnlive.com.buildem.BuildConfig;
 //import buildnlive.com.buildem.Interfaces;
 //import buildnlive.com.buildem.R;
-//import buildnlive.com.buildem.activities.DailyWorkProgressActivities;
+//import buildnlive.com.buildem.activities.WorkProgress.DailyWorkProgressActivities;
 //import buildnlive.com.buildem.adapters.ActivityImagesAdapter;
 //import buildnlive.com.buildem.adapters.AttendanceAdapter;
 //import buildnlive.com.buildem.adapters.DailyWorkAdapter;

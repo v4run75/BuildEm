@@ -7,7 +7,7 @@
     android:background="@color/white"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_machine_list"
-    tools:context=".activities.MachineList">
+    tools:context=".AssetJobSheet.MachineList">
 
     <LinearLayout
         android:id="@+id/top"

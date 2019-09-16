@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/light_grey"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activities.MarkAttendance"
+    tools:context=".MarkAttendance.MarkAttendance"
     tools:showIn="@layout/activity_mark_attendance">
 
     <LinearLayout

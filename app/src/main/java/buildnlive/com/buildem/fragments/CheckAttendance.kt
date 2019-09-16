@@ -2,40 +2,27 @@ package buildnlive.com.buildem.fragments
 
 
 import android.app.Activity
-import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.core.content.ContextCompat
-import androidx.appcompat.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.TextView
 import android.widget.Toast
-
-import com.android.volley.Request
-import org.json.JSONArray
-import org.json.JSONException
-import org.json.JSONObject
-
-import java.util.HashMap
-
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import buildnlive.com.buildem.App
 import buildnlive.com.buildem.Interfaces
 import buildnlive.com.buildem.R
-import buildnlive.com.buildem.activities.LoginActivity
 import buildnlive.com.buildem.console
 import buildnlive.com.buildem.utils.Config
 import com.amulyakhare.textdrawable.TextDrawable
 import com.amulyakhare.textdrawable.util.ColorGenerator
-import kotlinx.android.synthetic.main.activity_check_attendance.*
+import com.android.volley.Request
 import kotlinx.android.synthetic.main.content_check_attendance.*
+import org.json.JSONException
+import org.json.JSONObject
 
 class CheckAttendance : Fragment() {
 
@@ -68,8 +55,8 @@ class CheckAttendance : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         pref = app!!.pref
-        val n = pref!!.getString(LoginActivity.PREF_KEY_NAME, "Dummy")
-        val e = pref!!.getString(LoginActivity.PREF_KEY_EMAIL, "abc@xyz.com")
+        val n = pref!!.getString(buildnlive.com.buildem.LoginAndReset.LoginActivity.PREF_KEY_NAME, "Dummy")
+        val e = pref!!.getString(buildnlive.com.buildem.LoginAndReset.LoginActivity.PREF_KEY_EMAIL, "abc@xyz.com")
 
         cover!!.setImageDrawable(TextDrawable.builder().buildRound("" + n!![0], generator.getColor(e!!)))
 

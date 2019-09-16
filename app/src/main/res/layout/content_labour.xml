@@ -8,7 +8,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_request_items"
-    tools:context=".activities.LabourActivity">
+    tools:context=".LabourReport.LabourActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

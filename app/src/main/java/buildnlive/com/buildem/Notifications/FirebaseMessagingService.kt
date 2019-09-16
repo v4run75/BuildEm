@@ -10,7 +10,6 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import buildnlive.com.buildem.R
-import buildnlive.com.buildem.activities.NotificationActivity
 import buildnlive.com.buildem.console
 import com.google.firebase.messaging.RemoteMessage
 
@@ -50,7 +49,7 @@ class FirebaseMessagingService : com.google.firebase.messaging.FirebaseMessaging
     }
 
     private fun sendNotificationDefault(message: String?, title: String?) {
-        val intent = Intent(this, NotificationActivity::class.java).apply { Intent.FLAG_ACTIVITY_CLEAR_TOP }
+        val intent = Intent(this, buildnlive.com.buildem.Notifications.NotificationActivity::class.java).apply { Intent.FLAG_ACTIVITY_CLEAR_TOP }
 
         val pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT)

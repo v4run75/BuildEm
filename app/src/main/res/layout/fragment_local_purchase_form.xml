@@ -9,7 +9,7 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_local_purchase_form"
-    tools:context=".activities.LocalPurchaseForm"
+    tools:context=".LocalPurchaseAndPayment.LocalPurchaseForm"
     android:fillViewport="true">
     <RelativeLayout
         android:layout_width="match_parent"

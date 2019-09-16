@@ -8,7 +8,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_issue_item_list"
-    tools:context=".activities.IssuedItemsForm">
+    tools:context=".IssueItem.IssuedItemsForm">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

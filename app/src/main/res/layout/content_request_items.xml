@@ -7,7 +7,7 @@
     android:background="@color/light_grey"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_request_items"
-    tools:context=".activities.RequestItems">
+    tools:context=".RequestItem.RequestItems">
     <LinearLayout
         android:id="@+id/top"
         android:layout_width="match_parent"

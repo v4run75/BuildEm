@@ -7,7 +7,7 @@
     android:background="@color/light_grey"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_purchase_order"
-    tools:context=".activities.PurchaseOrder">
+    tools:context=".PurchaseOrder.PurchaseOrder">
     <!--<LinearLayout-->
         <!--android:id="@+id/top"-->
         <!--android:layout_width="match_parent"-->

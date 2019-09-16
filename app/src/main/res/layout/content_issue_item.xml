@@ -7,7 +7,7 @@
     android:background="@color/white"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_issue_item"
-    tools:context=".activities.IssuedItems">
+    tools:context=".IssueItem.IssuedItems">
 
     <LinearLayout
         android:id="@+id/top"

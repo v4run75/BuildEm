@@ -7,7 +7,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_labour_report"
-    tools:context=".activities.ManageLabourReport"
+    tools:context=".LabourReport.ManageLabourReport"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
         android:layout_width="match_parent"

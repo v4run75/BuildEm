@@ -9,7 +9,7 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_machine_list_form"
-    tools:context=".activities.MachineListForm"
+    tools:context=".AssetJobSheet.MachineListForm"
     android:fillViewport="true">
 
     a

@@ -6,16 +6,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
-import androidx.core.app.ActivityCompat
-import androidx.fragment.app.Fragment
-import androidx.core.content.ContextCompat
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
@@ -23,30 +13,35 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-
-import com.amulyakhare.textdrawable.TextDrawable
-import com.amulyakhare.textdrawable.util.ColorGenerator
-import com.android.volley.Request
-
-import org.json.JSONException
-import org.json.JSONObject
-
-import java.util.HashMap
-
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import buildnlive.com.buildem.App
 import buildnlive.com.buildem.Interfaces
+import buildnlive.com.buildem.LoginAndReset.LoginActivity.PREF_KEY_EMAIL
+import buildnlive.com.buildem.LoginAndReset.LoginActivity.PREF_KEY_NAME
 import buildnlive.com.buildem.Notifications.FirebaseMessagingService
 import buildnlive.com.buildem.R
 import buildnlive.com.buildem.console
-import buildnlive.com.buildem.utils.Config
-import io.realm.Realm
-
-import buildnlive.com.buildem.activities.LoginActivity.PREF_KEY_EMAIL
-import buildnlive.com.buildem.activities.LoginActivity.PREF_KEY_NAME
 import buildnlive.com.buildem.fragments.*
+import buildnlive.com.buildem.utils.Config
 import buildnlive.com.buildem.utils.Helper
 import buildnlive.com.buildem.utils.PrefernceFile
+import com.amulyakhare.textdrawable.TextDrawable
+import com.amulyakhare.textdrawable.util.ColorGenerator
+import com.android.volley.Request
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
+import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_home.*
+import org.json.JSONException
+import org.json.JSONObject
+import java.util.*
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private var imageButton: ImageButton? = null
@@ -161,7 +156,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         pref = app!!.pref
         fragment = HomeFragment.newInstance(app)
         if (!pref!!.getBoolean(PREF_KEY_LOGGED_IN, false)) {
-            startActivity(Intent(applicationContext, LoginActivity::class.java))
+            startActivity(Intent(applicationContext, buildnlive.com.buildem.LoginAndReset.LoginActivity::class.java))
             finish()
         }
         badge = findViewById(R.id.badge_notification)
@@ -169,7 +164,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         imageButton = findViewById(R.id.notification)
         imageButton!!.setOnClickListener {
             badge!!.visibility = View.GONE
-            startActivity(Intent(applicationContext, NotificationActivity::class.java))
+            startActivity(Intent(applicationContext, buildnlive.com.buildem.Notifications.NotificationActivity::class.java))
         }
 
         helper = Helper.instance
@@ -222,7 +217,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 navigation.visibility = View.INVISIBLE
                 fragment = CheckAttendanceLoc.newInstance(app!!)
             }
-            R.id.nav_plans -> fragment = PlansFragment.newInstance(application as App)
+            R.id.nav_plans -> fragment = buildnlive.com.buildem.WorkPlanning.PlansFragment.newInstance(application as App)
             R.id.nav_about -> fragment = AboutUsFragment.newInstance()
             R.id.nav_logout -> logout()
             R.id.nav_profile -> fragment = ProfileFragment.newInstance(app)
@@ -256,7 +251,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val realm = Realm.getDefaultInstance()
                 realm.executeTransaction { realm -> realm.deleteAll() }
 
-                startActivity(Intent(applicationContext, LoginActivity::class.java))
+                startActivity(Intent(applicationContext, buildnlive.com.buildem.LoginAndReset.LoginActivity::class.java))
                 finish()
 
             }

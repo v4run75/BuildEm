@@ -7,7 +7,7 @@
     android:background="@color/white"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_notification"
-    tools:context=".activities.NotificationActivity">
+    tools:context=".Notifications.NotificationActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView

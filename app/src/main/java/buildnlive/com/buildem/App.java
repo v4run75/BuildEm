@@ -18,9 +18,9 @@ import buildnlive.com.buildem.utils.Config;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-import static buildnlive.com.buildem.activities.LoginActivity.PREF_KEY_PERMISSIONS;
-import static buildnlive.com.buildem.activities.LoginActivity.PREF_KEY_PROJECTS;
-import static buildnlive.com.buildem.activities.LoginActivity.PREF_KEY_USER_ID;
+import static buildnlive.com.buildem.LoginAndReset.LoginActivity.PREF_KEY_PERMISSIONS;
+import static buildnlive.com.buildem.LoginAndReset.LoginActivity.PREF_KEY_PROJECTS;
+import static buildnlive.com.buildem.LoginAndReset.LoginActivity.PREF_KEY_USER_ID;
 import static buildnlive.com.buildem.utils.Config.PREF_NAME;
 
 public class App extends Application {

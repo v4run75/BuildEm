@@ -1,13 +1,11 @@
-package buildnlive.com.buildem.activities
+package buildnlive.com.buildem.LocalPurchaseAndPayment
 
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.location.Location
@@ -16,39 +14,18 @@ import android.net.Uri
 import android.os.*
 import android.provider.MediaStore
 import android.provider.Settings
+import android.text.TextUtils
+import android.util.Base64
+import android.view.View
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.appcompat.widget.Toolbar
-import android.text.TextUtils
-import android.util.Base64
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.AdapterView
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.Spinner
-import android.widget.TextView
-import android.widget.Toast
 import buildnlive.com.buildem.*
 import buildnlive.com.buildem.R
-
-import org.json.JSONArray
-import org.json.JSONException
-import org.json.JSONObject
-
-import java.io.ByteArrayOutputStream
-import java.io.File
-import java.io.IOException
-import java.text.SimpleDateFormat
-import java.util.ArrayList
-import java.util.Date
-import java.util.HashMap
-import java.util.Locale
-
 import buildnlive.com.buildem.adapters.SingleImageAdapter
 import buildnlive.com.buildem.elements.Item
 import buildnlive.com.buildem.elements.Packet
@@ -57,6 +34,14 @@ import buildnlive.com.buildem.utils.Config
 import buildnlive.com.buildem.utils.PrefernceFile
 import buildnlive.com.buildem.utils.UtilityofActivity
 import com.google.android.gms.location.*
+import org.json.JSONArray
+import org.json.JSONException
+import org.json.JSONObject
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class LocalPurchaseFormLoc : AppCompatActivity() {
 
@@ -114,8 +99,8 @@ class LocalPurchaseFormLoc : AppCompatActivity() {
         const val FAILURE_RESULT = 1
         const val PACKAGE_NAME = "com.google.android.gms.location.sample.locationaddress"
         const val RECEIVER = "$PACKAGE_NAME.RECEIVER"
-        const val RESULT_DATA_KEY = "${PACKAGE_NAME}.RESULT_DATA_KEY"
-        const val LOCATION_DATA_EXTRA = "${PACKAGE_NAME}.LOCATION_DATA_EXTRA"
+        const val RESULT_DATA_KEY = "$PACKAGE_NAME.RESULT_DATA_KEY"
+        const val LOCATION_DATA_EXTRA = "$PACKAGE_NAME.LOCATION_DATA_EXTRA"
     }
 
 
@@ -323,7 +308,7 @@ class LocalPurchaseFormLoc : AppCompatActivity() {
                         if (validate(quantity, total, vendor_details, unit)) {
                             console.log("From Validate")
                             try {
-                                sendRequest(selectedItem!!.id, quantity, unit, total, overheads,rate,tax,vendor_details, ship_no, details, images!!)
+                                sendRequest(selectedItem!!.id, quantity, unit, total, overheads,rate,tax, vendor_details, ship_no, details, images!!)
                             } catch (e: JSONException) {
                                 e.printStackTrace()
                             }
