@@ -36,7 +36,7 @@ class ComplaintDetailsAdapter(private val context: Context, users: ArrayList<Com
         return position
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComplaintDetailsAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.layout_complaint_details_item, parent, false)
         return ViewHolder(v)
     }
@@ -59,7 +59,7 @@ class ComplaintDetailsAdapter(private val context: Context, users: ArrayList<Com
         private val name: TextView = view.findViewById(R.id.name)
         private val unit: TextView = view.findViewById(R.id.units)
         private val qty: TextView = view.findViewById(R.id.qty)
-        private val check: CheckBox = view.findViewById(R.id.check)
+//        private val check: CheckBox = view.findViewById(R.id.check)
 
         fun bind(context: Context, item: ComplaintDetails.Details, pos: Int, listener: OnItemClickListener) {
 
@@ -70,6 +70,8 @@ class ComplaintDetailsAdapter(private val context: Context, users: ArrayList<Com
             qty.isClickable = false
             qty.text = item.qty
 
+
+/*
             check.setOnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked) {
                     if (!qty.text.isNullOrBlank()) {
@@ -79,7 +81,7 @@ class ComplaintDetailsAdapter(private val context: Context, users: ArrayList<Com
                         check.isChecked = false
                     }
                 }
-            }
+            }*/
         }
     }
 

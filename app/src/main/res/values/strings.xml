@@ -110,6 +110,13 @@
     <string name="see_more">See More</string>
     <string name="complaint_details">Complaint Details</string>
     <string name="work_done">Work Done</string>
+    <string name="status">Status: </string>
+    <string name="nameHolder">Name: %1$s</string>
+    <string name="addressHolder">Address: %1$s</string>
+    <string name="mobileholder">Mobile No: %1$s</string>
+    <string name="statusHolder">Status: %1$s</string>
+    <string name="machines_equipments">Machines/Equipments</string>
+    <string name="no_machine_equipments">No Machine/Equipments</string>
 
 
 </resources>

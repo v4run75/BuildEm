@@ -5,8 +5,10 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,6 +28,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 import buildnlive.com.buildem.App;
 import buildnlive.com.buildem.Interfaces;
@@ -174,13 +177,16 @@ public class FcmNotificationActivity extends AppCompatActivity {
 //        final String adapter=new ArrayAdapter<String>(this,mobileArray);
     }
 
-    protected Boolean isActivityRunning(Class activityClass)
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    protected Boolean isActivityRunning()
     {
         ActivityManager activityManager = (ActivityManager) getBaseContext().getSystemService(Context.ACTIVITY_SERVICE);
+        assert activityManager != null;
         List<ActivityManager.RunningTaskInfo> tasks = activityManager.getRunningTasks(Integer.MAX_VALUE);
 
         for (ActivityManager.RunningTaskInfo task : tasks) {
-            if (activityClass.getCanonicalName().equalsIgnoreCase(task.baseActivity.getClassName()))
+            assert task.baseActivity != null;
+            if (Objects.requireNonNull(HomeActivity.class.getCanonicalName()).equalsIgnoreCase(task.baseActivity.getClassName()))
                 return true;
         }
 
@@ -196,13 +202,15 @@ public class FcmNotificationActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(isActivityRunning(HomeActivity.class))
-        {
-            finish();
-        }
-        else {
-            startActivity(new Intent(FcmNotificationActivity.this,HomeActivity.class));
-            finish();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if(isActivityRunning())
+            {
+                finish();
+            }
+            else {
+                startActivity(new Intent(FcmNotificationActivity.this,HomeActivity.class));
+                finish();
+            }
         }
     }
 

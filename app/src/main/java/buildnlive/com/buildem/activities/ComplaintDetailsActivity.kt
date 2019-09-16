@@ -2,6 +2,7 @@ package buildnlive.com.buildem.activities
 
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -19,6 +20,7 @@ import buildnlive.com.buildem.elements.ComplaintDetails
 import buildnlive.com.buildem.elements.Packet
 import buildnlive.com.buildem.elements.ServiceActivityItem
 import buildnlive.com.buildem.utils.Config
+import buildnlive.com.buildem.utils.GlideApp
 import buildnlive.com.buildem.utils.UtilityofActivity
 import com.android.volley.Request
 import com.google.gson.Gson
@@ -83,14 +85,19 @@ class ComplaintDetailsActivity : AppCompatActivity() {
         listAdapter = ComplaintDetailsAdapter(context!!, ArrayList<ComplaintDetails.Details>(), listener)
         items!!.adapter = listAdapter
 
+        seeMore.setOnClickListener {
+            val intent = Intent(context, ViewCustomerData::class.java)
+            intent.putExtra("customerId", itemList!!.customerDetails.customerId)
+            intent.putExtra("type", "Complaint")
+            startActivity(intent)
+        }
+
         next.setOnClickListener {
 
 
         }
 
-
         getComplaintDetails()
-
     }
 
 
@@ -126,10 +133,16 @@ class ComplaintDetailsActivity : AppCompatActivity() {
                     itemList = Gson().fromJson<ComplaintDetails>(response, vendorType)
 
 
-                    name.text = itemList!!.customerDetails.customerName
-                    address.text = itemList!!.customerDetails.address
-                    mobileNo.text = "Mobile No: " + itemList!!.customerDetails.mobileNo
-                    status.text = "Status: " + itemList!!.customerDetails.status
+                    name.text = String.format( getString(R.string.nameHolder), itemList!!.customerDetails.customerName)
+                    address.text = String.format( getString(R.string.addressHolder), itemList!!.customerDetails.address)
+                    mobileNo.text =  String.format( getString(R.string.mobileholder), itemList!!.customerDetails.mobileNo)
+
+
+                    if ( itemList!!.customerDetails.status == "Completed") {
+                        GlideApp.with(context!!).load(R.drawable.active_circle).centerCrop().into(statusIndicator)
+                    } else {
+                        GlideApp.with(context!!).load(R.drawable.inactive_circle).centerCrop().into(statusIndicator)
+                    }
 
                     listAdapter = ComplaintDetailsAdapter(context!!, itemList!!.details, listener)
                     items!!.adapter = listAdapter

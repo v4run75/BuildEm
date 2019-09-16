@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.jetbrains.annotations.NotNull;
@@ -17,6 +18,7 @@ import java.util.List;
 
 import buildnlive.com.buildem.R;
 import buildnlive.com.buildem.elements.Complaint;
+import buildnlive.com.buildem.utils.GlideApp;
 
 public class ComplaintListAdapter extends RecyclerView.Adapter<ComplaintListAdapter.ViewHolder> {
     public interface OnItemClickListener {
@@ -72,6 +74,7 @@ public class ComplaintListAdapter extends RecyclerView.Adapter<ComplaintListAdap
         private TextView mobileNo;
         private TextView date;
         private TextView time;
+        private ImageView statusIndicator;
 
         public ViewHolder(View view) {
             super(view);
@@ -80,6 +83,7 @@ public class ComplaintListAdapter extends RecyclerView.Adapter<ComplaintListAdap
             mobileNo = view.findViewById(R.id.mobileNo);
             date = view.findViewById(R.id.date);
             time = view.findViewById(R.id.time);
+            statusIndicator = view.findViewById(R.id.statusIndicator);
 
 
         }
@@ -91,6 +95,12 @@ public class ComplaintListAdapter extends RecyclerView.Adapter<ComplaintListAdap
             date.setText(item.getComplaintDate());
 //            time.setText(item.getTime());
             mobileNo.setText(item.getCustomerContact());
+
+            if (item.getStatus().equals("Completed")) {
+                GlideApp.with(context).load(R.drawable.active_circle).centerCrop().into(statusIndicator);
+            } else {
+                GlideApp.with(context).load(R.drawable.inactive_circle).centerCrop().into(statusIndicator);
+            }
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

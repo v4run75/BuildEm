@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white"
-    android:layout_height="wrap_content">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/activity_customer_data"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/complaints_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:breakStrategy="high_quality"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="@string/customer_details" />
 
     <LinearLayout
-        android:id="@+id/container"
+        android:layout_below="@id/complaints_details"
+        android:id="@+id/customer_details_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="5dp">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,11 +42,10 @@
                 android:layout_height="wrap_content"
                 android:breakStrategy="high_quality"
                 android:padding="5dp"
+                android:textColor="@color/color3"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:textColor="@color/color3"
                 tools:text="Varun Singh" />
-
 
             <LinearLayout
                 android:gravity="end"
@@ -44,8 +60,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
                     android:textColor="@color/black"
-                    android:text="@string/status"
                     android:layout_gravity="center"
+                    android:text="@string/status"
                     android:layout_marginRight="5dp" />
 
                 <ImageView
@@ -65,67 +81,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:breakStrategy="high_quality"
-            android:padding="5dp"
-            android:maxLines="2"
             android:ellipsize="end"
-            android:textSize="12sp"
+            android:maxLines="2"
+            android:padding="5dp"
             android:textColor="@color/black"
+            android:textSize="12sp"
             tools:text="E-2/22 Arjun Mall Road, DLF Phase 1" />
+
 
         <TextView
             android:id="@+id/mobileNo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
             android:breakStrategy="high_quality"
+            android:gravity="start"
             android:padding="5dp"
-            android:maxLines="2"
-            android:ellipsize="end"
-            android:textSize="12sp"
             android:textColor="@color/black"
-            tools:text="9958829129" />
+            android:textSize="12sp"
+            tools:text="Mobile No: 7838342613" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/date"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:breakStrategy="high_quality"
-                android:padding="5dp"
-                android:maxLines="2"
-                android:ellipsize="end"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:drawableStart="@drawable/ic_date"
-                android:textSize="12sp"
-                android:textColor="@color/black"
-                tools:text="18-05-2019"
-                android:drawableLeft="@drawable/ic_date" />
-
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:breakStrategy="high_quality"
-                android:drawableStart="@drawable/ic_access_alarm_black_24dp"
-                android:drawableLeft="@drawable/ic_access_alarm_black_24dp"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:maxLines="2"
-                android:padding="5dp"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                android:visibility="gone"
-                tools:text="20:00" />
-
-        </LinearLayout>
 
     </LinearLayout>
 
@@ -133,7 +110,39 @@
         android:id="@+id/separator"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/container"
-        android:background="#e8e8e8" />
+        android:layout_below="@+id/customer_details_container"
+        android:background="@color/light_grey" />
+
+
+    <TextView
+        android:id="@+id/work_details"
+        android:layout_below="@id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:breakStrategy="high_quality"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="@string/machines_equipments" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/items"
+        android:layout_below="@id/work_details"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/no_content"
+        android:layout_below="@id/work_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:text="@string/no_machine_equipments" />
+
+
 
 </RelativeLayout>
