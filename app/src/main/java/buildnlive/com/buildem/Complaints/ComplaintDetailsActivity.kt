@@ -86,10 +86,13 @@ class ComplaintDetailsActivity : AppCompatActivity() {
 
         next.setOnClickListener {
 
+<<<<<<< HEAD:app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintDetailsActivity.kt
             val intent = Intent(context, ReviewComplaint::class.java)
             intent.putExtra("customerId", itemList!!.customerDetails.customerId)
             intent.putExtra("type", "Complaint")
             startActivity(intent)
+=======
+>>>>>>> parent of d31975d... New Complaint section:app/src/main/java/buildnlive/com/buildem/activities/ComplaintDetailsActivity.kt
 
         }
 

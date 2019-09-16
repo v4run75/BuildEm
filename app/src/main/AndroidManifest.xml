@@ -96,17 +96,23 @@
             </intent-filter>
         </activity>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <activity android:name="buildnlive.com.buildem.Installations.InstallationDetailsActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name="buildnlive.com.buildem.Installations.InstallationActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"  />
         <activity android:name="buildnlive.com.buildem.Complaints.ComplaintActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
         <activity android:name="buildnlive.com.buildem.Complaints.ComplaintDetailsActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
         <activity android:name=".activities.ViewCustomerData" />
 =======
+=======
+>>>>>>> parent of d31975d... New Complaint section
         <activity android:name=".activities.ServiceDetailsActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name=".activities.ServiceActivity" />
         <activity android:name=".activities.InstallationActivity" />
         <activity android:name=".activities.ComplaintActivity" />
         <activity android:name=".activities.ComplaintDetailsActivity" />
+<<<<<<< HEAD
+>>>>>>> parent of d31975d... New Complaint section
+=======
 >>>>>>> parent of d31975d... New Complaint section
 
 
