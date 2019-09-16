@@ -6,73 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="237c447b-d7ab-47e6-9686-e8d9f2c32558" name="Default Changelist" comment="Refactored project structure">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/AddItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ComplaintActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ComplaintDetailsActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/CreateActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/CreateLabour.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/DailyWorkProgressActivities.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/FcmNotificationActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/IndentItems.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/Inventory.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/IssuedItems.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/IssuedItemsForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/IssuedItemsFormLoc.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/LabourActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/LabourReportActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/LocalPurchase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/LocalPurchaseKotlin.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/LoginActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/MachineList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/MachineListForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/MachineListFormLoc.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ManageLabour.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ManageLabourReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ManageLabourReportLoc.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/MarkAttendance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/MarkAttendanceKotlin.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/NotificationActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/Planning.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/PlanningLoc.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/PurchaseOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/PurchaseOrderListing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/PurchaseOrderListingLoc.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/RequestItems.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ResetActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ReturnIssuedItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ServiceActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ServiceDetailsActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/WorkProgress.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/WorkProgressLoc.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/AddItemFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/AddItemLocFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/InventoryFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/IssueItemFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/IssueItemListFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/LocalPurchaseFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/LocalPurchaseListFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/MachineListFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ManageLabourFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/MarkAttendanceFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/MarkAttendanceLocFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/PaymentFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/PaymentFragmentLoc.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/PlansFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/RequestLabourFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/SendIndentFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/SendRequestFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ServiceFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewAttendanceFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewIndentFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewIssueFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewItemFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewLabourFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewLabourReportFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewMachineFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewPurchaseOrderFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ViewRequestsFragment.java" beforeDir="false" />
-    </list>
+    <list default="true" id="237c447b-d7ab-47e6-9686-e8d9f2c32558" name="Default Changelist" comment="Refactored project structure" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +16,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="ENU7N15A20006259" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5X_API_26" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -141,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_purchase_order_listing.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+            <state relative-caret-position="112">
+              <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
@@ -239,14 +173,35 @@
     <option name="height" value="735" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
       <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BuildEm" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="BuildEm" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="BuildEm" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="buildem" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -439,6 +394,16 @@
       <window_info anchor="right" id="Preview" order="8" />
       <window_info anchor="right" id="Json Parser" order="9" />
     </layout>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -851,8 +816,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_purchase_order_listing.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        <state relative-caret-position="112">
+          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
