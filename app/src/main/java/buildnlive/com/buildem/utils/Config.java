@@ -72,4 +72,6 @@ public class Config {
     public static final String GET_SERVICE_UPDATES ="https://buildnlive.com/app/mobileapp_em/index.php?r=site/GetServiceUpdates";
     public static final String ShowComplaints ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowComplaints&user_id=[0]";
     public static final String ShowComplaintsDetails ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowComplaintDetails&user_id=[0]&complaint_id=[1]";
+    public static final String GetCustomerData ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/GetCustomerData&user_id=[0]&customer_id=[1]&id=[2]&type=[3]";
+    public static final String SaveComplaintUpdate ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/SaveComplaintUpdate";
 }

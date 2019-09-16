@@ -1,5 +1,8 @@
 package buildnlive.com.buildem.elements;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -30,7 +33,8 @@ public class ComplaintDetails {
         this.customerDetails = customerDetails;
     }
 
-    public static class Details {
+    public static class Details implements Parcelable {
+
         @Expose
         @SerializedName("units")
         private String units;
@@ -75,6 +79,41 @@ public class ComplaintDetails {
         public void setWorkId(String workId) {
             this.workId = workId;
         }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(this.units);
+            dest.writeString(this.qty);
+            dest.writeString(this.workName);
+            dest.writeString(this.workId);
+        }
+
+        public Details() {
+        }
+
+        protected Details(Parcel in) {
+            this.units = in.readString();
+            this.qty = in.readString();
+            this.workName = in.readString();
+            this.workId = in.readString();
+        }
+
+        public static final Parcelable.Creator<Details> CREATOR = new Parcelable.Creator<Details>() {
+            @Override
+            public Details createFromParcel(Parcel source) {
+                return new Details(source);
+            }
+
+            @Override
+            public Details[] newArray(int size) {
+                return new Details[size];
+            }
+        };
     }
 
     public class CustomerDetails {

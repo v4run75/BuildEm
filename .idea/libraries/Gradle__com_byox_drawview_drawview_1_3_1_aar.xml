@@ -1,12 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: com.byox.drawview:drawview:1.3.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2172104d851a0b34699e2c589d02c574/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2172104d851a0b34699e2c589d02c574/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/035a2396a73eb5b5be269ed59cbe695a/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/035a2396a73eb5b5be269ed59cbe695a/res" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.byox.drawview/drawview/1.3.1/f3ec3f6945468d9ce374644ff508dd11f9e13c63/drawview-1.3.1-javadoc.jar!/" />
-    </JAVADOC>
+    <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.byox.drawview/drawview/1.3.1/969d9ed6e9a27210ec211d52f7d5d89cafa7490a/drawview-1.3.1-sources.jar!/" />
     </SOURCES>

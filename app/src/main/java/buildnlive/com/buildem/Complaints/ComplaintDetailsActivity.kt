@@ -1,7 +1,8 @@
-package buildnlive.com.buildem.activities
+package buildnlive.com.buildem.Complaints
 
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -13,16 +14,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import buildnlive.com.buildem.App
 import buildnlive.com.buildem.Interfaces
 import buildnlive.com.buildem.R
+import buildnlive.com.buildem.activities.ViewCustomerData
 import buildnlive.com.buildem.adapters.ComplaintDetailsAdapter
 import buildnlive.com.buildem.console
 import buildnlive.com.buildem.elements.ComplaintDetails
 import buildnlive.com.buildem.elements.Packet
 import buildnlive.com.buildem.elements.ServiceActivityItem
 import buildnlive.com.buildem.utils.Config
+import buildnlive.com.buildem.utils.GlideApp
 import buildnlive.com.buildem.utils.UtilityofActivity
 import com.android.volley.Request
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.android.synthetic.main.activity_complaint_details.*
 import kotlinx.android.synthetic.main.content_complaint_details.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -83,14 +87,33 @@ class ComplaintDetailsActivity : AppCompatActivity() {
         listAdapter = ComplaintDetailsAdapter(context!!, ArrayList<ComplaintDetails.Details>(), listener)
         items!!.adapter = listAdapter
 
+        seeMore.setOnClickListener {
+            val intent = Intent(context, ViewCustomerData::class.java)
+            intent.putExtra("customerId", itemList!!.customerDetails.customerId)
+            intent.putExtra("complaintId", complaintId)
+            intent.putExtra("type", "Complaint")
+            startActivity(intent)
+        }
+
         next.setOnClickListener {
 
+            val intent = Intent(context, ReviewComplaint::class.java)
+            intent.putExtra("workArray", itemList!!.details)
+            intent.putExtra("complaintId", complaintId)
+            startActivity(intent)
 
         }
 
+        add.setOnClickListener {
+
+            val intent = Intent(context, ReviewComplaint::class.java)
+            intent.putExtra("workArray", itemList!!.details)
+            intent.putExtra("complaintId", complaintId)
+            startActivity(intent)
+
+        }
 
         getComplaintDetails()
-
     }
 
 
@@ -126,14 +149,19 @@ class ComplaintDetailsActivity : AppCompatActivity() {
                     itemList = Gson().fromJson<ComplaintDetails>(response, vendorType)
 
 
-                    name.text = itemList!!.customerDetails.customerName
-                    address.text = itemList!!.customerDetails.address
-                    mobileNo.text = "Mobile No: " + itemList!!.customerDetails.mobileNo
-                    status.text = "Status: " + itemList!!.customerDetails.status
+                    name.text = String.format(getString(R.string.nameHolder), itemList!!.customerDetails.customerName)
+                    address.text = String.format(getString(R.string.addressHolder), itemList!!.customerDetails.address)
+                    mobileNo.text = String.format(getString(R.string.mobileholder), itemList!!.customerDetails.mobileNo)
+
+
+                    if (itemList!!.customerDetails.status == "Completed") {
+                        GlideApp.with(context!!).load(R.drawable.active_circle).centerCrop().into(statusIndicator)
+                    } else {
+                        GlideApp.with(context!!).load(R.drawable.inactive_circle).centerCrop().into(statusIndicator)
+                    }
 
                     listAdapter = ComplaintDetailsAdapter(context!!, itemList!!.details, listener)
                     items!!.adapter = listAdapter
-
 
 
                 } catch (e: JSONException) {

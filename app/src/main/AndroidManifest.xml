@@ -98,7 +98,9 @@
         <activity android:name=".Installations.InstallationDetailsActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name=".Installations.InstallationActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
         <activity android:name=".Complaints.ComplaintActivity"  android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
-        <activity android:name=".activities.ComplaintDetailsActivity"  android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".Complaints.ComplaintDetailsActivity"  android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.ViewCustomerData" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".Complaints.ReviewComplaint" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
 
 
         <service android:name=".Notifications.FirebaseMessagingService">

@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import buildnlive.com.buildem.App
 import buildnlive.com.buildem.Interfaces
 import buildnlive.com.buildem.R
-import buildnlive.com.buildem.activities.ComplaintDetailsActivity
 import buildnlive.com.buildem.adapters.ComplaintListAdapter
 import buildnlive.com.buildem.console
 import buildnlive.com.buildem.elements.Complaint
@@ -113,13 +112,11 @@ class ComplaintActivity : AppCompatActivity() {
                     listAdapter = ComplaintListAdapter(context!!, itemList, listener)
                     items!!.adapter = listAdapter
 /*
-
                     val array = JSONArray(response)
                     for (i in 0 until array.length()) {
                         itemList.add(ServiceItem().parseFromJSON(array.getJSONObject(i)))
                     }
                     console.log("data set changed")
-
                     if (itemList.isEmpty()) {
 //                        Toast.makeText(mContext, "No Results", Toast.LENGTH_LONG).show()
                         no_content.visibility = View.VISIBLE
