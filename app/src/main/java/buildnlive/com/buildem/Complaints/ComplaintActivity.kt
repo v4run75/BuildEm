@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import buildnlive.com.buildem.App
 import buildnlive.com.buildem.Interfaces
 import buildnlive.com.buildem.R
+import buildnlive.com.buildem.activities.ComplaintDetailsActivity
 import buildnlive.com.buildem.adapters.ComplaintListAdapter
 import buildnlive.com.buildem.console
 import buildnlive.com.buildem.elements.Complaint
