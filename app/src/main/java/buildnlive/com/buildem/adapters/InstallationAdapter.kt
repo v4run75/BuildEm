@@ -7,23 +7,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
-import android.widget.CompoundButton
 import android.widget.TextView
 import android.widget.Toast
 
 import java.util.ArrayList
 
 import buildnlive.com.buildem.R
-import buildnlive.com.buildem.elements.ServiceActivityItem
+import buildnlive.com.buildem.elements.InstallationActivityItem
 
-class ServicesAdapter(private val context: Context, users: ArrayList<ServiceActivityItem>, private val listener: OnItemClickListener) : RecyclerView.Adapter<ServicesAdapter.ViewHolder>() {
+class InstallationAdapter(private val context: Context, users: ArrayList<InstallationActivityItem>, private val listener: OnItemClickListener) : RecyclerView.Adapter<InstallationAdapter.ViewHolder>() {
 
-    private var items: List<ServiceActivityItem>? = null
+    private var items: List<InstallationActivityItem>? = null
 
     interface OnItemClickListener {
-        fun onItemClick(serviceItem: ServiceActivityItem, pos: Int, view: View)
+        fun onItemClick(installationItem: InstallationActivityItem, pos: Int, view: View)
 
-        fun onItemCheck(serviceItem: ServiceActivityItem, pos: Int, view: View, qty: TextView)
+        fun onItemCheck(installationItem: InstallationActivityItem, pos: Int, view: View, qty: TextView)
     }
 
     init {
@@ -38,7 +37,7 @@ class ServicesAdapter(private val context: Context, users: ArrayList<ServiceActi
         return position
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ServicesAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InstallationAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.layout_service_activity, parent, false)
         return ViewHolder(v)
     }
@@ -48,7 +47,7 @@ class ServicesAdapter(private val context: Context, users: ArrayList<ServiceActi
     }
 
 
-    fun addItems(borrowModelList: List<ServiceActivityItem>) {
+    fun addItems(borrowModelList: List<InstallationActivityItem>) {
         this.items = borrowModelList
         notifyDataSetChanged()
     }
@@ -63,7 +62,7 @@ class ServicesAdapter(private val context: Context, users: ArrayList<ServiceActi
         private val qty: TextView = view.findViewById(R.id.qty)
         private val check: CheckBox = view.findViewById(R.id.check)
 
-        fun bind(context: Context, item: ServiceActivityItem, pos: Int, listener: OnItemClickListener) {
+        fun bind(context: Context, item: InstallationActivityItem, pos: Int, listener: OnItemClickListener) {
 
             name.text = item.name
 

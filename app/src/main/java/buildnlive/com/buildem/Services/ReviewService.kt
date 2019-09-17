@@ -1,5 +1,4 @@
-package buildnlive.com.buildem.AMC
-
+package buildnlive.com.buildem.Services
 
 import android.content.Context
 import android.content.Intent
@@ -18,6 +17,7 @@ import buildnlive.com.buildem.R
 import buildnlive.com.buildem.activities.HomeActivity
 import buildnlive.com.buildem.adapters.ReviewDetailsAdapter
 import buildnlive.com.buildem.console
+import buildnlive.com.buildem.elements.ServiceDetailsItem
 import buildnlive.com.buildem.elements.WorkListItem
 import buildnlive.com.buildem.utils.Config
 import buildnlive.com.buildem.utils.UtilityofActivity
@@ -29,30 +29,30 @@ import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.set
 
-class ReviewAMC : AppCompatActivity() {
+class ReviewService : AppCompatActivity() {
 
     private var context: Context? = null
     private var appCompatActivity: AppCompatActivity? = this
     private var utilityofActivity: UtilityofActivity? = null
     private var app: App? = null
     private var listAdapter: ReviewDetailsAdapter? = null
-    private var resultList: ArrayList<WorkListItem> = ArrayList()
-    private var workArray: ArrayList<WorkListItem>? = ArrayList()
+    private var resultList: java.util.ArrayList<WorkListItem> = java.util.ArrayList()
+
 
     companion object {
-        var amcId: String? = ""
+        var serviceId: String? = ""
+        var workArray: ArrayList<WorkListItem>? = ArrayList()
     }
 
 
     private var listener = object : ReviewDetailsAdapter.OnItemClickListener {
         override fun onItemClick(serviceItem: WorkListItem, pos: Int, view: View) {
-          }
+        }
 
         override fun onItemCheck(serviceItem: WorkListItem, pos: Int, view: View, qty: TextView) {
             serviceItem.qty = qty.text.toString()
             resultList.add(serviceItem)
         }
-
 
     }
 
@@ -64,7 +64,7 @@ class ReviewAMC : AppCompatActivity() {
 
 
         if (intent != null) {
-            amcId = intent.getStringExtra("amcId")
+            serviceId = intent.getStringExtra("serviceId")
             workArray = intent.getParcelableArrayListExtra<WorkListItem>("workArray")
         }
 
@@ -99,16 +99,16 @@ class ReviewAMC : AppCompatActivity() {
 
 
     private fun saveComplaint() {
-        val requestUrl = Config.SaveAMCUpdate
+        val requestUrl = Config.SaveServiceUpdate
 
         val params = HashMap<String, String>()
 
-        params["amc_id"] = amcId!!
+        params["service_id"] = serviceId!!
         val json = Gson()
         params["array"] = json.toJson(workArray)
         params["user_id"] = App.userId
 
-        console.log("Complaint URL:  $requestUrl")
+        console.log("Service URL:  $requestUrl")
         console.log("Params:  $params")
 
         app!!.sendNetworkRequest(requestUrl, Request.Method.POST, params, object : Interfaces.NetworkInterfaceListener {
@@ -130,9 +130,8 @@ class ReviewAMC : AppCompatActivity() {
                 try {
                     if (response == "1") {
                         utilityofActivity!!.toast("Request Generated")
-
                         finishAffinity()
-                        startActivity(Intent(context!!, HomeActivity::class.java))
+                        startActivity(Intent(context!!,HomeActivity::class.java))
                     }
                 } catch (e: JSONException) {
                     e.printStackTrace()

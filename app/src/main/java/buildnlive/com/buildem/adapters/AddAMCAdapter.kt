@@ -10,16 +10,17 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import buildnlive.com.buildem.R
 import buildnlive.com.buildem.elements.AMCItemDetails
+import buildnlive.com.buildem.elements.WorkListItem
 import java.util.*
 
-class AddAMCAdapter(private val context: Context, users: ArrayList<AMCItemDetails.Details>, private val listener: OnItemClickListener) : RecyclerView.Adapter<AddAMCAdapter.ViewHolder>() {
+class AddAMCAdapter(private val context: Context, users: ArrayList<WorkListItem>, private val listener: OnItemClickListener) : RecyclerView.Adapter<AddAMCAdapter.ViewHolder>() {
 
-    private var items: List<AMCItemDetails.Details>? = null
+    private var items: List<WorkListItem>? = null
 
     interface OnItemClickListener {
-        fun onItemClick(serviceItem: AMCItemDetails.Details, pos: Int, view: View)
+        fun onItemClick(serviceItem: WorkListItem, pos: Int, view: View)
 
-        fun onItemCheck(serviceItem: AMCItemDetails.Details, pos: Int, view: View, qty: TextView, checked: Boolean, check: CheckBox)
+        fun onItemCheck(serviceItem: WorkListItem, pos: Int, view: View, qty: TextView, checked: Boolean, check: CheckBox)
     }
 
     init {
@@ -44,7 +45,7 @@ class AddAMCAdapter(private val context: Context, users: ArrayList<AMCItemDetail
     }
 
 
-    fun addItems(borrowModelList: List<AMCItemDetails.Details>) {
+    fun addItems(borrowModelList: List<WorkListItem>) {
         this.items = borrowModelList
         notifyDataSetChanged()
     }
@@ -59,14 +60,13 @@ class AddAMCAdapter(private val context: Context, users: ArrayList<AMCItemDetail
         private val qty: TextView = view.findViewById(R.id.qty)
         private val check: CheckBox = view.findViewById(R.id.check)
 
-        fun bind(context: Context, item: AMCItemDetails.Details, pos: Int, listener: OnItemClickListener) {
+        fun bind(context: Context, item: WorkListItem, pos: Int, listener: OnItemClickListener) {
 
             name.text = item.workName
 
             unit.text = item.units
             /*      qty.isEnabled = false
                   qty.isClickable = false*/
-            qty.text = item.qty
 
             check.setOnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked) {

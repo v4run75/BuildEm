@@ -72,11 +72,15 @@ public class Config {
     public static final String GET_SERVICE_UPDATES ="https://buildnlive.com/app/mobileapp_em/index.php?r=site/GetServiceUpdates";
     public static final String ShowComplaints ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowComplaints&user_id=[0]";
     public static final String ShowAMC ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowAMC&user_id=[0]";
+    public static final String ShowServices ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowServices&user_id=[0]";
     public static final String ShowComplaintsDetails ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowComplaintDetails&user_id=[0]&complaint_id=[1]";
     public static final String ShowAMCDetails ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowAMCDetails&user_id=[0]&amc_id=[1]";
+    public static final String ShowServiceDetails ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowServiceDetails&user_id=[0]&service_id=[1]";
     public static final String GetCustomerData ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/GetCustomerData&user_id=[0]&customer_id=[1]&id=[2]&type=[3]";
     public static final String SaveComplaintUpdate ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/SaveComplaintUpdate";
     public static final String SaveAMCUpdate ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/SaveAMCUpdate";
+    public static final String SaveServiceUpdate ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/SaveServiceUpdate";
+    public static final String ShowWork ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowWork&user_id=[0]";
 
 
 }

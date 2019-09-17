@@ -1,14 +1,12 @@
 package buildnlive.com.buildem.adapters;
 
-
 import android.content.Context;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -16,18 +14,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import buildnlive.com.buildem.R;
-import buildnlive.com.buildem.elements.ServiceItem;
+import buildnlive.com.buildem.elements.InstallationItem;
 
-public class ServiceListAdapter extends RecyclerView.Adapter<ServiceListAdapter.ViewHolder> {
+public class InstallationsListAdapter extends RecyclerView.Adapter<InstallationsListAdapter.ViewHolder> {
     public interface OnItemClickListener {
-        void onItemClick(ServiceItem project, int pos, View view);
+        void onItemClick(InstallationItem project, int pos, View view);
     }
 
-    private List<ServiceItem> items;
+    private List<InstallationItem> items;
     private Context context;
     private final OnItemClickListener listener;
 
-    public ServiceListAdapter(Context context, ArrayList<ServiceItem> users, OnItemClickListener listener) {
+    public InstallationsListAdapter(Context context, ArrayList<InstallationItem> users, OnItemClickListener listener) {
         this.items = users;
         this.context = context;
         this.listener = listener;
@@ -45,8 +43,8 @@ public class ServiceListAdapter extends RecyclerView.Adapter<ServiceListAdapter.
 
     @NotNull
     @Override
-    public ServiceListAdapter.ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_complaint_item, parent, false);
+    public InstallationsListAdapter.ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_service_item, parent, false);
         return new ViewHolder(v);
     }
 
@@ -56,7 +54,7 @@ public class ServiceListAdapter extends RecyclerView.Adapter<ServiceListAdapter.
     }
 
 
-    public void addItems(List<ServiceItem> borrowModelList) {
+    public void addItems(List<InstallationItem> borrowModelList) {
         this.items = borrowModelList;
         notifyDataSetChanged();
     }
@@ -69,7 +67,6 @@ public class ServiceListAdapter extends RecyclerView.Adapter<ServiceListAdapter.
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
         private TextView address;
-        private TextView mobileNo;
         private TextView date;
         private TextView time;
 
@@ -77,20 +74,18 @@ public class ServiceListAdapter extends RecyclerView.Adapter<ServiceListAdapter.
             super(view);
             name = view.findViewById(R.id.name);
             address = view.findViewById(R.id.address);
-            mobileNo = view.findViewById(R.id.mobileNo);
             date = view.findViewById(R.id.date);
             time = view.findViewById(R.id.time);
 
 
         }
 
-        public void bind(final Context context, final ServiceItem item, final int pos, final OnItemClickListener listener) {
+        public void bind(final Context context, final InstallationItem item, final int pos, final OnItemClickListener listener) {
 
-            name.setText(item.getCustomerName());
-            address.setText(item.getCustomerAddress());
-            date.setText(item.getServiceDate());
-//            time.setText(item.getTime());
-            mobileNo.setText(item.getCustomerContact());
+            name.setText(item.getName());
+            address.setText(item.getAddress());
+            date.setText(item.getDate());
+            time.setText(item.getTime());
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

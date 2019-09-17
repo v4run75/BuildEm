@@ -9,11 +9,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import buildnlive.com.buildem.R
-import buildnlive.com.buildem.elements.ComplaintDetails
 import buildnlive.com.buildem.elements.WorkListItem
 import java.util.*
 
-class AddComplaintAdapter(private val context: Context, users: ArrayList<WorkListItem>, private val listener: OnItemClickListener) : RecyclerView.Adapter<AddComplaintAdapter.ViewHolder>() {
+class AddServiceAdapter(private val context: Context, users: ArrayList<WorkListItem>, private val listener: OnItemClickListener) : RecyclerView.Adapter<AddServiceAdapter.ViewHolder>() {
 
     private var items: List<WorkListItem>? = null
 
@@ -35,7 +34,7 @@ class AddComplaintAdapter(private val context: Context, users: ArrayList<WorkLis
         return position
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddComplaintAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddServiceAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.layout_add_complaint_item, parent, false)
         return ViewHolder(v)
     }

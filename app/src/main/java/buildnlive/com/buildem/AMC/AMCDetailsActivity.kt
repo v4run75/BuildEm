@@ -18,15 +18,15 @@ import buildnlive.com.buildem.adapters.AMCItemDetailsAdapter
 import buildnlive.com.buildem.console
 import buildnlive.com.buildem.elements.AMCItemDetails
 import buildnlive.com.buildem.elements.Packet
-import buildnlive.com.buildem.elements.ServiceActivityItem
+import buildnlive.com.buildem.elements.InstallationActivityItem
 import buildnlive.com.buildem.utils.Config
 import buildnlive.com.buildem.utils.GlideApp
 import buildnlive.com.buildem.utils.UtilityofActivity
 import com.android.volley.Request
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import kotlinx.android.synthetic.main.activity_complaint_details.*
-import kotlinx.android.synthetic.main.content_complaint_details.*
+import kotlinx.android.synthetic.main.activity_amc_details.*
+import kotlinx.android.synthetic.main.content_amc_details.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -59,7 +59,7 @@ class AMCDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_complaint_details)
+        setContentView(R.layout.activity_amc_details)
 
         context = this
 
@@ -99,7 +99,6 @@ class AMCDetailsActivity : AppCompatActivity() {
         add.setOnClickListener {
 
             val intent = Intent(context, AddAMC::class.java)
-            intent.putExtra("workArray", itemList!!.details)
             intent.putExtra("amcId", amcId)
             startActivity(intent)
 
@@ -163,54 +162,6 @@ class AMCDetailsActivity : AppCompatActivity() {
             }
         })
     }
-
-
-    @Throws(JSONException::class)
-    private fun submit(service_id: String, comment: String, images: ArrayList<Packet>?, list: ArrayList<ServiceActivityItem>, alertDialog: AlertDialog) {
-
-        utilityofActivity!!.showProgressDialog()
-
-        val params = HashMap<String, String>()
-        params["comment"] = comment
-        params["service_id"] = service_id
-
-        val jsonArray = JSONArray()
-
-        for (i in list) {
-            jsonArray.put(JSONObject().put("id", i.id)
-                    .put("name", i.name)
-                    .put("quantity", i.quantity)
-                    .put("type", i.type))
-        }
-
-        params["list"] = jsonArray.toString()
-
-        console.log("Service  $params")
-
-        app!!.sendNetworkRequest(Config.GET_SERVICE_UPDATES, Request.Method.POST, params, object : Interfaces.NetworkInterfaceListener {
-            override fun onNetworkRequestStart() {
-
-            }
-
-            override fun onNetworkRequestError(error: String) {
-                utilityofActivity!!.dismissProgressDialog()
-                utilityofActivity!!.toast("Something went wrong, Try again later")
-
-            }
-
-            override fun onNetworkRequestComplete(response: String) {
-                utilityofActivity!!.dismissProgressDialog()
-                if (response == "1") {
-                    Toast.makeText(context, "Status Updated", Toast.LENGTH_SHORT).show()
-                    alertDialog.dismiss()
-                    finish()
-                } else {
-                    utilityofActivity!!.toast("Invalid Response from server")
-                }
-            }
-        })
-    }
-
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

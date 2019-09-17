@@ -21,10 +21,10 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import buildnlive.com.buildem.*
 import buildnlive.com.buildem.adapters.ActivityImagesAdapter
-import buildnlive.com.buildem.adapters.ServicesAdapter
+import buildnlive.com.buildem.adapters.InstallationAdapter
 import buildnlive.com.buildem.elements.Packet
-import buildnlive.com.buildem.elements.ServiceActivityItem
-import buildnlive.com.buildem.elements.ServiceItem
+import buildnlive.com.buildem.elements.InstallationActivityItem
+import buildnlive.com.buildem.elements.InstallationItem
 import buildnlive.com.buildem.utils.AdvancedRecyclerView
 import buildnlive.com.buildem.utils.Config
 import buildnlive.com.buildem.utils.UtilityofActivity
@@ -43,10 +43,10 @@ class InstallationDetailsActivity : AppCompatActivity() {
     var context: Context? = null
     var utilityofActivity: UtilityofActivity? = null
     var appCompatActivity: AppCompatActivity? = this
-    var serviceItem: ServiceItem? = null
-    private var listAdapter: ServicesAdapter? = null
-    private var itemList: ArrayList<ServiceActivityItem> = ArrayList()
-    private var resultList: ArrayList<ServiceActivityItem> = ArrayList()
+    var installationItem: InstallationItem? = null
+    private var listAdapter: InstallationAdapter? = null
+    private var itemList: ArrayList<InstallationActivityItem> = ArrayList()
+    private var resultList: ArrayList<InstallationActivityItem> = ArrayList()
     var app: App? = null
     private var images: java.util.ArrayList<Packet>? = null
     private var imagesAdapter: ActivityImagesAdapter? = null
@@ -62,14 +62,14 @@ class InstallationDetailsActivity : AppCompatActivity() {
         val REQUEST_CAPTURE_IMAGE = 7190
     }
 
-    private var listener = object : ServicesAdapter.OnItemClickListener {
-        override fun onItemClick(serviceItem: ServiceActivityItem, pos: Int, view: View) {
+    private var listener = object : InstallationAdapter.OnItemClickListener {
+        override fun onItemClick(installationItem: InstallationActivityItem, pos: Int, view: View) {
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 
-        override fun onItemCheck(serviceItem: ServiceActivityItem, pos: Int, view: View, qty: TextView) {
-            serviceItem.quantity=qty.text.toString()
-            resultList.add(serviceItem)
+        override fun onItemCheck(installationItem: InstallationActivityItem, pos: Int, view: View, qty: TextView) {
+            installationItem.quantity=qty.text.toString()
+            resultList.add(installationItem)
         }
 
     }
@@ -81,7 +81,7 @@ class InstallationDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_service_details)
+        setContentView(R.layout.activity_installation_details)
 
         context = this
 
@@ -93,17 +93,17 @@ class InstallationDetailsActivity : AppCompatActivity() {
 
 
         if (bundle != null) {
-            serviceItem = bundle.getParcelable("serviceItem")
+            installationItem = bundle.getParcelable("installationItem")
         }
 
-        name.text = serviceItem!!.name
-        address.text = serviceItem!!.address
-        email.text = serviceItem!!.email
-//        email.text = "Email: "+serviceItem!!.email
-//        mobileNo.text = "Mobile No: "+serviceItem!!.mobileNo
-        mobileNo.text = "Mobile No: " + serviceItem!!.mobileNo
-        date.text = serviceItem!!.date
-        time.text = serviceItem!!.time
+        name.text = installationItem!!.name
+        address.text = installationItem!!.address
+        email.text = installationItem!!.email
+//        email.text = "Email: "+installationItem!!.email
+//        mobileNo.text = "Mobile No: "+installationItem!!.mobileNo
+        mobileNo.text = "Mobile No: " + installationItem!!.mobileNo
+        date.text = installationItem!!.date
+        time.text = installationItem!!.time
 
 
         utilityofActivity = UtilityofActivity(appCompatActivity!!)
@@ -115,9 +115,9 @@ class InstallationDetailsActivity : AppCompatActivity() {
         items!!.addItemDecoration(dividerItemDecoration)
         items!!.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        listAdapter = ServicesAdapter(context!!, ArrayList<ServiceActivityItem>(), listener)
+        listAdapter = InstallationAdapter(context!!, ArrayList<InstallationActivityItem>(), listener)
 //        itemList.add()
-//        listAdapter = ServicesAdapter(context,itemList, listener)
+//        listAdapter = InstallationAdapter(context,itemList, listener)
         items!!.adapter = listAdapter
 
         next.setOnClickListener {
@@ -131,7 +131,7 @@ class InstallationDetailsActivity : AppCompatActivity() {
 
     private fun menuUpdate() {
         val inflater = this.layoutInflater
-        val dialogView = inflater.inflate(R.layout.alert_dialog_service_activity, null)
+        val dialogView = inflater.inflate(R.layout.alert_dialog_installations_activity, null)
         val dialogBuilder = AlertDialog.Builder(context!!, R.style.PinDialog)
         val alertDialog = dialogBuilder.setCancelable(false).setView(dialogView).create()
         alertDialog.show()
@@ -199,7 +199,7 @@ class InstallationDetailsActivity : AppCompatActivity() {
             try {
                 //TODO Call Submit here
 
-                submit(serviceItem!!.serviceId,message.text.toString(),images,resultList,alertDialog)
+                submit(installationItem!!.serviceId,message.text.toString(),images,resultList,alertDialog)
             } catch (e: Exception) {
                 Toast.makeText(context, "Fill data properly!", Toast.LENGTH_SHORT).show()
             }
@@ -211,7 +211,7 @@ class InstallationDetailsActivity : AppCompatActivity() {
     private fun getServiceActivities() {
         val requestUrl = Config.SERVICES_ACTIVITIES
         val params = HashMap<String, String>()
-        params["service_id"] = serviceItem!!.serviceId
+        params["service_id"] = installationItem!!.serviceId
 
 //        requestUrl = requestUrl.replace("[0]", App.userId)
 
@@ -237,7 +237,7 @@ class InstallationDetailsActivity : AppCompatActivity() {
                 try {
                     val array = JSONArray(response)
                     for (i in 0 until array.length()) {
-                        itemList.add(ServiceActivityItem().parseFromJSON(array.getJSONObject(i)))
+                        itemList.add(InstallationActivityItem().parseFromJSON(array.getJSONObject(i)))
                     }
                     console.log("data set changed")
 
@@ -283,7 +283,7 @@ class InstallationDetailsActivity : AppCompatActivity() {
     }
 
     @Throws(JSONException::class)
-    private fun submit(service_id: String, comment: String, images: ArrayList<Packet>?,list: ArrayList<ServiceActivityItem>,alertDialog: AlertDialog) {
+    private fun submit(service_id: String, comment: String, images: ArrayList<Packet>?, list: ArrayList<InstallationActivityItem>, alertDialog: AlertDialog) {
 
             utilityofActivity!!.showProgressDialog()
 

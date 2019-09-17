@@ -1,6 +1,7 @@
 package buildnlive.com.buildem.Complaints
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.view.View
@@ -13,9 +14,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import buildnlive.com.buildem.App
 import buildnlive.com.buildem.Interfaces
 import buildnlive.com.buildem.R
-import buildnlive.com.buildem.adapters.ComplaintDetailsAdapter
+import buildnlive.com.buildem.activities.HomeActivity
+import buildnlive.com.buildem.adapters.ReviewDetailsAdapter
 import buildnlive.com.buildem.console
 import buildnlive.com.buildem.elements.ComplaintDetails
+import buildnlive.com.buildem.elements.WorkListItem
 import buildnlive.com.buildem.utils.Config
 import buildnlive.com.buildem.utils.UtilityofActivity
 import com.android.volley.Request
@@ -32,21 +35,21 @@ class ReviewComplaint : AppCompatActivity() {
     private var appCompatActivity: AppCompatActivity? = this
     private var utilityofActivity: UtilityofActivity? = null
     private var app: App? = null
-    private var listAdapter: ComplaintDetailsAdapter? = null
-    private var resultList: java.util.ArrayList<ComplaintDetails.Details> = java.util.ArrayList()
+    private var listAdapter: ReviewDetailsAdapter? = null
+    private var resultList: java.util.ArrayList<WorkListItem> = java.util.ArrayList()
 
 
     companion object {
         var complaintId: String? = ""
-        var workArray: ArrayList<ComplaintDetails.Details>? = ArrayList()
+        var workArray: ArrayList<WorkListItem>? = ArrayList()
     }
 
 
-    private var listener = object : ComplaintDetailsAdapter.OnItemClickListener {
-        override fun onItemClick(serviceItem: ComplaintDetails.Details, pos: Int, view: View) {
+    private var listener = object : ReviewDetailsAdapter.OnItemClickListener {
+        override fun onItemClick(serviceItem: WorkListItem, pos: Int, view: View) {
         }
 
-        override fun onItemCheck(serviceItem: ComplaintDetails.Details, pos: Int, view: View, qty: TextView) {
+        override fun onItemCheck(serviceItem: WorkListItem, pos: Int, view: View, qty: TextView) {
             serviceItem.qty = qty.text.toString()
             resultList.add(serviceItem)
         }
@@ -62,7 +65,7 @@ class ReviewComplaint : AppCompatActivity() {
 
         if (intent != null) {
             complaintId = intent.getStringExtra("complaintId")
-            workArray = intent.getParcelableArrayListExtra<ComplaintDetails.Details>("workArray")
+            workArray = intent.getParcelableArrayListExtra<WorkListItem>("workArray")
         }
 
         app = application as App
@@ -84,7 +87,7 @@ class ReviewComplaint : AppCompatActivity() {
         items!!.addItemDecoration(dividerItemDecoration)
         items!!.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        listAdapter = ComplaintDetailsAdapter(context!!, workArray!!, listener)
+        listAdapter = ReviewDetailsAdapter(context!!, workArray!!, listener)
         items!!.adapter = listAdapter
 
 
@@ -127,7 +130,9 @@ class ReviewComplaint : AppCompatActivity() {
                 try {
                     if (response == "1") {
                         utilityofActivity!!.toast("Request Generated")
-                        finish()
+
+                        finishAffinity()
+                        startActivity(Intent(context!!, HomeActivity::class.java))
                     }
                 } catch (e: JSONException) {
                     e.printStackTrace()

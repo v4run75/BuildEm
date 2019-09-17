@@ -20,6 +20,7 @@ import buildnlive.com.buildem.Complaints.ComplaintActivity;
 import buildnlive.com.buildem.Installations.InstallationActivity;
 import buildnlive.com.buildem.Inventory.AddItem;
 import buildnlive.com.buildem.R;
+import buildnlive.com.buildem.Services.ServicesActivity;
 
 import static buildnlive.com.buildem.utils.Config.PREF_NAME;
 
@@ -72,7 +73,7 @@ public class ServiceMenuFragment extends Fragment implements View.OnClickListene
                 startActivity(new Intent(getContext(), AMCActivity.class));
                 break;
             case R.id.services:
-                startActivity(new Intent(getContext(), AddItem.class));
+                startActivity(new Intent(getContext(), ServicesActivity.class));
                 break;
         }
     }

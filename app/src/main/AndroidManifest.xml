@@ -102,10 +102,14 @@
         <activity android:name=".activities.ViewCustomerData" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name=".Complaints.ReviewComplaint" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" />
         <activity android:name=".Complaints.AddComplaint" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
-        <activity android:name=".AMC.AMCActivity" />
-        <activity android:name=".AMC.AMCDetailsActivity" />
-        <activity android:name=".AMC.AddAMC" />
-        <activity android:name=".AMC.ReviewAMC" />
+        <activity android:name=".AMC.AMCActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".AMC.AMCDetailsActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".AMC.AddAMC" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".AMC.ReviewAMC" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".Services.ServicesActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".Services.ServicesDetailsActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".Services.AddService" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".Services.ReviewService" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
 
 
         <service android:name=".Notifications.FirebaseMessagingService">

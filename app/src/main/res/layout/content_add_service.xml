@@ -5,12 +5,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_amc"
+    tools:showIn="@layout/activity_add_service"
     android:background="@color/white">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/items"
+        android:layout_above="@+id/next"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -32,6 +33,7 @@
         android:visibility="gone" />
     <TextView
         android:visibility="gone"
+        android:layout_above="@+id/next"
         android:id="@+id/no_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -40,4 +42,14 @@
         android:layout_centerInParent="true"
         android:text="@string/no_services"
         />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:background="@drawable/inactive_button"
+        android:layout_alignParentBottom="true" />
+
 </RelativeLayout>

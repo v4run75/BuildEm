@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import buildnlive.com.buildem.App
 import buildnlive.com.buildem.Interfaces
 import buildnlive.com.buildem.R
-import buildnlive.com.buildem.adapters.ServiceListAdapter
+import buildnlive.com.buildem.adapters.InstallationsListAdapter
 import buildnlive.com.buildem.console
-import buildnlive.com.buildem.elements.ServiceItem
+import buildnlive.com.buildem.elements.InstallationItem
 import buildnlive.com.buildem.utils.Config
 import buildnlive.com.buildem.utils.UtilityofActivity
 import com.android.volley.Request
@@ -32,15 +32,15 @@ class InstallationFragment : Fragment() {
 
     private var mContext: Context? = null
     private var appCompatActivity: AppCompatActivity? = null
-    private var listAdapter: ServiceListAdapter? = null
-    private var itemList: ArrayList<ServiceItem> = ArrayList()
+    private var listAdapter: InstallationsListAdapter? = null
+    private var itemList: ArrayList<InstallationItem> = ArrayList()
     private var utilityofActivity: UtilityofActivity? = null
 
 
-    private var listener = ServiceListAdapter.OnItemClickListener { item, pos, view ->
+    private var listener = InstallationsListAdapter.OnItemClickListener { item, pos, view ->
         val intent = Intent(mContext, InstallationDetailsActivity::class.java)
         val bundle = Bundle()
-        bundle.putParcelable("serviceItem", item)
+        bundle.putParcelable("installationItem", item)
         intent.putExtras(bundle)
         startActivity(intent)
     }
@@ -75,7 +75,7 @@ class InstallationFragment : Fragment() {
         items!!.addItemDecoration(dividerItemDecoration)
         items!!.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        listAdapter = ServiceListAdapter(context, ArrayList<ServiceItem>(), listener)
+        listAdapter = InstallationsListAdapter(context, ArrayList<InstallationItem>(), listener)
         items!!.adapter = listAdapter
 
     }
@@ -110,7 +110,7 @@ class InstallationFragment : Fragment() {
                 try {
                     val array = JSONArray(response)
                     for (i in 0 until array.length()) {
-                        itemList.add(ServiceItem().parseFromJSON(array.getJSONObject(i)))
+                        itemList.add(InstallationItem().parseFromJSON(array.getJSONObject(i)))
                     }
                     console.log("data set changed")
 

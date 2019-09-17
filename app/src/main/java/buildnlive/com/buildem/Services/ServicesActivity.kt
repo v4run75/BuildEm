@@ -1,11 +1,9 @@
-package buildnlive.com.buildem.AMC
+package buildnlive.com.buildem.Services
 
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.method.ScrollingMovementMethod
-import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -15,58 +13,47 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import buildnlive.com.buildem.App
 import buildnlive.com.buildem.Interfaces
 import buildnlive.com.buildem.R
-import buildnlive.com.buildem.activities.HomeActivity
-import buildnlive.com.buildem.adapters.ReviewDetailsAdapter
+import buildnlive.com.buildem.adapters.ServiceListAdapter
 import buildnlive.com.buildem.console
-import buildnlive.com.buildem.elements.WorkListItem
+import buildnlive.com.buildem.elements.ServiceItem
 import buildnlive.com.buildem.utils.Config
 import buildnlive.com.buildem.utils.UtilityofActivity
 import com.android.volley.Request
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.content_review.*
+import com.google.gson.reflect.TypeToken
+import kotlinx.android.synthetic.main.content_amc.*
 import org.json.JSONException
-import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.set
 
-class ReviewAMC : AppCompatActivity() {
+class ServicesActivity : AppCompatActivity() {
 
     private var context: Context? = null
     private var appCompatActivity: AppCompatActivity? = this
+    private var listAdapter: ServiceListAdapter? = null
+    private var itemList: ArrayList<ServiceItem> = ArrayList()
     private var utilityofActivity: UtilityofActivity? = null
     private var app: App? = null
-    private var listAdapter: ReviewDetailsAdapter? = null
-    private var resultList: ArrayList<WorkListItem> = ArrayList()
-    private var workArray: ArrayList<WorkListItem>? = ArrayList()
 
-    companion object {
-        var amcId: String? = ""
+    private var listener = ServiceListAdapter.OnItemClickListener { item, pos, view ->
+        val intent = Intent(context, ServicesDetailsActivity::class.java)
+        val bundle = Bundle()
+        bundle.putString("serviceId", item.serviceId)
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 
 
-    private var listener = object : ReviewDetailsAdapter.OnItemClickListener {
-        override fun onItemClick(serviceItem: WorkListItem, pos: Int, view: View) {
-          }
-
-        override fun onItemCheck(serviceItem: WorkListItem, pos: Int, view: View, qty: TextView) {
-            serviceItem.qty = qty.text.toString()
-            resultList.add(serviceItem)
-        }
-
-
+    override fun onStart() {
+        super.onStart()
+        getItems()
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_review)
+        setContentView(R.layout.activity_services)
 
         context = this
 
-
-        if (intent != null) {
-            amcId = intent.getStringExtra("amcId")
-            workArray = intent.getParcelableArrayListExtra<WorkListItem>("workArray")
-        }
 
         app = application as App
 
@@ -77,9 +64,7 @@ class ReviewAMC : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         val toolbar_title = findViewById<TextView>(R.id.toolbar_title)
-        toolbar_title.text = getString(R.string.reviewAndSave)
-
-        comments.movementMethod = ScrollingMovementMethod()
+        toolbar_title.text = getString(R.string.services)
 
 
         val dividerItemDecoration = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
@@ -87,31 +72,22 @@ class ReviewAMC : AppCompatActivity() {
         items!!.addItemDecoration(dividerItemDecoration)
         items!!.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        listAdapter = ReviewDetailsAdapter(context!!, workArray!!, listener)
+        listAdapter = ServiceListAdapter(context, ArrayList<ServiceItem>(), listener)
         items!!.adapter = listAdapter
-
-
-        save.setOnClickListener {
-            saveComplaint()
-        }
 
     }
 
 
-    private fun saveComplaint() {
-        val requestUrl = Config.SaveAMCUpdate
+    private fun getItems() {
+        var requestUrl = Config.ShowServices
 
-        val params = HashMap<String, String>()
+        requestUrl = requestUrl.replace("[0]", App.userId)
 
-        params["amc_id"] = amcId!!
-        val json = Gson()
-        params["array"] = json.toJson(workArray)
-        params["user_id"] = App.userId
+        itemList.clear()
 
-        console.log("Complaint URL:  $requestUrl")
-        console.log("Params:  $params")
+        console.log("Services:  $requestUrl")
 
-        app!!.sendNetworkRequest(requestUrl, Request.Method.POST, params, object : Interfaces.NetworkInterfaceListener {
+        app!!.sendNetworkRequest(requestUrl, Request.Method.POST, null, object : Interfaces.NetworkInterfaceListener {
             override fun onNetworkRequestStart() {
                 utilityofActivity!!.showProgressDialog()
             }
@@ -127,13 +103,17 @@ class ReviewAMC : AppCompatActivity() {
                 console.log(response)
                 utilityofActivity!!.dismissProgressDialog()
 
-                try {
-                    if (response == "1") {
-                        utilityofActivity!!.toast("Request Generated")
 
-                        finishAffinity()
-                        startActivity(Intent(context!!, HomeActivity::class.java))
-                    }
+                try {
+                    val vendorType = object : TypeToken<ArrayList<ServiceItem>>() {
+
+                    }.type
+                    itemList = Gson().fromJson<ArrayList<ServiceItem>>(response, vendorType)
+
+                    listAdapter = ServiceListAdapter(context!!, itemList, listener)
+                    items!!.adapter = listAdapter
+
+
                 } catch (e: JSONException) {
                     e.printStackTrace()
                 }

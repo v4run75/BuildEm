@@ -6,17 +6,17 @@ import android.os.Parcelable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ServiceActivityItem implements Parcelable {
+public class InstallationActivityItem implements Parcelable {
     private String id;
     private String name;
     private String type;
     private String quantity;
     private String units;
 
-    public ServiceActivityItem() {
+    public InstallationActivityItem() {
     }
 
-    public ServiceActivityItem(String id, String name, String type,String quantity,String units) {
+    public InstallationActivityItem(String id, String name, String type, String quantity, String units) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -25,7 +25,7 @@ public class ServiceActivityItem implements Parcelable {
 
     }
 
-    public ServiceActivityItem parseFromJSON(JSONObject obj) throws JSONException {
+    public InstallationActivityItem parseFromJSON(JSONObject obj) throws JSONException {
         setId(obj.getString("id"));
         setName(obj.getString("name"));
         setType(obj.getString("type"));
@@ -86,21 +86,21 @@ public class ServiceActivityItem implements Parcelable {
         dest.writeString(this.type);
     }
 
-    protected ServiceActivityItem(Parcel in) {
+    protected InstallationActivityItem(Parcel in) {
         this.id = in.readString();
         this.name = in.readString();
         this.type = in.readString();
     }
 
-    public static final Creator<ServiceActivityItem> CREATOR = new Creator<ServiceActivityItem>() {
+    public static final Creator<InstallationActivityItem> CREATOR = new Creator<InstallationActivityItem>() {
         @Override
-        public ServiceActivityItem createFromParcel(Parcel source) {
-            return new ServiceActivityItem(source);
+        public InstallationActivityItem createFromParcel(Parcel source) {
+            return new InstallationActivityItem(source);
         }
 
         @Override
-        public ServiceActivityItem[] newArray(int size) {
-            return new ServiceActivityItem[size];
+        public InstallationActivityItem[] newArray(int size) {
+            return new InstallationActivityItem[size];
         }
     };
 }
