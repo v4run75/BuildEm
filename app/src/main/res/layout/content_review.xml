@@ -8,13 +8,7 @@
     tools:showIn="@layout/activity_review"
     android:background="@color/white">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/items"
-        android:layout_width="match_parent"
-        android:layout_height="180dp" />
-
     <LinearLayout
-        android:layout_below="@+id/items"
         android:layout_marginTop="10dp"
         android:id="@+id/container"
         android:orientation="horizontal"
@@ -53,26 +47,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:spinnerMode="dialog"
-        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:padding="10dp"
         android:entries="@array/complaint_status"
         android:background="@drawable/border"
         android:prompt="@string/type"/>
 
-    <EditText
-        android:layout_below="@+id/status"
-        android:id="@+id/comments"
-        android:layout_margin="10dp"
-        android:lines="8"
-        android:gravity="start"
-        android:scrollbars="vertical"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/items"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:inputType="textMultiLine"
-        android:hint="@string/comments"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border"
-        android:padding="10dp"
-        />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/status"
+        android:layout_above="@id/save"/>
+
 
     <Button
         android:layout_alignParentBottom="true"

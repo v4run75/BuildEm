@@ -52,6 +52,9 @@ public class WorkListItem implements Parcelable {
         this.workId = workId;
     }
 
+    public WorkListItem() {
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -65,9 +68,6 @@ public class WorkListItem implements Parcelable {
         dest.writeString(this.qty);
     }
 
-    public WorkListItem() {
-    }
-
     protected WorkListItem(Parcel in) {
         this.units = in.readString();
         this.workName = in.readString();
@@ -75,7 +75,7 @@ public class WorkListItem implements Parcelable {
         this.qty = in.readString();
     }
 
-    public static final Parcelable.Creator<WorkListItem> CREATOR = new Parcelable.Creator<WorkListItem>() {
+    public static final Creator<WorkListItem> CREATOR = new Creator<WorkListItem>() {
         @Override
         public WorkListItem createFromParcel(Parcel source) {
             return new WorkListItem(source);

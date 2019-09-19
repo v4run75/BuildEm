@@ -223,6 +223,9 @@ public class AMCItemDetails implements Parcelable {
         };
     }
 
+    public AMCItemDetails() {
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -234,15 +237,12 @@ public class AMCItemDetails implements Parcelable {
         dest.writeParcelable(this.customerDetails, flags);
     }
 
-    public AMCItemDetails() {
-    }
-
     protected AMCItemDetails(Parcel in) {
         this.details = in.createTypedArrayList(Details.CREATOR);
         this.customerDetails = in.readParcelable(CustomerDetails.class.getClassLoader());
     }
 
-    public static final Parcelable.Creator<AMCItemDetails> CREATOR = new Parcelable.Creator<AMCItemDetails>() {
+    public static final Creator<AMCItemDetails> CREATOR = new Creator<AMCItemDetails>() {
         @Override
         public AMCItemDetails createFromParcel(Parcel source) {
             return new AMCItemDetails(source);
