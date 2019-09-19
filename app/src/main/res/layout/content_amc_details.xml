@@ -6,22 +6,48 @@
     android:layout_height="match_parent"
     tools:showIn="@layout/activity_amc_details"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-
     android:background="@color/white">
-
-    <TextView
-        android:id="@+id/complaints_details"
+    <LinearLayout
+        android:id="@+id/customerDetailsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:breakStrategy="high_quality"
-        android:padding="10dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="@string/complaint_details" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/customer_details"
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:layout_height="wrap_content"
+            android:breakStrategy="high_quality"
+            android:padding="10dp"
+            android:gravity="start"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/customer_details" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/onJob"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="0.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/on_job"
+            android:textColor="@color/white"
+            android:background="@drawable/inactive_button" />
+
+
+    </LinearLayout>
+
 
     <LinearLayout
-        android:layout_below="@id/complaints_details"
+        android:layout_below="@id/customerDetailsContainer"
         android:id="@+id/customer_details_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -101,6 +127,22 @@
             android:textColor="@color/black"
             android:textSize="12sp"
             tools:text="Mobile No: 7838342613" />
+
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:breakStrategy="high_quality"
+            android:gravity="start"
+            android:padding="5dp"
+            android:background="@drawable/border"
+            android:lines="5"
+            android:scrollbars="vertical"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            tools:text="Comment: Testing" />
 
 
         <TextView

@@ -121,6 +121,7 @@
     <string name="nameHolder">Name: %1$s</string>
     <string name="addressHolder">Address: %1$s</string>
     <string name="mobileholder">Mobile No: %1$s</string>
+    <string name="commentholder">Comment: %1$s</string>
     <string name="statusHolder">Status: %1$s</string>
     <string name="machines_equipments">Machines/Equipments</string>
     <string name="no_machine_equipments">No Machine/Equipments</string>
@@ -130,6 +131,7 @@
     <string name="save">Save</string>
     <string name="reviewAndSave">Review and Save</string>
     <string name="next">Next</string>
+    <string name="on_job">On Job</string>
 
 
 </resources>

@@ -110,6 +110,7 @@
         <activity android:name=".Services.ServicesDetailsActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name=".Services.AddService" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name=".Services.ReviewService" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".Installations.AddInstallation" />
 
 
         <service android:name=".Notifications.FirebaseMessagingService">

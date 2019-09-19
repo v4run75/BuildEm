@@ -80,6 +80,8 @@ public class Config {
     public static final String SaveComplaintUpdate ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/SaveComplaintUpdate";
     public static final String SaveAMCUpdate ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/SaveAMCUpdate";
     public static final String SaveServiceUpdate ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/SaveServiceUpdate";
+    public static final String SaveInstallationUpdate ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/SaveInstallationUpdate";
+    public static final String UpdateUserSite ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/UpdateUserSite";
     public static final String ShowWork ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowWork&user_id=[0]";
 
 

@@ -258,6 +258,32 @@ class UtilityofActivity(activity: AppCompatActivity) {
         }
     }
 
+    fun showFetchLocationDialog() {
+
+        appCompatActivity.runOnUiThread(Runnable {
+            if (progressDialog == null) {
+                progressDialog = ProgressDialog(appCompatActivity)
+                progressDialog?.window
+                progressDialog?.setCancelable(false)
+            }
+            progressDialog?.setMessage("Fetching Location...")
+            progressDialog?.isIndeterminate = false
+
+            progressDialog?.show()
+        })
+    }
+
+    fun dismissFetchLocationDialog() {
+        try {
+            if (progressDialog != null) {
+                progressDialog?.dismiss()
+                progressDialog = null
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
     fun showResponse(body: String) {
         Log.e("Full response => ", body)
     }

@@ -4,32 +4,18 @@
     <shared>
       <config>
         <device id="pixel" />
-        <device id="4.65in 720p (Galaxy Nexus)" />
         <device id="4in WVGA (Nexus S)" />
+        <device id="4.65in 720p (Galaxy Nexus)" />
         <device id="5.1in WVGA" />
       </config>
     </shared>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="237c447b-d7ab-47e6-9686-e8d9f2c32558" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCDetailsActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AddAMC.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/ReviewAMC.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/AddComplaint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AMCItemDetailsAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AMCListAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddAMCAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddComplaintAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/AMCItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/AMCItemDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_amc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_complaint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_amc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_add_amc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_add_complaint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_amc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_add_complaint_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/AddInstallation.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddInstallationAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_installation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_add_installation.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -40,20 +26,24 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCDetailsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCDetailsActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintDetailsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintDetailsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ReviewComplaint.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ReviewComplaint.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationDetailsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationDetailsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ViewCustomerData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ViewCustomerData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Services/ServicesDetailsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Services/ServicesDetailsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/AMCItemDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/AMCItemDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/ComplaintDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/ComplaintDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ServiceMenuFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ServiceMenuFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/InstallationItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/InstallationItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/ServiceDetailsItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/ServiceDetailsItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/utils/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/utils/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/utils/UtilityofActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/utils/UtilityofActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_installation_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_installation_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_amc_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_amc_details.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_complaint_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_complaint_details.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_review.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_review.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_service_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_service_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_service_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_installation_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_services_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_services_details.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -110,60 +100,13 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCDetailsActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-42">
-              <caret line="103" column="33" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
-              <folding>
-                <element signature="e#36#1312#0" expanded="true" />
-                <element signature="e#2526#2549#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/utils/Config.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="75" column="31" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AddAMC.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="60" column="56" lean-forward="true" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
-              <folding>
-                <element signature="e#37#695#0" expanded="true" />
-                <element signature="e#2889#2912#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
-              <folding>
-                <element signature="e#37#912#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="resourceFile" />
+        <option value="Kotlin File" />
         <option value="Class" />
         <option value="layoutResourceFile_vertical" />
       </list>
@@ -171,29 +114,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>firebase</find>
-      <find>items.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false))</find>
-      <find>items.setLayoutManager(new LinearLayoutManager(getContext()</find>
-      <find>status</find>
-      <find>android:id=&quot;@+id/statusIndicator&quot;</find>
-      <find>layout_compla</find>
-      <find>addressHolder</find>
-      <find>labour</find>
-      <find>.activities.</find>
-      <find>buildnlive.com.buildem.activities.</find>
-      <find>android:windowSoftInputMode=&quot;stateHidden&quot; android:screenOrientation=&quot;portrait&quot;</find>
-      <find>Spinner</find>
-      <find>Button</find>
-      <find>params</find>
-      <find>array</find>
-      <find>ComplaintListAdapter</find>
       <find>Complaint</find>
-      <find>List</find>
-      <find>ComplaintDetailsAdapter</find>
       <find>static</find>
       <find>AddComplaintAdapter</find>
       <find>ComplaintDetails</find>
       <find>complaintId</find>
+      <find>work</find>
+      <find>getw</find>
+      <find>menu</find>
+      <find>services</find>
+      <find>AMCListAdapter</find>
+      <find>InstallationsListAdapter</find>
+      <find>AMCItem</find>
+      <find>List</find>
+      <find>AMCItemDetails</find>
+      <find>ada</find>
+      <find>AMCItemDetails.Details</find>
+      <find>AMCItemDetailsAdapter</find>
+      <find>ComplaintDetails.Details</find>
+      <find>ComplaintDetailsAdapter</find>
+      <find>ServiceDetailsItem.Details</find>
+      <find>ServiceDetailsItemAdapter</find>
+      <find>AddAMCAdapter</find>
+      <find>amcId</find>
+      <find>Al</find>
+      <find>Alert</find>
+      <find>comment</find>
+      <find>mConetxt</find>
+      <find>startLocationUpdates</find>
+      <find>seem</find>
+      <find>onjob</find>
     </findStrings>
     <replaceStrings>
       <replace>CustomerData.Details</replace>
@@ -206,18 +156,31 @@
       <replace>AddComplaintAdapter</replace>
       <replace>AMCListAdapter</replace>
       <replace>AMCItem</replace>
-      <replace>ArrayList</replace>
       <replace>AMCItemDetailsAdapter</replace>
       <replace>AddAMCAdapter</replace>
       <replace>AMCItemDetails</replace>
       <replace>amcId</replace>
       <replace>id</replace>
+      <replace>ServiceListAdapter</replace>
+      <replace>ServiceItem</replace>
+      <replace>ArrayList</replace>
+      <replace>serviceId</replace>
+      <replace>ServicesItemDetails</replace>
+      <replace>AddServiceAdapter</replace>
+      <replace>ServiceDetailsItem</replace>
+      <replace>WorkDetailsItem</replace>
+      <replace>WorkListItem</replace>
+      <replace>ReviewDetailsAdapter</replace>
+      <replace>AddInstallationAdapter</replace>
+      <replace>installationId</replace>
+      <replace>comments</replace>
+      <replace>context</replace>
     </replaceStrings>
     <dirStrings>
       <dir>F:\BuildEm\app\src\main\res</dir>
-      <dir>F:\BuildEm\app\src\test\java</dir>
       <dir>F:\BuildEm\app\src\main\java\buildnlive\com\buildem\IndentItem</dir>
       <dir>F:\BuildEm\app\src\main\res\layout</dir>
+      <dir>F:\BuildEm\app\src\test\java</dir>
       <dir>F:\BuildEm\app\src\main\java\buildnlive\com\buildem</dir>
     </dirStrings>
   </component>
@@ -227,57 +190,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_purchase_order_listing.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Notifications/FcmNotificationActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/active_circle.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/inactive_circle.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_complaint.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_customer_data.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_customer_data.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/CustomerDataAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/CustomerData.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/Complaint.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_customer_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/CustomerDataAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_review.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_complaint_details.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddComplaintAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ComplaintDetailsAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_complaint_details_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_add_complaint_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_complaint.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_complaint_details.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_add_complaint.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/alert_dialog_service_activity.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_services.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_services.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_add_amc.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_amc.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ServiceListAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/ServiceItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ServiceListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Services/ServicesActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_services_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_amc_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ServiceDetailsItemAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_service.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_add_service.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ServiceMenuFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Services/AddServiceAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddAMCAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AddAMC.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/WorkListItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ReviewDetailsAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ReviewDetailsAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/ReviewAMC.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddComplaintAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/AddComplaint.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ReviewComplaint.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_review.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddComplaintAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_service_menu.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/AMCItem.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AMCListAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_amc.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_amc.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AMCItemDetailsAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/AddAMC.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddAMCAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_amc.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_add_amc.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ServiceMenuFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/utils/Config.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/ReviewAMC.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationDetailsActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ViewCustomerData.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintDetailsActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCDetailsActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddServiceAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Services/AddService.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Services/ReviewService.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/AddInstallation.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_installation.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddInstallationAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/AddInstallation.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_add_installation.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/AMCItemDetails.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/ComplaintDetails.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AddAMC.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/ServiceDetailsItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_installation_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/InstallationItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_installation_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/utils/Config.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/utils/UtilityofActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_amc_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationDetailsActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintDetailsActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_complaint_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Services/ServicesDetailsActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_services_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCDetailsActivity.kt" />
       </list>
     </option>
   </component>
@@ -316,32 +279,12 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="buildem" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="AMC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BuildEm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="buildem" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BuildEm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="BuildEm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -353,20 +296,23 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/Complaints" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="E:/Android/WebpulseClients" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateKotlinClassDialog.RecentsKey">
-      <recent name="buildnlive.com.buildem.AMC" />
       <recent name="buildnlive.com.buildem.adapters" />
+      <recent name="buildnlive.com.buildem.Services" />
+      <recent name="buildnlive.com.buildem.AMC" />
       <recent name="buildnlive.com.buildem.Complaints" />
       <recent name="buildnlive.com.buildem.activities" />
     </key>
@@ -516,12 +462,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568631019891</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Completed Service Module">
+      <created>1568700808898</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568700808898</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.22104466" />
@@ -542,9 +494,9 @@
       <window_info anchor="bottom" id="Flutter Performance" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Build" order="9" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="10" weight="0.44680852" />
+      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.44680852" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3289689" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" weight="0.329296" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -577,7 +529,7 @@
       <window_info anchor="bottom" id="Build" order="9" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="10" weight="0.44680852" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3289689" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" weight="0.329296" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -643,535 +595,530 @@
     <MESSAGE value="New Complaint section" />
     <MESSAGE value="Refactored project structure" />
     <MESSAGE value="Update Complaint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Complaint" />
+    <MESSAGE value="Completed Service Module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed Service Module" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/inactive_circle.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_customer_data.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/CustomerDataAdapter.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/CustomerData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1617">
-          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#984#985#0" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1060#1061#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-            <element signature="e#1138#1139#0" expanded="true" />
-            <element signature="e#1178#1179#0" expanded="true" />
-            <element signature="e#1232#1233#0" expanded="true" />
-            <element signature="e#1282#1283#0" expanded="true" />
-            <element signature="e#1796#1797#0" expanded="true" />
-            <element signature="e#1833#1834#0" expanded="true" />
-            <element signature="e#1881#1882#0" expanded="true" />
-            <element signature="e#1925#1926#0" expanded="true" />
-            <element signature="e#1963#1964#0" expanded="true" />
-            <element signature="e#2001#2002#0" expanded="true" />
-            <element signature="e#2051#2052#0" expanded="true" />
-            <element signature="e#2097#2098#0" expanded="true" />
-            <element signature="e#2136#2137#0" expanded="true" />
-            <element signature="e#2175#2176#0" expanded="true" />
-            <element signature="e#2227#2228#0" expanded="true" />
-            <element signature="e#2275#2276#0" expanded="true" />
-            <element signature="e#2318#2319#0" expanded="true" />
-            <element signature="e#2361#2362#0" expanded="true" />
-            <element signature="e#2421#2422#0" expanded="true" />
-            <element signature="e#2477#2478#0" expanded="true" />
-            <element signature="e#2518#2519#0" expanded="true" />
-            <element signature="e#2559#2560#0" expanded="true" />
-            <element signature="e#2615#2616#0" expanded="true" />
-            <element signature="e#2667#2668#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/Complaint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="100" column="44" lean-forward="true" selection-end-line="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_customer_data.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="143" column="41" selection-start-line="143" selection-start-column="41" selection-end-line="143" selection-end-column="41" />
-          <folding>
-            <element signature="e#376#416#0" expanded="true" />
-            <element signature="e#809#835#0" expanded="true" />
-            <element signature="e#2424#2440#0" expanded="true" />
-            <element signature="e#4476#4505#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/CustomerDataAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="e#1090#1091#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1183#1184#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
-            <element signature="e#1356#1460#1" expanded="true" />
-            <element signature="e#1385#1404#0" expanded="true" />
-            <element signature="e#1864#1865#0" expanded="true" />
-            <element signature="e#1899#1900#0" expanded="true" />
-            <element signature="e#2084#2177#0" expanded="true" />
-            <element signature="e#2112#2150#0" expanded="true" />
-            <element signature="e#2155#2174#0" expanded="true" />
-            <element signature="e#2084#2177#0" expanded="true" />
-            <element signature="e#2187#2276#0" expanded="true" />
-            <element signature="e#2215#2257#0" expanded="true" />
-            <element signature="e#2166#2179#0" expanded="true" />
-            <element signature="e#2187#2276#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_customer_item.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="81" column="38" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_complaint_item.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_review.xml">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_complaint_details_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="33" lean-forward="true" selection-end-line="51" selection-end-column="17" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_complaint_details.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="62" column="45" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_complaint_details.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1422">
-          <caret line="144" column="47" selection-start-line="144" selection-start-column="47" selection-end-line="144" selection-end-column="47" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_add_complaint_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_review.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="77" column="42" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_review.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="24" column="50" lean-forward="true" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="111" column="135" selection-start-line="111" selection-start-column="135" selection-end-line="111" selection-end-column="135" />
+        </state>
+      </provider>
       <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="103" column="136" selection-start-line="103" selection-start-column="136" selection-end-line="103" selection-end-column="136" />
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_service_menu.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ServiceMenuFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="179" lean-forward="true" selection-start-line="179" selection-end-line="179" />
-          <folding>
-            <element signature="e#7852#7870#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ComplaintListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="21" column="42" lean-forward="true" selection-end-line="103" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AMCListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="91" column="43" lean-forward="true" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1031#1032#0" expanded="true" />
-            <element signature="e#1062#1063#0" expanded="true" />
-            <element signature="e#1124#1125#0" expanded="true" />
-            <element signature="e#1155#1156#0" expanded="true" />
-            <element signature="e#1292#1397#1" expanded="true" />
-            <element signature="e#1321#1340#0" expanded="true" />
-            <element signature="e#1559#1578#0" expanded="true" />
-            <element signature="e#1559#1578#0" expanded="true" />
-            <element signature="e#1788#1789#0" expanded="true" />
-            <element signature="e#1823#1824#0" expanded="true" />
-            <element signature="e#2528#2564#0" expanded="true" />
-            <element signature="e#2541#2563#0" expanded="true" />
-            <element signature="e#2528#2564#0" expanded="true" />
-            <element signature="e#2578#2620#0" expanded="true" />
-            <element signature="e#2594#2619#0" expanded="true" />
-            <element signature="e#2578#2620#0" expanded="true" />
-            <element signature="e#2634#2665#0" expanded="true" />
-            <element signature="e#2647#2664#0" expanded="true" />
-            <element signature="e#2634#2665#0" expanded="true" />
-            <element signature="e#3547#3548#0" expanded="true" />
-            <element signature="e#3628#3629#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_complaint.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="68" column="51" lean-forward="true" selection-end-line="80" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_complaint.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="37" column="31" lean-forward="true" selection-end-line="42" selection-end-column="17" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_amc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="77" column="39" lean-forward="true" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_amc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-          <folding>
-            <element signature="e#326#366#0" expanded="true" />
-            <element signature="e#1474#1495#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/AMCItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="314">
+          <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ComplaintDetailsAdapter.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Services/ServicesActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="9" column="31" lean-forward="true" selection-end-line="72" selection-end-column="1" />
+        <state relative-caret-position="238">
+          <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+          <folding>
+            <element signature="e#42#925#0" expanded="true" />
+            <element signature="e#2279#2307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Services/AddServiceAdapter.kt" />
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/widget/LinearLayout.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#6946#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="e#37#912#0" expanded="true" />
+            <element signature="e#2663#4057#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/WorkListItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          <folding>
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#667#668#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#813#814#0" expanded="true" />
+            <element signature="e#849#850#0" expanded="true" />
+            <element signature="e#1095#1096#0" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+            <element signature="e#1775#1776#0" expanded="true" />
+            <element signature="e#1830#1831#0" expanded="true" />
+            <element signature="e#1900#1901#0" expanded="true" />
+            <element signature="e#1953#1954#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AMCItemDetailsAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="246">
+          <caret line="15" lean-forward="true" selection-end-line="71" selection-end-column="1" />
           <folding>
             <element signature="e#41#346#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/AddAMC.kt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddComplaintAdapter.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/ReviewDetailsAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="12" column="18" lean-forward="true" selection-end-line="83" selection-end-column="1" />
+        <state relative-caret-position="204">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="26" />
           <folding>
-            <element signature="e#41#407#0" expanded="true" />
+            <element signature="e#41#344#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddAMCAdapter.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddComplaintAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="59" lean-forward="true" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+        <state relative-caret-position="238">
+          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddServiceAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-595">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
-            <element signature="e#41#405#0" expanded="true" />
+            <element signature="e#41#403#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Services/AddService.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-760">
+          <caret line="67" column="58" selection-start-line="67" selection-start-column="58" selection-end-line="67" selection-end-column="58" />
+          <folding>
+            <element signature="e#41#1046#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/AddComplaint.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="56" selection-start-column="2" selection-end-line="60" selection-end-column="5" />
+          <folding>
+            <element signature="e#43#1050#0" expanded="true" />
+            <element signature="e#3625#5042#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ReviewComplaint.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="30" column="40" lean-forward="true" selection-end-line="151" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_complaint.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="77" column="45" selection-end-line="80" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_add_complaint.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_amc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1048">
-          <caret line="65" column="44" lean-forward="true" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_add_amc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+        <state relative-caret-position="141">
+          <caret line="42" column="37" lean-forward="true" selection-start-line="42" selection-start-column="37" selection-end-line="43" selection-end-column="61" />
           <folding>
-            <element signature="e#326#366#0" expanded="true" />
-            <element signature="e#1562#1583#0" expanded="true" />
-            <element signature="e#1749#1763#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/AddComplaint.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="97" column="60" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
-          <folding>
-            <element signature="e#43#715#0" expanded="true" />
+            <element signature="e#2845#2878#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintActivity.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Services/ReviewService.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+        <state relative-caret-position="226">
+          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
           <folding>
-            <element signature="e#43#931#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/fragments/ServiceMenuFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1960#1993#0" expanded="true" />
-            <element signature="e#1960#1993#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/ReviewAMC.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="64" column="48" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="48" />
-          <folding>
-            <element signature="e#37#1019#0" expanded="true" />
-            <element signature="e#2730#2763#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="69" column="61" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationDetailsActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="90" column="56" selection-start-line="90" selection-start-column="56" selection-end-line="90" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintDetailsActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="90" column="36" lean-forward="true" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/activities/ViewCustomerData.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-          <folding>
-            <element signature="e#43#1049#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/utils/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="75" column="31" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
-          <folding>
-            <element signature="e#37#912#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCDetailsActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42">
-          <caret line="103" column="33" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
-          <folding>
-            <element signature="e#36#1312#0" expanded="true" />
-            <element signature="e#2526#2549#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/ComplaintDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2414">
-          <caret line="196" column="44" lean-forward="true" selection-start-line="196" selection-start-column="44" selection-end-line="196" selection-end-column="44" />
-          <folding>
-            <element signature="e#4310#4311#0" expanded="true" />
-            <element signature="e#4342#4343#0" expanded="true" />
-            <element signature="e#5348#5349#0" expanded="true" />
-            <element signature="e#5412#5413#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/AMCItemDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-131">
-          <caret line="120" column="30" lean-forward="true" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1537#1538#0" expanded="true" />
-            <element signature="e#1576#1577#0" expanded="true" />
-            <element signature="e#1939#1940#0" expanded="true" />
-            <element signature="e#1971#1972#0" expanded="true" />
-            <element signature="e#2614#2615#0" expanded="true" />
-            <element signature="e#2672#2673#0" expanded="true" />
-            <element signature="e#2745#2746#0" expanded="true" />
-            <element signature="e#2801#2802#0" expanded="true" />
-            <element signature="e#4278#4279#0" expanded="true" />
-            <element signature="e#4310#4311#0" expanded="true" />
-            <element signature="e#5316#5317#0" expanded="true" />
-            <element signature="e#5380#5381#0" expanded="true" />
-            <element signature="e#5470#5471#0" expanded="true" />
-            <element signature="e#5494#5495#0" expanded="true" />
-            <element signature="e#5869#5907#0" expanded="true" />
-            <element signature="e#6109#6110#0" expanded="true" />
-            <element signature="e#6166#6167#0" expanded="true" />
-            <element signature="e#6238#6239#0" expanded="true" />
-            <element signature="e#6293#6294#0" expanded="true" />
+            <element signature="e#2837#2870#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AddAMC.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="60" column="56" lean-forward="true" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
+        <state relative-caret-position="119">
+          <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
           <folding>
-            <element signature="e#37#695#0" expanded="true" />
-            <element signature="e#2889#2912#0" expanded="true" />
+            <element signature="e#37#976#0" expanded="true" />
+            <element signature="e#3864#5275#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_amc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="79" column="54" lean-forward="true" selection-end-line="80" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_add_amc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="43" lean-forward="true" selection-end-line="54" selection-end-column="17" />
+          <folding>
+            <element signature="e#326#366#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddAMCAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="18" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/adapters/AddInstallationAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="20" column="72" lean-forward="true" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+          <folding>
+            <element signature="e#41#457#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_installation.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="77" column="45" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_add_installation.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/ReviewAMC.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="142" column="5" selection-start-line="100" selection-start-column="2" selection-end-line="142" selection-end-column="5" />
+          <folding>
+            <element signature="e#37#1100#0" expanded="true" />
+            <element signature="e#3326#4815#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_complaint.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="77" column="39" lean-forward="true" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_complaint.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/AMCItemDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="134" column="32" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="32" />
+          <folding>
+            <element signature="e#3468#3469#0" expanded="true" />
+            <element signature="e#3506#3507#0" expanded="true" />
+            <element signature="e#3556#3557#0" expanded="true" />
+            <element signature="e#3602#3603#0" expanded="true" />
+            <element signature="e#4615#4616#0" expanded="true" />
+            <element signature="e#4647#4648#0" expanded="true" />
+            <element signature="e#5673#5674#0" expanded="true" />
+            <element signature="e#5737#5738#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="123" column="25" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/ComplaintDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="132" column="34" lean-forward="true" selection-start-line="132" selection-start-column="34" selection-end-line="132" selection-end-column="34" />
+          <folding>
+            <element signature="e#3471#3472#0" expanded="true" />
+            <element signature="e#3509#3510#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#3605#3606#0" expanded="true" />
+            <element signature="e#4618#4619#0" expanded="true" />
+            <element signature="e#4650#4651#0" expanded="true" />
+            <element signature="e#5676#5677#0" expanded="true" />
+            <element signature="e#5740#5741#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/ServiceDetailsItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="137" column="36" selection-start-line="137" selection-start-column="36" selection-end-line="137" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+            <element signature="e#2800#2801#0" expanded="true" />
+            <element signature="e#2856#2857#0" expanded="true" />
+            <element signature="e#3532#3533#0" expanded="true" />
+            <element signature="e#3582#3583#0" expanded="true" />
+            <element signature="e#3628#3629#0" expanded="true" />
+            <element signature="e#4641#4642#0" expanded="true" />
+            <element signature="e#4673#4674#0" expanded="true" />
+            <element signature="e#5699#5700#0" expanded="true" />
+            <element signature="e#5763#5764#0" expanded="true" />
+            <element signature="e#5510#5511#0" expanded="true" />
+            <element signature="e#5534#5535#0" expanded="true" />
+            <element signature="e#5917#5955#0" expanded="true" />
+            <element signature="e#6306#6307#0" expanded="true" />
+            <element signature="e#6365#6366#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/IndentItem/IndentItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="110" column="50" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/elements/InstallationItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding>
+            <element signature="e#1385#1386#0" expanded="true" />
+            <element signature="e#1415#1416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/AddInstallation.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="122" column="20" lean-forward="true" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
+          <folding>
+            <element signature="e#4349#5869#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/MarkAttendance/MarkAttendanceLocFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="309" column="73" selection-start-line="308" selection-start-column="14" selection-end-line="309" selection-end-column="73" />
+          <folding>
+            <element signature="e#7542#9581#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/utils/UtilityofActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="260" column="26" selection-start-line="260" selection-start-column="26" selection-end-line="260" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_installation_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="61" column="44" lean-forward="true" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_amc_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="62" column="45" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_installation_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="51" selection-end-column="59" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_complaint_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_complaint_details.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="50" column="59" selection-start-line="50" selection-start-column="59" selection-end-line="50" selection-end-column="59" />
+          <folding>
+            <element signature="e#1162#1188#0" expanded="true" />
+            <element signature="e#1645#1661#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Complaints/ComplaintDetailsActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="105" column="51" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="51" />
+          <folding>
+            <element signature="e#4133#6454#2" />
+            <element signature="e#6537#6616#2" />
+            <element signature="e#3976#5634#0" />
+            <element signature="e#3991#6303#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_amc_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="49" column="59" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="49" selection-end-column="59" />
+          <folding>
+            <element signature="e#1155#1181#0" expanded="true" />
+            <element signature="e#1638#1654#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_services_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="62" column="46" lean-forward="true" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_services_details.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="50" column="59" selection-start-line="50" selection-start-column="59" selection-end-line="50" selection-end-column="59" />
+          <folding>
+            <element signature="e#1161#1187#0" expanded="true" />
+            <element signature="e#1644#1660#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/AMC/AMCDetailsActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="200" column="61" selection-start-line="200" selection-start-column="61" selection-end-line="200" selection-end-column="61" />
+          <folding>
+            <element signature="e#9045#9124#2" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Installations/InstallationDetailsActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="278" column="9" selection-start-line="215" selection-start-column="6" selection-end-line="278" selection-end-column="9" />
+          <folding>
+            <element signature="e#3078#3429#0" />
+            <element signature="e#9650#10111#2" />
+            <element signature="e#5346#5401#2" />
+            <element signature="e#5491#5555#2" />
+            <element signature="e#5147#6667#0" />
+            <element signature="e#5083#8728#0" />
+            <element signature="e#8769#10604#0" />
+            <element signature="e#10697#11846#0" />
+            <element signature="e#12039#14034#0" />
+            <element signature="e#14176#14864#0" />
+            <element signature="e#14939#15242#0" />
+            <element signature="e#15292#15366#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/Services/ServicesDetailsActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="182" selection-start-line="182" selection-end-line="245" selection-end-column="9" />
+          <folding>
+            <element signature="e#41#1663#0" expanded="true" />
+            <element signature="e#6347#9080#2" />
+            <element signature="e#6517#8838#2" />
+            <element signature="e#8921#9000#2" />
+            <element signature="e#3784#6096#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/buildnlive/com/buildem/utils/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="71" column="38" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
         </state>
       </provider>
     </entry>

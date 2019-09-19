@@ -1,12 +1,24 @@
 package buildnlive.com.buildem.Services
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.Location
+import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
+import android.text.method.ScrollingMovementMethod
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import buildnlive.com.buildem.App
@@ -18,16 +30,13 @@ import buildnlive.com.buildem.console
 import buildnlive.com.buildem.elements.ServiceDetailsItem
 import buildnlive.com.buildem.utils.Config
 import buildnlive.com.buildem.utils.GlideApp
+import buildnlive.com.buildem.utils.PrefernceFile
 import buildnlive.com.buildem.utils.UtilityofActivity
 import com.android.volley.Request
+import com.google.android.gms.location.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_services_details.*
-import kotlinx.android.synthetic.main.content_service_details.*
-import kotlinx.android.synthetic.main.content_service_details.address
-import kotlinx.android.synthetic.main.content_service_details.items
-import kotlinx.android.synthetic.main.content_service_details.mobileNo
-import kotlinx.android.synthetic.main.content_service_details.name
 import kotlinx.android.synthetic.main.content_services_details.*
 import org.json.JSONException
 import java.util.*
@@ -57,6 +66,37 @@ class ServicesDetailsActivity : AppCompatActivity() {
     }
 
 
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    var outputLocation: String? = null
+
+
+    private var lastLocation: Location? = null
+    var locationRequest: LocationRequest? = null
+    private lateinit var locationCallback: LocationCallback
+
+    object Constants {
+        const val SUCCESS_RESULT = 0
+        const val FAILURE_RESULT = 1
+        const val PACKAGE_NAME = "com.google.android.gms.location.sample.locationaddress"
+        const val RECEIVER = "$PACKAGE_NAME.RECEIVER"
+        const val RESULT_DATA_KEY = "$PACKAGE_NAME.RESULT_DATA_KEY"
+        const val LOCATION_DATA_EXTRA = "$PACKAGE_NAME.LOCATION_DATA_EXTRA"
+    }
+
+    private fun stopLocationUpdates() {
+        fusedLocationClient.removeLocationUpdates(locationCallback)
+    }
+
+
+    @SuppressLint("MissingPermission")
+    private fun startLocationUpdates() {
+        fusedLocationClient.requestLocationUpdates(
+                locationRequest,
+                locationCallback,
+                null /* Looper */
+        )
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_services_details)
@@ -77,6 +117,40 @@ class ServicesDetailsActivity : AppCompatActivity() {
         utilityofActivity = UtilityofActivity(appCompatActivity!!)
         utilityofActivity!!.configureToolbar(appCompatActivity!!)
 
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(appCompatActivity!!)
+
+
+        locationRequest = LocationRequest.create()?.apply {
+            interval = 1000
+            fastestInterval = 1000
+            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+        }
+
+        val builder = LocationSettingsRequest.Builder()
+                .addLocationRequest(locationRequest!!)
+
+        builder.build()
+
+        locationCallback = object : LocationCallback() {
+            override fun onLocationResult(locationResult: LocationResult?) {
+                utilityofActivity!!.dismissFetchLocationDialog()
+                locationResult ?: return
+                for (location in locationResult.locations) {
+                    if (location != null)
+                        lastLocation = location
+                    if (lastLocation != null) {
+                        PrefernceFile.getInstance(context!!).setString("Lat", lastLocation!!.latitude.toString())
+                        PrefernceFile.getInstance(context!!).setString("Long", lastLocation!!.longitude.toString())
+                        startJob()
+                    } else {
+                        utilityofActivity!!.toast("Some error occurred, Could not fetch location")
+                    }
+                    console.log("Location LatLang: $lastLocation")
+                }
+            }
+        }
+
+
 
         val dividerItemDecoration = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
 
@@ -85,6 +159,8 @@ class ServicesDetailsActivity : AppCompatActivity() {
 
         listAdapter = ServiceDetailsItemAdapter(context!!, ArrayList<ServiceDetailsItem.Details>(), listener)
         items!!.adapter = listAdapter
+
+        comment.movementMethod = ScrollingMovementMethod()
 
         seeMore.setOnClickListener {
             val intent = Intent(context, ViewCustomerData::class.java)
@@ -104,9 +180,118 @@ class ServicesDetailsActivity : AppCompatActivity() {
 
         }
 
+        onJob.setOnClickListener {
+            val builder = android.app.AlertDialog.Builder(context!!)
+
+            builder.setTitle("Start Job")
+
+            builder.setPositiveButton("Start", DialogInterface.OnClickListener { dialogInterface, i ->
+
+                if (((Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) && (ContextCompat.checkSelfPermission(
+                                appCompatActivity!!,
+                                Manifest.permission.ACCESS_FINE_LOCATION
+                        )) != PackageManager.PERMISSION_GRANTED)
+                ) {
+                    ActivityCompat.requestPermissions(appCompatActivity!!, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 102)
+                } else {
+
+                    val lm = context!!.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+                    var gps_enabled = false
+                    var network_enabled = false
+
+                    try {
+                        gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+                    } catch (ex: Exception) {
+                    }
+
+                    try {
+                        network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+                    } catch (ex: Exception) {
+                    }
+
+                    if (!gps_enabled && !network_enabled) {
+                        // notify user
+
+                        val builder = AlertDialog.Builder(context!!)
+
+                        builder.setTitle("Location Settings")
+
+                        builder.setMessage("Location services are required for posting please switch them on to continue.")
+                        builder.setPositiveButton("Open Settings") { dialog, which ->
+                            context!!.startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+
+                        }
+                        builder.setNegativeButton("Dismiss") { dialog, which ->
+                            Toast.makeText(
+                                    context,
+                                    "Location Services are necessary for posting",
+                                    Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        val dialog: AlertDialog = builder.create()
+                        dialog.show()
+                    } else {
+                        utilityofActivity!!.showFetchLocationDialog()
+                        startLocationUpdates()
+                    }
+                }
+            })
+
+            builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface, i ->
+                dialogInterface.dismiss()
+            })
+
+            val dialog = builder.create()
+            dialog.show()
+        }
+
         getServiceItemDetails()
     }
 
+
+    private fun startJob() {
+        val requestUrl = Config.UpdateUserSite
+
+        val params = HashMap<String, String>()
+
+        params["id"] = serviceId!!
+        params["type"] = "Service"
+        params["user_id"] = App.userId
+        params["latitude"] = lastLocation!!.latitude.toString()
+        params["longitude"] = lastLocation!!.longitude.toString()
+
+        console.log("Installation URL:  $requestUrl")
+        console.log("Params:  $params")
+
+        app!!.sendNetworkRequest(requestUrl, Request.Method.POST, params, object : Interfaces.NetworkInterfaceListener {
+            override fun onNetworkRequestStart() {
+                utilityofActivity!!.showProgressDialog()
+            }
+
+            override fun onNetworkRequestError(error: String) {
+                stopLocationUpdates()
+                utilityofActivity!!.dismissProgressDialog()
+                console.error("Network request failed with error :$error")
+                Toast.makeText(context, "Check Network, Something went wrong", Toast.LENGTH_LONG).show()
+            }
+
+            override fun onNetworkRequestComplete(response: String) {
+                console.log(response)
+                stopLocationUpdates()
+                utilityofActivity!!.dismissProgressDialog()
+
+                try {
+                    if (response == "1") {
+                        utilityofActivity!!.toast("Job Successfully Started")
+                    } else
+                        utilityofActivity!!.toast("Some error occurred, Please try again")
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                }
+
+            }
+        })
+    }
 
     private fun getServiceItemDetails() {
         var requestUrl = Config.ShowServiceDetails
@@ -143,6 +328,7 @@ class ServicesDetailsActivity : AppCompatActivity() {
                     name.text = String.format(getString(R.string.nameHolder), itemList!!.customerDetails.customerName)
                     address.text = String.format(getString(R.string.addressHolder), itemList!!.customerDetails.address)
                     mobileNo.text = String.format(getString(R.string.mobileholder), itemList!!.customerDetails.mobileNo)
+                    comment.text = String.format(getString(R.string.commentholder), itemList!!.customerDetails.comment)
 
 
                     if (itemList!!.customerDetails.status == "Completed") {

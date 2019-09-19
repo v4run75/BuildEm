@@ -14,11 +14,12 @@ public class InstallationItem implements Parcelable {
     private String date;
     private String mobileNo;
     private String email;
+    private String comment;
 
     public InstallationItem() {
     }
 
-    public InstallationItem(String service_id, String name, String address, String time, String date, String mobileNo, String email) {
+    public InstallationItem(String service_id, String name, String address, String time, String date, String mobileNo, String email, String comment) {
         this.service_id = service_id;
         this.name = name;
         this.time = time;
@@ -26,6 +27,7 @@ public class InstallationItem implements Parcelable {
         this.date = date;
         this.mobileNo = mobileNo;
         this.email = email;
+        this.comment = comment;
     }
 
     public InstallationItem parseFromJSON(JSONObject obj) throws JSONException {
@@ -36,7 +38,16 @@ public class InstallationItem implements Parcelable {
         setDate(obj.getString("service_date"));
         setMobileNo(obj.getString("contact_no"));
         setEmail(obj.getString("email_id"));
+        setComment(obj.getString("comments"));
         return this;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public void setAddress(String address) {

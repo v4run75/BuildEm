@@ -131,6 +131,17 @@ public class AMCItemDetails implements Parcelable {
         @Expose
         @SerializedName("customer_id")
         private String customerId;
+        @Expose
+        @SerializedName("comment")
+        private String comment;
+
+        public String getComment() {
+            return comment;
+        }
+
+        public void setComment(String comment) {
+            this.comment = comment;
+        }
 
         public String getStatus() {
             return status;
@@ -172,6 +183,9 @@ public class AMCItemDetails implements Parcelable {
             this.customerId = customerId;
         }
 
+        public CustomerDetails() {
+        }
+
         @Override
         public int describeContents() {
             return 0;
@@ -184,9 +198,7 @@ public class AMCItemDetails implements Parcelable {
             dest.writeString(this.mobileNo);
             dest.writeString(this.customerName);
             dest.writeString(this.customerId);
-        }
-
-        public CustomerDetails() {
+            dest.writeString(this.comment);
         }
 
         protected CustomerDetails(Parcel in) {
@@ -195,9 +207,10 @@ public class AMCItemDetails implements Parcelable {
             this.mobileNo = in.readString();
             this.customerName = in.readString();
             this.customerId = in.readString();
+            this.comment = in.readString();
         }
 
-        public static final Parcelable.Creator<CustomerDetails> CREATOR = new Parcelable.Creator<CustomerDetails>() {
+        public static final Creator<CustomerDetails> CREATOR = new Creator<CustomerDetails>() {
             @Override
             public CustomerDetails createFromParcel(Parcel source) {
                 return new CustomerDetails(source);
