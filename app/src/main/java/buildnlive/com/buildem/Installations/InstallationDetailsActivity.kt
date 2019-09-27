@@ -2,9 +2,7 @@ package buildnlive.com.buildem.Installations
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.AlertDialog.Builder
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -21,10 +19,7 @@ import android.text.method.ScrollingMovementMethod
 import android.util.Base64
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -76,6 +71,9 @@ class InstallationDetailsActivity : AppCompatActivity() {
         val QUALITY = 10
         val REQUEST_GALLERY_IMAGE = 7191
         val REQUEST_CAPTURE_IMAGE = 7190
+        var commentsHolder = ""
+        var jobStatusHolder = ""
+
     }
 
     private var listener = object : InstallationAdapter.OnItemClickListener {
@@ -215,73 +213,89 @@ class InstallationDetailsActivity : AppCompatActivity() {
         }
 
         onJob.setOnClickListener {
-            val builder = Builder(context!!)
-
-            builder.setTitle("Start Job")
-
-            builder.setPositiveButton("Start", DialogInterface.OnClickListener { dialogInterface, i ->
-
-                if (((Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) && (ContextCompat.checkSelfPermission(
-                                appCompatActivity!!,
-                                Manifest.permission.ACCESS_FINE_LOCATION
-                        )) != PackageManager.PERMISSION_GRANTED)
-                ) {
-                    ActivityCompat.requestPermissions(appCompatActivity!!, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 102)
-                } else {
-
-                    val lm = context!!.getSystemService(Context.LOCATION_SERVICE) as LocationManager
-                    var gps_enabled = false
-                    var network_enabled = false
-
-                    try {
-                        gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
-                    } catch (ex: Exception) {
-                    }
-
-                    try {
-                        network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-                    } catch (ex: Exception) {
-                    }
-
-                    if (!gps_enabled && !network_enabled) {
-                        // notify user
-
-                        val builder = AlertDialog.Builder(context!!)
-
-                        builder.setTitle("Location Settings")
-
-                        builder.setMessage("Location services are required for posting please switch them on to continue.")
-                        builder.setPositiveButton("Open Settings") { dialog, which ->
-                            context!!.startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-
-                        }
-                        builder.setNegativeButton("Dismiss") { dialog, which ->
-                            Toast.makeText(
-                                    context,
-                                    "Location Services are necessary for posting",
-                                    Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                        val dialog: AlertDialog = builder.create()
-                        dialog.show()
-                    } else {
-                        utilityofActivity!!.showFetchLocationDialog()
-                        startLocationUpdates()
-                    }
-                }
-            })
-
-            builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface, i ->
-                dialogInterface.dismiss()
-            })
-
-            val dialog = builder.create()
-            dialog.show()
+            showJobStartDialog()
         }
 
         getServiceActivities()
 
     }
+
+    private fun showJobStartDialog() {
+        val inflater = this.layoutInflater
+        val dialogView = inflater.inflate(R.layout.alert_start_job, null)
+        val dialogBuilder = AlertDialog.Builder(context!!, R.style.PinDialog)
+        val alertDialog = dialogBuilder.setCancelable(true).setView(dialogView).create()
+        alertDialog.show()
+
+        val title = dialogView.findViewById<TextView>(R.id.alert_title)
+        title.text = getString(R.string.start_job)
+        val message = dialogView.findViewById<EditText>(R.id.alert_message)
+        val spinner = dialogView.findViewById<Spinner>(R.id.jobStatus)
+        message.movementMethod = ScrollingMovementMethod()
+
+        val positive = dialogView.findViewById<Button>(R.id.positive)
+        positive.setOnClickListener {
+            if (((Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) && (ContextCompat.checkSelfPermission(
+                            appCompatActivity!!,
+                            Manifest.permission.ACCESS_FINE_LOCATION
+                    )) != PackageManager.PERMISSION_GRANTED)
+            ) {
+                ActivityCompat.requestPermissions(appCompatActivity!!, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 102)
+            } else {
+
+                val lm = context!!.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+                var gps_enabled = false
+                var network_enabled = false
+
+                try {
+                    gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+                } catch (ex: Exception) {
+                }
+
+                try {
+                    network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+                } catch (ex: Exception) {
+                }
+
+                if (!gps_enabled && !network_enabled) {
+                    // notify user
+
+                    val builder = AlertDialog.Builder(context!!)
+
+                    builder.setTitle("Location Settings")
+
+                    builder.setMessage("Location services are required for posting please switch them on to continue.")
+                    builder.setPositiveButton("Open Settings") { dialog, which ->
+                        context!!.startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+
+                    }
+                    builder.setNegativeButton("Dismiss") { dialog, which ->
+                        Toast.makeText(
+                                context,
+                                "Location Services are necessary for posting",
+                                Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    val dialog: AlertDialog = builder.create()
+                    dialog.show()
+                } else {
+                    utilityofActivity!!.showFetchLocationDialog()
+                    commentsHolder = message.text.toString()
+                    jobStatusHolder = spinner.selectedItem.toString()
+                    startLocationUpdates()
+                    alertDialog.dismiss()
+                }
+            }
+        }
+
+
+        val negative = dialogView.findViewById<Button>(R.id.negative)
+        negative.setOnClickListener {
+            alertDialog.dismiss()
+        }
+
+    }
+
 
     private fun startJob() {
         val requestUrl = Config.UpdateUserSite
@@ -291,6 +305,8 @@ class InstallationDetailsActivity : AppCompatActivity() {
         params["id"] = installationItem!!.serviceId
         params["type"] = "Installation"
         params["user_id"] = App.userId
+        params["status"] = jobStatusHolder
+        params["comments"] = commentsHolder
         params["latitude"] = lastLocation!!.latitude.toString()
         params["longitude"] = lastLocation!!.longitude.toString()
 
@@ -354,11 +370,21 @@ class InstallationDetailsActivity : AppCompatActivity() {
                 console.log(response)
                 utilityofActivity!!.dismissProgressDialog()
                 try {
-                    val array = JSONArray(response)
-                    for (i in 0 until array.length()) {
-                        itemList.add(InstallationActivityItem().parseFromJSON(array.getJSONObject(i)))
+//                    console.log("Response"+response)
+                    val array = JSONObject(response)
+//                    console.log("Array" +array)
+                    val details = array.getJSONArray("details")
+//                    console.log("Details" +details)
+                    val jobStatus = array.getString("show_on_job_button")
+//                    console.log("jobStatus" +jobStatus)
+
+                    for (i in 0 until details.length()) {
+                        itemList.add(InstallationActivityItem().parseFromJSON(details.getJSONObject(i)))
                     }
                     console.log("data set changed")
+
+
+                    onJob.isEnabled = jobStatus == "1"
 
                     if (itemList.isEmpty()) {
 //                        Toast.makeText(mContext, "No Results", Toast.LENGTH_LONG).show()

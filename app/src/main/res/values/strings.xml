@@ -86,6 +86,13 @@
         <item>Suspended</item>
     </string-array>
 
+  <string-array name="job_status">
+        <item>Begin Job</item>
+        <item>Job Completed</item>
+        <item>Job Cancelled</item>
+        <item>Job Delayed</item>
+    </string-array>
+
     <string-array name="acitivity_units">
         <item>Select Unit</item>
         <item>nos</item>
@@ -132,6 +139,7 @@
     <string name="reviewAndSave">Review and Save</string>
     <string name="next">Next</string>
     <string name="on_job">On Job</string>
+    <string name="start_job">Start Job</string>
 
 
 </resources>

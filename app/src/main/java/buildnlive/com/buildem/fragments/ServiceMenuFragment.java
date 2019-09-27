@@ -12,15 +12,16 @@ import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 import buildnlive.com.buildem.AMC.AMCActivity;
 import buildnlive.com.buildem.App;
 import buildnlive.com.buildem.Complaints.ComplaintActivity;
 import buildnlive.com.buildem.Installations.InstallationActivity;
-import buildnlive.com.buildem.Inventory.AddItem;
 import buildnlive.com.buildem.R;
 import buildnlive.com.buildem.Services.ServicesActivity;
+import buildnlive.com.buildem.utils.PrefernceFile;
 
 import static buildnlive.com.buildem.utils.Config.PREF_NAME;
 
@@ -56,6 +57,29 @@ public class ServiceMenuFragment extends Fragment implements View.OnClickListene
         complaints.setOnClickListener(this);
         amc.setOnClickListener(this);
         services.setOnClickListener(this);
+
+        ArrayList<String> permissionList = PrefernceFile.Companion.getInstance(getContext()).getArrayList("Perm");
+
+        for (String permission : permissionList) {
+            switch (permission) {
+                case "Installations": {
+                    installations.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Complaints": {
+                    complaints.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "AMC": {
+                    amc.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Services": {
+                    services.setVisibility(View.VISIBLE);
+                    break;
+                }
+            }
+        }
 
 
     }

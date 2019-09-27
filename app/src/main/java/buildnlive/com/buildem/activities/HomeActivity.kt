@@ -214,113 +214,124 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 fragment = HomeFragment.newInstance(app)
             }
             R.id.nav_attendance -> {
-                navigation.visibility = View.INVISIBLE
+                navigation.visibility = View.GONE
                 fragment = CheckAttendanceLoc.newInstance(app!!)
             }
-            R.id.nav_plans -> fragment = buildnlive.com.buildem.WorkPlanning.PlansFragment.newInstance(application as App)
-            R.id.nav_about -> fragment = AboutUsFragment.newInstance()
+            R.id.nav_plans -> {
+                navigation.visibility = View.GONE
+                fragment = buildnlive.com.buildem.WorkPlanning.PlansFragment.newInstance(application as App)
+            }
+            R.id.nav_about -> {
+                navigation.visibility = View.GONE
+                fragment = AboutUsFragment.newInstance()
+            }
             R.id.nav_logout -> logout()
-            R.id.nav_profile -> fragment = ProfileFragment.newInstance(app)
+            R.id.nav_profile -> {
+                fragment = ProfileFragment.newInstance(app)
+                navigation.visibility = View.GONE
+            }
         }
-        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
-        drawer.closeDrawer(GravityCompat.START)
-        return true
-    }
 
-    private fun logout() {
-        val app = application as App
-        var requestUrl = Config.LOGOOUT
-        requestUrl = requestUrl.replace("[0]", App.userId)
-        console.log(requestUrl)
-        app.sendNetworkRequest(requestUrl, Request.Method.POST, null, object : Interfaces.NetworkInterfaceListener {
-            override fun onNetworkRequestStart() {
 
+    val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
+    drawer.closeDrawer(GravityCompat.START)
+    return true
+}
+
+private fun logout() {
+    val app = application as App
+    var requestUrl = Config.LOGOOUT
+    requestUrl = requestUrl.replace("[0]", App.userId)
+    console.log(requestUrl)
+    app.sendNetworkRequest(requestUrl, Request.Method.POST, null, object : Interfaces.NetworkInterfaceListener {
+        override fun onNetworkRequestStart() {
+
+        }
+
+        override fun onNetworkRequestError(error: String) {
+
+            console.error("Network request failed with error :$error")
+            Toast.makeText(applicationContext, "Check Network, Something went wrong", Toast.LENGTH_LONG).show()
+
+        }
+
+        override fun onNetworkRequestComplete(response: String) {
+
+            pref!!.edit().clear().commit()
+            PrefernceFile.getInstance(context!!).clearData()
+            val realm = Realm.getDefaultInstance()
+            realm.executeTransaction { realm -> realm.deleteAll() }
+
+            startActivity(Intent(applicationContext, buildnlive.com.buildem.LoginAndReset.LoginActivity::class.java))
+            finish()
+
+        }
+    })
+
+}
+
+private fun changeFragment() {
+    supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, fragment!!)
+            .commit()
+}
+
+
+@Throws(JSONException::class)
+private fun sendRequest() {
+    val app = application as App
+    val params = HashMap<String, String>()
+    val jsonObject = JSONObject()
+    jsonObject.put("project_id", App.projectId).put("user_id", App.userId)
+    params["notification_count"] = jsonObject.toString()
+    console.log("Res:$params")
+    app.sendNetworkRequest(Config.GET_NOTIFICATIONS_COUNT, 1, params, object : Interfaces.NetworkInterfaceListener {
+        override fun onNetworkRequestStart() {
+
+        }
+
+        override fun onNetworkRequestError(error: String) {
+
+        }
+
+        override fun onNetworkRequestComplete(response: String) {
+            console.log(response)
+            if (response == "0") {
+                badge!!.visibility = View.GONE
+            } else {
+                badge!!.visibility = View.VISIBLE
+                badge!!.text = response
             }
+        }
+    })
+}
 
-            override fun onNetworkRequestError(error: String) {
+@Throws(JSONException::class)
+private fun sendFcmToken(fcmToken: String?) {
+    val app = application as App
+    val params = HashMap<String, String>()
+    params["fcm_token"] = fcmToken!!
+    params["user_id"] = App.userId
 
-                console.error("Network request failed with error :$error")
-                Toast.makeText(applicationContext, "Check Network, Something went wrong", Toast.LENGTH_LONG).show()
+    console.log("Res:$params")
 
-            }
+    app.sendNetworkRequest(Config.UPDATE_FCM_KEY, Request.Method.POST, params, object : Interfaces.NetworkInterfaceListener {
+        override fun onNetworkRequestStart() {
 
-            override fun onNetworkRequestComplete(response: String) {
+        }
 
-                pref!!.edit().clear().commit()
-                PrefernceFile.getInstance(context!!).clearData()
-                val realm = Realm.getDefaultInstance()
-                realm.executeTransaction { realm -> realm.deleteAll() }
+        override fun onNetworkRequestError(error: String) {
+            console.log("$error Fail")
+        }
 
-                startActivity(Intent(applicationContext, buildnlive.com.buildem.LoginAndReset.LoginActivity::class.java))
-                finish()
+        override fun onNetworkRequestComplete(response: String) {
+            console.log("$response Success")
+        }
+    })
+}
 
-            }
-        })
-
-    }
-
-    private fun changeFragment() {
-        supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.container, fragment!!)
-                .commit()
-    }
-
-
-    @Throws(JSONException::class)
-    private fun sendRequest() {
-        val app = application as App
-        val params = HashMap<String, String>()
-        val jsonObject = JSONObject()
-        jsonObject.put("project_id", App.projectId).put("user_id", App.userId)
-        params["notification_count"] = jsonObject.toString()
-        console.log("Res:$params")
-        app.sendNetworkRequest(Config.GET_NOTIFICATIONS_COUNT, 1, params, object : Interfaces.NetworkInterfaceListener {
-            override fun onNetworkRequestStart() {
-
-            }
-
-            override fun onNetworkRequestError(error: String) {
-
-            }
-
-            override fun onNetworkRequestComplete(response: String) {
-                console.log(response)
-                if (response == "0") {
-                    badge!!.visibility = View.GONE
-                } else {
-                    badge!!.visibility = View.VISIBLE
-                    badge!!.text = response
-                }
-            }
-        })
-    }
-
-    @Throws(JSONException::class)
-    private fun sendFcmToken(fcmToken: String?) {
-        val app = application as App
-        val params = HashMap<String, String>()
-        params["fcm_token"] = fcmToken!!
-        params["user_id"] = App.userId
-
-        console.log("Res:$params")
-
-        app.sendNetworkRequest(Config.UPDATE_FCM_KEY, Request.Method.POST, params, object : Interfaces.NetworkInterfaceListener {
-            override fun onNetworkRequestStart() {
-
-            }
-
-            override fun onNetworkRequestError(error: String) {
-                console.log("$error Fail")
-            }
-
-            override fun onNetworkRequestComplete(response: String) {
-                console.log("$response Success")
-            }
-        })
-    }
-
-    companion object {
-        val PREF_KEY_LOGGED_IN = "is_logged_in"
-    }
+companion object {
+    val PREF_KEY_LOGGED_IN = "is_logged_in"
+}
 }

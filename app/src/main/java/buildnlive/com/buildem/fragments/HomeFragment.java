@@ -40,6 +40,7 @@ import buildnlive.com.buildem.console;
 import buildnlive.com.buildem.elements.Project;
 import buildnlive.com.buildem.elements.ProjectMember;
 import buildnlive.com.buildem.utils.Config;
+import buildnlive.com.buildem.utils.PrefernceFile;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -128,6 +129,63 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         planning.setOnClickListener(this);
         machine.setOnClickListener(this);
 
+
+        ArrayList<String> permissionList = PrefernceFile.Companion.getInstance(getContext()).getArrayList("Perm");
+
+        for (String permission : permissionList) {
+            switch (permission) {
+                case "Work": {
+                    workProgress.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Progress": {
+                    planning.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Work Schedule": {
+                    workProgress.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Labour Progress": {
+                    labourReport.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Inventory": {
+                    manageInventory.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Indent Item": {
+                    manageInventory.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Issue Item": {
+                    issuedItems.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Receive Item": {
+                    purchaseOrder.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Local Purchase": {
+                    localPurchase.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Assets": {
+                    machine.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Request": {
+                    requestItems.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case "Labour Attendance": {
+                    markAttendance.setVisibility(View.VISIBLE);
+                    break;
+                }
+            }
+        }
+
+/*
         switch (App.permissions) {
             case "Storekeeper":
 //                labour.setVisibility(View.GONE);
@@ -169,7 +227,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //                labour.setVisibility(View.GONE);
                 break;
 
-        }
+        }*/
 
 //            title.setText("Welcome " + pref.getString(PREF_KEY_NAME, "Dummy").split(" ")[0]);
 

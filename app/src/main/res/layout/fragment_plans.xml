@@ -12,8 +12,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/plans"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/owner" />
+        android:layout_height="match_parent"/>
 
     <ProgressBar
         android:id="@+id/progress"
@@ -32,14 +31,4 @@
         android:background="#ffffff"
         android:visibility="gone" />
 
-    <TextView
-        android:id="@+id/owner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/grey"
-        android:padding="5dp"
-        android:text="Build&amp;Live © 2018"
-        android:textAlignment="center"
-        android:textSize="16sp" />
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package buildnlive.com.buildem.LoginAndReset;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import buildnlive.com.buildem.App;
@@ -28,6 +30,7 @@ import buildnlive.com.buildem.activities.HomeActivity;
 import buildnlive.com.buildem.console;
 import buildnlive.com.buildem.elements.Project;
 import buildnlive.com.buildem.utils.Config;
+import buildnlive.com.buildem.utils.PrefernceFile;
 import io.realm.Realm;
 
 //import static buildnlive.com.buildem.activities.HomeActivity.PREF_KEY_LOGGED_IN;
@@ -39,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressBar progress;
     private TextView hider,unable_to_login;
     private SharedPreferences pref;
+    private Context context;
     public static final String PREF_KEY_EMAIL = "user_email";
     public static final String PREF_KEY_NAME = "user_name";
     public static final String PREF_KEY_CONTACT = "user_contact";
@@ -51,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
+        context=this;
         mobile = findViewById(R.id.mobile);
         pass = findViewById(R.id.pass);
         login = findViewById(R.id.login);
@@ -115,6 +120,19 @@ public class LoginActivity extends AppCompatActivity {
                         JSONObject obj = new JSONObject(response);
                         String id = obj.getString("id");
                         String perm= obj.getString("role");
+
+                        JSONArray permissions = obj.getJSONArray("permissions");
+                        console.log(permissions.toString());
+
+
+                        ArrayList<String> permNames=new ArrayList<>();
+
+                        for(int i =0;i<permissions.length();i++)
+                        {
+                            permNames.add(permissions.getJSONObject(i).getString("label"));
+                        }
+
+
                         pref.edit().putBoolean(HomeActivity.Companion.getPREF_KEY_LOGGED_IN(), true).apply();
                         pref.edit().putString(PREF_KEY_USER_ID, id).apply();
                         pref.edit().putString(PREF_KEY_EMAIL, obj.getString("login_name")).apply();
@@ -123,6 +141,11 @@ public class LoginActivity extends AppCompatActivity {
                         pref.edit().putString(PREF_KEY_PERMISSIONS,perm).apply();
                         App.userId = id;
                         App.permissions=perm;
+
+
+                        PrefernceFile.Companion.getInstance(context).saveArrayList(permNames,"Perm");
+
+
                         JSONArray array = obj.getJSONArray("project_list");
                         Realm realm = Realm.getDefaultInstance();
                         for (int i = 0; i < array.length(); i++) {

@@ -2,6 +2,8 @@ package buildnlive.com.buildem.utils
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 /**
  * Created by Server on 2/28/2018.
@@ -37,6 +39,23 @@ class PrefernceFile private constructor(context: Context) {
         ed!!.remove(key)
         ed!!.commit()
     }
+
+    fun saveArrayList(list: ArrayList<String>, key: String) {
+        val gson = Gson()
+        val json = gson.toJson(list)
+        ed!!.putString(key, json)
+        ed!!.commit()     // This line is IMPORTANT !!!
+    }
+
+    fun getArrayList(key: String): ArrayList<String> {
+        val gson = Gson()
+        val json = prefs!!.getString(key, null)
+        val type = object : TypeToken<ArrayList<String>>() {
+
+        }.type
+        return gson.fromJson<ArrayList<String>>(json, type)
+    }
+
 
 
 /*    fun setEmailsList(key: String, value: List<String>) {

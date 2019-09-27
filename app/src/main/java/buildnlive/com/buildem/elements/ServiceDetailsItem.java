@@ -16,6 +16,17 @@ public class ServiceDetailsItem implements Parcelable {
     @Expose
     @SerializedName("customer_details")
     private CustomerDetails customerDetails;
+    @Expose
+    @SerializedName("show_on_job_button")
+    private String jobButton;
+
+    public String getJobButton() {
+        return jobButton;
+    }
+
+    public void setJobButton(String jobButton) {
+        this.jobButton = jobButton;
+    }
 
     public ArrayList<Details> getDetails() {
         return details;

@@ -3,7 +3,6 @@ package buildnlive.com.buildem.Services
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
@@ -13,8 +12,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.text.method.ScrollingMovementMethod
 import android.view.View
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -73,6 +71,11 @@ class ServicesDetailsActivity : AppCompatActivity() {
     private var lastLocation: Location? = null
     var locationRequest: LocationRequest? = null
     private lateinit var locationCallback: LocationCallback
+
+    companion object{
+        var commentsHolder=""
+        var jobStatusHolder=""
+    }
 
     object Constants {
         const val SUCCESS_RESULT = 0
@@ -151,7 +154,6 @@ class ServicesDetailsActivity : AppCompatActivity() {
         }
 
 
-
         val dividerItemDecoration = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
 
         items!!.addItemDecoration(dividerItemDecoration)
@@ -181,71 +183,87 @@ class ServicesDetailsActivity : AppCompatActivity() {
         }
 
         onJob.setOnClickListener {
-            val builder = android.app.AlertDialog.Builder(context!!)
-
-            builder.setTitle("Start Job")
-
-            builder.setPositiveButton("Start", DialogInterface.OnClickListener { dialogInterface, i ->
-
-                if (((Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) && (ContextCompat.checkSelfPermission(
-                                appCompatActivity!!,
-                                Manifest.permission.ACCESS_FINE_LOCATION
-                        )) != PackageManager.PERMISSION_GRANTED)
-                ) {
-                    ActivityCompat.requestPermissions(appCompatActivity!!, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 102)
-                } else {
-
-                    val lm = context!!.getSystemService(Context.LOCATION_SERVICE) as LocationManager
-                    var gps_enabled = false
-                    var network_enabled = false
-
-                    try {
-                        gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
-                    } catch (ex: Exception) {
-                    }
-
-                    try {
-                        network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-                    } catch (ex: Exception) {
-                    }
-
-                    if (!gps_enabled && !network_enabled) {
-                        // notify user
-
-                        val builder = AlertDialog.Builder(context!!)
-
-                        builder.setTitle("Location Settings")
-
-                        builder.setMessage("Location services are required for posting please switch them on to continue.")
-                        builder.setPositiveButton("Open Settings") { dialog, which ->
-                            context!!.startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-
-                        }
-                        builder.setNegativeButton("Dismiss") { dialog, which ->
-                            Toast.makeText(
-                                    context,
-                                    "Location Services are necessary for posting",
-                                    Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                        val dialog: AlertDialog = builder.create()
-                        dialog.show()
-                    } else {
-                        utilityofActivity!!.showFetchLocationDialog()
-                        startLocationUpdates()
-                    }
-                }
-            })
-
-            builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface, i ->
-                dialogInterface.dismiss()
-            })
-
-            val dialog = builder.create()
-            dialog.show()
+            showJobStartDialog()
         }
 
         getServiceItemDetails()
+    }
+
+
+    private fun showJobStartDialog() {
+        val inflater = this.layoutInflater
+        val dialogView = inflater.inflate(R.layout.alert_start_job, null)
+        val dialogBuilder = AlertDialog.Builder(context!!, R.style.PinDialog)
+        val alertDialog = dialogBuilder.setCancelable(true).setView(dialogView).create()
+        alertDialog.show()
+
+        val title = dialogView.findViewById<TextView>(R.id.alert_title)
+        title.text = getString(R.string.start_job)
+        val message = dialogView.findViewById<EditText>(R.id.alert_message)
+        val spinner = dialogView.findViewById<Spinner>(R.id.jobStatus)
+        message.movementMethod = ScrollingMovementMethod()
+
+        val positive = dialogView.findViewById<Button>(R.id.positive)
+        positive.setOnClickListener {
+            if (((Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) && (ContextCompat.checkSelfPermission(
+                            appCompatActivity!!,
+                            Manifest.permission.ACCESS_FINE_LOCATION
+                    )) != PackageManager.PERMISSION_GRANTED)
+            ) {
+                ActivityCompat.requestPermissions(appCompatActivity!!, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 102)
+            } else {
+
+                val lm = context!!.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+                var gps_enabled = false
+                var network_enabled = false
+
+                try {
+                    gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+                } catch (ex: Exception) {
+                }
+
+                try {
+                    network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+                } catch (ex: Exception) {
+                }
+
+                if (!gps_enabled && !network_enabled) {
+                    // notify user
+
+                    val builder = AlertDialog.Builder(context!!)
+
+                    builder.setTitle("Location Settings")
+
+                    builder.setMessage("Location services are required for posting please switch them on to continue.")
+                    builder.setPositiveButton("Open Settings") { dialog, which ->
+                        context!!.startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+
+                    }
+                    builder.setNegativeButton("Dismiss") { dialog, which ->
+                        Toast.makeText(
+                                context,
+                                "Location Services are necessary for posting",
+                                Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    val dialog: AlertDialog = builder.create()
+                    dialog.show()
+                } else {
+                    utilityofActivity!!.showFetchLocationDialog()
+                    commentsHolder=message.text.toString()
+                    jobStatusHolder=spinner.selectedItem.toString()
+                    startLocationUpdates()
+                    alertDialog.dismiss()
+                }
+            }
+        }
+
+
+        val negative = dialogView.findViewById<Button>(R.id.negative)
+        negative.setOnClickListener {
+            alertDialog.dismiss()
+        }
+
     }
 
 
@@ -257,6 +275,8 @@ class ServicesDetailsActivity : AppCompatActivity() {
         params["id"] = serviceId!!
         params["type"] = "Service"
         params["user_id"] = App.userId
+        params["status"] = jobStatusHolder
+        params["comments"] = commentsHolder
         params["latitude"] = lastLocation!!.latitude.toString()
         params["longitude"] = lastLocation!!.longitude.toString()
 
@@ -330,6 +350,8 @@ class ServicesDetailsActivity : AppCompatActivity() {
                     mobileNo.text = String.format(getString(R.string.mobileholder), itemList!!.customerDetails.mobileNo)
                     comment.text = String.format(getString(R.string.commentholder), itemList!!.customerDetails.comment)
 
+
+                    onJob.isEnabled = itemList!!.jobButton == "1"
 
                     if (itemList!!.customerDetails.status == "Completed") {
                         GlideApp.with(context!!).load(R.drawable.active_circle).centerCrop().into(statusIndicator)
