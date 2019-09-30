@@ -157,6 +157,7 @@ class ReviewAMC : AppCompatActivity() {
             }
         }
 
+        params["images"]=array.toString()
         console.log("AMC URL:  $requestUrl")
         console.log("Params:  $params")
 

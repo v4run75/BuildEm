@@ -643,10 +643,11 @@ class InstallationDetailsActivity : AppCompatActivity() {
                 val encodedImage = Base64.encodeToString(b, Base64.DEFAULT)
                 array.put(encodedImage)
             }
-
-            params["images"] = array.toString()
-            console.log("Service Images  $params")
         }
+
+
+        params["images"] = array.toString()
+        console.log("Service Images  $params")
 
         app!!.sendNetworkRequest(Config.GET_SERVICE_UPDATES, Request.Method.POST, params, object : Interfaces.NetworkInterfaceListener {
             override fun onNetworkRequestStart() {
@@ -661,6 +662,7 @@ class InstallationDetailsActivity : AppCompatActivity() {
 
             override fun onNetworkRequestComplete(response: String) {
                 utilityofActivity!!.dismissProgressDialog()
+                console.log("RESPONSE: $response")
                 if (response == "1") {
                     Toast.makeText(context, "Status Updated", Toast.LENGTH_SHORT).show()
                     alertDialog.dismiss()

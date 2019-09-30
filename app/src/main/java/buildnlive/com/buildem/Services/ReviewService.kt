@@ -157,6 +157,7 @@ class ReviewService : AppCompatActivity() {
         }
 
 
+        params["images"]=array.toString()
         console.log("Service URL:  $requestUrl")
         console.log("Params:  $params")
 

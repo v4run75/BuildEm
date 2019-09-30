@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -76,6 +78,11 @@ public class ServiceMenuFragment extends Fragment implements View.OnClickListene
                 }
                 case "Services": {
                     services.setVisibility(View.VISIBLE);
+                    break;
+                }
+                default:
+                {
+                    Log.e("Permission: ",permission);
                     break;
                 }
             }

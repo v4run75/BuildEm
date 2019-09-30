@@ -8,8 +8,27 @@
     tools:showIn="@layout/activity_add_amc"
     android:background="@color/white">
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:breakStrategy="high_quality"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:text="@string/choose_work_done" />
+    <View
+        android:layout_below="@+id/title"
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_grey"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/separator"
         android:id="@+id/items"
         android:layout_above="@+id/next"
         android:layout_width="match_parent"

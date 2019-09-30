@@ -154,6 +154,8 @@ class ReviewComplaint : AppCompatActivity() {
             }
         }
 
+        params["images"]=array.toString()
+
         console.log("Complaint URL:  $requestUrl")
         console.log("Params:  $params")
 

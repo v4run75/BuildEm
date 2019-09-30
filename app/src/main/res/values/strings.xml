@@ -140,6 +140,8 @@
     <string name="next">Next</string>
     <string name="on_job">On Job</string>
     <string name="start_job">Start Job</string>
+    <string name="machine_installations">Machine Installations</string>
+    <string name="choose_work_done">Choose Work Done</string>
 
 
 </resources>
