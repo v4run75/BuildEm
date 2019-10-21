@@ -47,6 +47,11 @@
         <item>Labour</item>
         <item>Misc</item>
     </string-array>
+    <string-array name="approval">
+        <item>Select</item>
+        <item>With Signature</item>
+        <item>Without Signature</item>
+    </string-array>
     <string-array name="status">
         <item>Select Status</item>
         <item>Completed</item>
@@ -84,6 +89,12 @@
         <item>Pending</item>
         <item>Completed</item>
         <item>Suspended</item>
+    </string-array>
+
+    <string-array name="tax">
+        <item>Select W/O Tax</item>
+        <item>With Tax</item>
+        <item>Tax Extra 18%</item>
     </string-array>
 
   <string-array name="job_status">
@@ -142,6 +153,15 @@
     <string name="start_job">Start Job</string>
     <string name="machine_installations">Machine Installations</string>
     <string name="choose_work_done">Choose Work Done</string>
+    <string name="agreement">I acknowledge the work done.</string>
+    <string name="clear_pad">Clear</string>
+    <string name="save_signature">Save</string>
+    <string name="compress_signature">Scale</string>
+    <string name="proceed_with_signature">Proceed With Signature</string>
+    <string name="proceed_without_signature">Proceed Without Signature</string>
+    <string name="select_an_action">Select an action</string>
+    <string name="approval">Approval</string>
+    <string name="reason">Reason</string>
 
 
 </resources>

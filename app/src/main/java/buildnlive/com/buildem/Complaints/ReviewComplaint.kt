@@ -199,7 +199,7 @@ class ReviewComplaint : AppCompatActivity() {
         val dialogView = inflater.inflate(R.layout.alert_dialog_image_upload, null)
 
         val alert_title = dialogView.findViewById<TextView>(R.id.alert_title)
-        alert_title.text = getString(R.string.amc)
+        alert_title.text = getString(R.string.complaints)
 
         val dialogBuilder = AlertDialog.Builder(context!!, R.style.PinDialog)
         val alertDialog = dialogBuilder.setCancelable(false).setView(dialogView).create()

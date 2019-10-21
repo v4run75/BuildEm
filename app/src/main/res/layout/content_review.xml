@@ -43,6 +43,20 @@
 
     <Spinner
         android:layout_below="@+id/container"
+        android:id="@+id/tax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="10dp"
+        android:entries="@array/tax"
+        android:background="@drawable/border"
+        android:prompt="@string/type"/>
+
+   <Spinner
+        android:layout_below="@+id/tax"
         android:id="@+id/status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

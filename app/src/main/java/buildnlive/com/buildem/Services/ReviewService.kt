@@ -11,13 +11,11 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.text.method.ScrollingMovementMethod
 import android.util.Base64
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -108,7 +106,6 @@ class ReviewService : AppCompatActivity() {
         toolbar_title.text = getString(R.string.reviewAndSave)
 
 
-
         val dividerItemDecoration = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
 
         items!!.addItemDecoration(dividerItemDecoration)
@@ -121,8 +118,7 @@ class ReviewService : AppCompatActivity() {
         save.setOnClickListener {
             if (amountReceived.text.toString() != "" && status.selectedItem.toString() != "Select Status")
                 menuUpdate()
-            else
-            {
+            else {
                 utilityofActivity!!.toast("Please fill Amount & Status")
             }
         }
@@ -130,7 +126,7 @@ class ReviewService : AppCompatActivity() {
     }
 
 
-    private fun saveService(comment: String, images: java.util.ArrayList<Packet>?, alertDialog: AlertDialog) {
+    private fun saveService(comment: String, images: java.util.ArrayList<Packet>?, alertDialog: AlertDialog, reason: String) {
         val requestUrl = Config.SaveServiceUpdate
 
         val params = HashMap<String, String>()
@@ -142,7 +138,8 @@ class ReviewService : AppCompatActivity() {
         params["comments"] = comment
         params["status"] = status.selectedItem.toString()
         params["amount"] = amountReceived.text.toString()
-
+        params["reason"] = reason
+        params["signature"] = ""
 
         val array = JSONArray()
         for (p in images!!) {
@@ -157,7 +154,7 @@ class ReviewService : AppCompatActivity() {
         }
 
 
-        params["images"]=array.toString()
+        params["images"] = array.toString()
         console.log("Service URL:  $requestUrl")
         console.log("Params:  $params")
 
@@ -184,7 +181,7 @@ class ReviewService : AppCompatActivity() {
 
                         utilityofActivity!!.toast("Request Generated")
                         finishAffinity()
-                        startActivity(Intent(context!!,HomeActivity::class.java))
+                        startActivity(Intent(context!!, HomeActivity::class.java))
                     }
                 } catch (e: JSONException) {
                     e.printStackTrace()
@@ -199,7 +196,7 @@ class ReviewService : AppCompatActivity() {
         val dialogView = inflater.inflate(R.layout.alert_dialog_image_upload, null)
 
         val alert_title = dialogView.findViewById<TextView>(R.id.alert_title)
-        alert_title.text = getString(R.string.amc)
+        alert_title.text = getString(R.string.services)
 
         val dialogBuilder = AlertDialog.Builder(context!!, R.style.PinDialog)
         val alertDialog = dialogBuilder.setCancelable(false).setView(dialogView).create()
@@ -293,9 +290,79 @@ class ReviewService : AppCompatActivity() {
         val positive = dialogView.findViewById<Button>(R.id.positive)
         positive.setOnClickListener {
             try {
-//                submit(installationItem!!.serviceId, message.text.toString(), images, resultList, alertDialog)
-                saveService(message.text.toString(),images!!,alertDialog)
+                val inflaterChooser1 = layoutInflater
+                val dialogViewChooser1 = inflaterChooser1.inflate(R.layout.signature_chooser, null)
+                val dialogBuilderChooser1 = AlertDialog.Builder(context!!, R.style.PinDialog)
+                val alertDialogChooser1 = dialogBuilderChooser1.setCancelable(false).setView(dialogViewChooser1).create()
+                alertDialogChooser1.show()
+                val close = dialogViewChooser1.findViewById<Button>(R.id.negative)
+                val submit = dialogViewChooser1.findViewById<Button>(R.id.positive)
+                val approval = dialogViewChooser1.findViewById<Spinner>(R.id.approval)
+                val reason = dialogViewChooser1.findViewById<EditText>(R.id.reason)
+
+                reason.movementMethod = ScrollingMovementMethod()
+
+                var approvalString: String? = ""
+
+                approval.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                    }
+
+                    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                        if (p2 > 0) {
+                            if (p2 == 2) {
+                                reason.visibility = View.VISIBLE
+                            } else {
+                                reason.visibility = View.GONE
+                            }
+                            approvalString = p0!!.selectedItem.toString()
+                        } else {
+                            reason.visibility = View.GONE
+                            utilityofActivity!!.toast("Please Select Approval Option")
+                        }
+                    }
+                }
+
+                /* if (approval.selectedItem.toString() == "Select") {
+                     reason.visibility = View.GONE
+                     utilityofActivity!!.toast("Please Select Approval Option")
+                 } else {
+                     if (approval.selectedItem.toString() == "With Signature") {
+                         reason.visibility = View.GONE
+                     } else {
+                         reason.visibility = View.VISIBLE
+                     }
+                 }*/
+
+                close.setOnClickListener {
+                    alertDialogChooser1.dismiss()
+                }
+
+                submit.setOnClickListener {
+                    if (approvalString.equals("Without Signature")) {
+                        if (!reason.text.toString().isBlank())
+                            saveService(message.text.toString(), images!!, alertDialog, reason.text.toString())
+                        else
+                            reason.error="Enter Reason"
+                    } else {
+                        val intent = Intent(context, ServiceSignatureActivity::class.java)
+                        intent.putExtra("message",message.text.toString())
+                        intent.putExtra("images",images)
+                        intent.putExtra("workArray", workArray)
+                        intent.putExtra("serviceId", serviceId)
+                        intent.putExtra("status",status.selectedItem.toString())
+                        intent.putExtra("amount", amountReceived.text.toString())
+
+                        alertDialog.dismiss()
+                        alertDialogChooser1.dismiss()
+                        startActivity(intent)
+                    }
+                }
+
+
             } catch (e: Exception) {
+                e.printStackTrace()
                 Toast.makeText(context, "Fill data properly!", Toast.LENGTH_SHORT).show()
             }
         }
@@ -364,8 +431,7 @@ class ReviewService : AppCompatActivity() {
         } else if (requestCode == REQUEST_GALLERY_IMAGE) {
             val packet = images!!.removeAt(0)
             //            packet.setName(imagePath);
-            if(data!=null)
-            {
+            if (data != null) {
                 val uri = data.data
                 packet.name = getRealPathFromURI(uri)
                 console.log("Image Path " + packet.name + "EXTRAS " + packet.extra)
@@ -404,8 +470,6 @@ class ReviewService : AppCompatActivity() {
         val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         return File.createTempFile(imageFileName, ".jpg", storageDir)
     }
-
-
 
 
     override fun onSupportNavigateUp(): Boolean {
