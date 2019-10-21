@@ -43,8 +43,9 @@ class AddInstallation : AppCompatActivity() {
 
         }
 
-        override fun onItemCheck(serviceItem: WorkListItem, pos: Int, view: View, qty: TextView, checked: Boolean, check: CheckBox) {
+        override fun onItemCheck(serviceItem: WorkListItem, pos: Int, view: View, qty: TextView, checked: Boolean, check: CheckBox, rate: String) {
             serviceItem.qty = qty.text.toString()
+            serviceItem.rate = rate
             resultList.add(serviceItem)
             /* if (checked) {
                 if (!qty.text.isNullOrBlank()) {
