@@ -1,11 +1,17 @@
-package buildnlive.com.buildem.Services
+package buildnlive.com.buildem.Complaints
+
 
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.util.Base64
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
@@ -25,12 +31,12 @@ import com.google.gson.Gson
 import com.williamww.silkysignature.views.SignaturePad
 import org.json.JSONArray
 import org.json.JSONException
-import java.io.ByteArrayOutputStream
+import java.io.*
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.set
 
-class ServiceSignatureActivity : AppCompatActivity() {
+class ComplaintSignatureActivity : AppCompatActivity() {
 
     private var mSignaturePad: SignaturePad? = null
     private var mClearButton: Button? = null
@@ -41,7 +47,7 @@ class ServiceSignatureActivity : AppCompatActivity() {
     private var app: App? = null
 
     companion object {
-        var serviceId: String? = ""
+        var complaintId: String? = ""
         val QUALITY = 10
     }
 
@@ -61,7 +67,7 @@ class ServiceSignatureActivity : AppCompatActivity() {
         app = application as App
 
         if (intent != null) {
-            serviceId = intent.getStringExtra("serviceId")
+            complaintId = intent.getStringExtra("complaintId")
             status = intent.getStringExtra("status")
             workArray = intent.getParcelableArrayListExtra<WorkListItem>("workArray")
             message = intent.getStringExtra("message")
@@ -91,17 +97,19 @@ class ServiceSignatureActivity : AppCompatActivity() {
 
         mSaveButton!!.setOnClickListener {
             val signatureBitmap = mSignaturePad!!.signatureBitmap
-            saveService(signatureBitmap)
+            saveComplaint(signatureBitmap)
         }
     }
 
 
-    private fun saveService(signatureBitmap: Bitmap) {
+
+
+    private fun saveComplaint(signatureBitmap: Bitmap) {
         val requestUrl = Config.SaveServiceUpdate
 
         val params = HashMap<String, String>()
 
-        params["service_id"] = serviceId!!
+        params["complaint_id"] = complaintId!!
         val json = Gson()
         params["array"] = json.toJson(workArray)
         params["user_id"] = App.userId

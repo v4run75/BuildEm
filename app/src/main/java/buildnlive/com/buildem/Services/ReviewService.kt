@@ -116,10 +116,10 @@ class ReviewService : AppCompatActivity() {
 
 
         save.setOnClickListener {
-            if (amountReceived.text.toString() != "" && status.selectedItem.toString() != "Select Status")
+            if (amountReceived.text.toString() != "" && status.selectedItem.toString() != "Select Status" && tax.selectedItem.toString()!="Select Tax")
                 menuUpdate()
             else {
-                utilityofActivity!!.toast("Please fill Amount & Status")
+                utilityofActivity!!.toast("Please fill all fields")
             }
         }
 
@@ -136,6 +136,7 @@ class ReviewService : AppCompatActivity() {
         params["array"] = json.toJson(workArray)
         params["user_id"] = App.userId
         params["comments"] = comment
+        params["tax"] = tax.selectedItem.toString()
         params["status"] = status.selectedItem.toString()
         params["amount"] = amountReceived.text.toString()
         params["reason"] = reason
@@ -324,16 +325,6 @@ class ReviewService : AppCompatActivity() {
                     }
                 }
 
-                /* if (approval.selectedItem.toString() == "Select") {
-                     reason.visibility = View.GONE
-                     utilityofActivity!!.toast("Please Select Approval Option")
-                 } else {
-                     if (approval.selectedItem.toString() == "With Signature") {
-                         reason.visibility = View.GONE
-                     } else {
-                         reason.visibility = View.VISIBLE
-                     }
-                 }*/
 
                 close.setOnClickListener {
                     alertDialogChooser1.dismiss()

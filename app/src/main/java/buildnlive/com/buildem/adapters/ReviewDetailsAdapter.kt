@@ -55,6 +55,7 @@ class ReviewDetailsAdapter(private val context: Context, users: ArrayList<WorkLi
         private val name: TextView = view.findViewById(R.id.name)
         private val unit: TextView = view.findViewById(R.id.units)
         private val qty: TextView = view.findViewById(R.id.qty)
+        private val rate: TextView = view.findViewById(R.id.rate)
 
         fun bind(context: Context, item: WorkListItem, pos: Int, listener: OnItemClickListener) {
 
@@ -64,6 +65,9 @@ class ReviewDetailsAdapter(private val context: Context, users: ArrayList<WorkLi
             qty.isEnabled = false
             qty.isClickable = false
             qty.text = item.qty
+            rate.text = item.rate
+            rate.isEnabled = false
+            rate.isClickable = false
 
 
         }

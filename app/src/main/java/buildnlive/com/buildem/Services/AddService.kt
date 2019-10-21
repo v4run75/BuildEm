@@ -16,7 +16,6 @@ import buildnlive.com.buildem.Interfaces
 import buildnlive.com.buildem.R
 import buildnlive.com.buildem.adapters.AddServiceAdapter
 import buildnlive.com.buildem.console
-import buildnlive.com.buildem.elements.ServiceDetailsItem
 import buildnlive.com.buildem.elements.WorkListItem
 import buildnlive.com.buildem.utils.Config
 import buildnlive.com.buildem.utils.UtilityofActivity
@@ -41,8 +40,9 @@ class AddService : AppCompatActivity() {
 
         }
 
-        override fun onItemCheck(serviceItem: WorkListItem, pos: Int, view: View, qty: TextView, checked: Boolean, check: CheckBox) {
+        override fun onItemCheck(serviceItem: WorkListItem, pos: Int, view: View, qty: TextView, checked: Boolean, check: CheckBox, rate: String) {
             serviceItem.qty = qty.text.toString()
+            serviceItem.rate = rate
             resultList.add(serviceItem)
         }
 

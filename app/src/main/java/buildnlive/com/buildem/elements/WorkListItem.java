@@ -19,6 +19,15 @@ public class WorkListItem implements Parcelable {
     private String workId;
 
     private String qty;
+    private String rate;
+
+    public String getRate() {
+        return rate;
+    }
+
+    public void setRate(String rate) {
+        this.rate = rate;
+    }
 
     public String getQty() {
         return qty;
@@ -66,6 +75,7 @@ public class WorkListItem implements Parcelable {
         dest.writeString(this.workName);
         dest.writeString(this.workId);
         dest.writeString(this.qty);
+        dest.writeString(this.rate);
     }
 
     protected WorkListItem(Parcel in) {
@@ -73,6 +83,7 @@ public class WorkListItem implements Parcelable {
         this.workName = in.readString();
         this.workId = in.readString();
         this.qty = in.readString();
+        this.rate = in.readString();
     }
 
     public static final Creator<WorkListItem> CREATOR = new Creator<WorkListItem>() {

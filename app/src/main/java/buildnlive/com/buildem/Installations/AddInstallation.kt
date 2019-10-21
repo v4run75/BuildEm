@@ -4,10 +4,10 @@ package buildnlive.com.buildem.Installations
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.View
-import android.widget.CheckBox
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AlertDialog.Builder
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -111,7 +111,68 @@ class AddInstallation : AppCompatActivity() {
 
                 builder.setMessage("Are you sure you want to submit?")
                 builder.setPositiveButton("Yes") { dialog, which ->
-                    saveInstallation()
+
+
+                    val inflaterChooser1 = layoutInflater
+                    val dialogViewChooser1 = inflaterChooser1.inflate(R.layout.signature_chooser, null)
+                    val dialogBuilderChooser1 = AlertDialog.Builder(context!!, R.style.PinDialog)
+                    val alertDialogChooser1 = dialogBuilderChooser1.setCancelable(false).setView(dialogViewChooser1).create()
+                    alertDialogChooser1.show()
+                    val close = dialogViewChooser1.findViewById<Button>(R.id.negative)
+                    val submit = dialogViewChooser1.findViewById<Button>(R.id.positive)
+                    val approval = dialogViewChooser1.findViewById<Spinner>(R.id.approval)
+                    val reason = dialogViewChooser1.findViewById<EditText>(R.id.reason)
+
+                    reason.movementMethod = ScrollingMovementMethod()
+
+                    var approvalString: String? = ""
+
+                    approval.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                        override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                        }
+
+                        override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                            if (p2 > 0) {
+                                if (p2 == 2) {
+                                    reason.visibility = View.VISIBLE
+                                } else {
+                                    reason.visibility = View.GONE
+                                }
+                                approvalString = p0!!.selectedItem.toString()
+                            } else {
+                                reason.visibility = View.GONE
+                                utilityofActivity!!.toast("Please Select Approval Option")
+                            }
+                        }
+                    }
+
+
+                    close.setOnClickListener {
+                        alertDialogChooser1.dismiss()
+                    }
+
+                    submit.setOnClickListener {
+                        if (approvalString.equals("Without Signature")) {
+                            if (!reason.text.toString().isBlank())
+                                saveInstallation(reason.text.toString())
+                            else
+                                reason.error="Enter Reason"
+                        } else {
+
+                            val intent = Intent(context, InstallationSignatureActivity::class.java)
+                            intent.putExtra("workArray", resultList)
+                            intent.putExtra("installationId", installationId)
+                            startActivity(intent)
+
+                            alertDialogChooser1.dismiss()
+                            startActivity(intent)
+                        }
+                    }
+
+
+
+
                 }
 
                 builder.setNegativeButton("Dismiss") { dialog, which ->
@@ -129,7 +190,7 @@ class AddInstallation : AppCompatActivity() {
     }
 
 
-    private fun saveInstallation() {
+    private fun saveInstallation(reason: String) {
         val requestUrl = Config.SaveInstallationUpdate
 
         val params = HashMap<String, String>()
@@ -138,6 +199,8 @@ class AddInstallation : AppCompatActivity() {
         val json = Gson()
         params["array"] = json.toJson(resultList)
         params["user_id"] = App.userId
+        params["reason"] = reason
+        params["signature"] = ""
 
         console.log("Installation URL:  $requestUrl")
         console.log("Params:  $params")

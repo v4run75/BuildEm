@@ -112,6 +112,9 @@
         <activity android:name=".Services.ReviewService" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name=".Installations.AddInstallation" />
         <activity android:name=".Services.ServiceSignatureActivity" />
+        <activity android:name=".AMC.AmcSignatureActivity" />
+        <activity android:name=".Complaints.ComplaintSignatureActivity" />
+        <activity android:name=".Installations.InstallationSignatureActivity" />
 
 
         <service android:name=".Notifications.FirebaseMessagingService">

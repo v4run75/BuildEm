@@ -11,13 +11,11 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.text.method.ScrollingMovementMethod
 import android.util.Base64
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -117,18 +115,16 @@ class ReviewComplaint : AppCompatActivity() {
 
 
         save.setOnClickListener {
-            if (amountReceived.text.toString() != "" && status.selectedItem.toString() != "Select Status")
+            if (amountReceived.text.toString() != "" && status.selectedItem.toString() != "Select Status" && tax.selectedItem.toString()!="Select Tax")
                 menuUpdate()
-            else
-            {
-                utilityofActivity!!.toast("Please fill Amount & Status")
-            }
+            else {
+                utilityofActivity!!.toast("Please fill all fields")            }
         }
 
     }
 
 
-    private fun saveComplaint(comment: String, images: java.util.ArrayList<Packet>?, alertDialog: AlertDialog) {
+    private fun saveComplaint(comment: String, images: java.util.ArrayList<Packet>?, alertDialog: AlertDialog, reason: String) {
         val requestUrl = Config.SaveComplaintUpdate
 
         val params = HashMap<String, String>()
@@ -139,8 +135,10 @@ class ReviewComplaint : AppCompatActivity() {
         params["user_id"] = App.userId
         params["comments"] = comment
         params["status"] = status.selectedItem.toString()
+        params["tax"] = tax.selectedItem.toString()
         params["amount"] = amountReceived.text.toString()
-
+        params["reason"] = reason
+        params["signature"] = ""
 
         val array = JSONArray()
         for (p in images!!) {
@@ -293,8 +291,66 @@ class ReviewComplaint : AppCompatActivity() {
         val positive = dialogView.findViewById<Button>(R.id.positive)
         positive.setOnClickListener {
             try {
-//                submit(installationItem!!.serviceId, message.text.toString(), images, resultList, alertDialog)
-                saveComplaint(message.text.toString(), images!!, alertDialog)
+                val inflaterChooser1 = layoutInflater
+                val dialogViewChooser1 = inflaterChooser1.inflate(R.layout.signature_chooser, null)
+                val dialogBuilderChooser1 = AlertDialog.Builder(context!!, R.style.PinDialog)
+                val alertDialogChooser1 = dialogBuilderChooser1.setCancelable(false).setView(dialogViewChooser1).create()
+                alertDialogChooser1.show()
+                val close = dialogViewChooser1.findViewById<Button>(R.id.negative)
+                val submit = dialogViewChooser1.findViewById<Button>(R.id.positive)
+                val approval = dialogViewChooser1.findViewById<Spinner>(R.id.approval)
+                val reason = dialogViewChooser1.findViewById<EditText>(R.id.reason)
+
+                reason.movementMethod = ScrollingMovementMethod()
+
+                var approvalString: String? = ""
+
+                approval.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                    }
+
+                    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                        if (p2 > 0) {
+                            if (p2 == 2) {
+                                reason.visibility = View.VISIBLE
+                            } else {
+                                reason.visibility = View.GONE
+                            }
+                            approvalString = p0!!.selectedItem.toString()
+                        } else {
+                            reason.visibility = View.GONE
+                            utilityofActivity!!.toast("Please Select Approval Option")
+                        }
+                    }
+                }
+
+
+                close.setOnClickListener {
+                    alertDialogChooser1.dismiss()
+                }
+
+                submit.setOnClickListener {
+                    if (approvalString.equals("Without Signature")) {
+                        if (!reason.text.toString().isBlank())
+                            saveComplaint(message.text.toString(), images!!, alertDialog, reason.text.toString())
+                        else
+                            reason.error="Enter Reason"
+                    } else {
+                        val intent = Intent(context, ComplaintSignatureActivity::class.java)
+                        intent.putExtra("message",message.text.toString())
+                        intent.putExtra("images",images)
+                        intent.putExtra("workArray", workArray)
+                        intent.putExtra("complaintId", complaintId)
+                        intent.putExtra("status",status.selectedItem.toString())
+                        intent.putExtra("amount", amountReceived.text.toString())
+
+                        alertDialog.dismiss()
+                        alertDialogChooser1.dismiss()
+                        startActivity(intent)
+                    }
+                }
+
             } catch (e: Exception) {
                 Toast.makeText(context, "Fill data properly!", Toast.LENGTH_SHORT).show()
             }

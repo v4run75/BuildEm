@@ -92,7 +92,8 @@
     </string-array>
 
     <string-array name="tax">
-        <item>Select W/O Tax</item>
+        <item>Select Tax</item>
+        <item>W/O Tax</item>
         <item>With Tax</item>
         <item>Tax Extra 18%</item>
     </string-array>
@@ -162,6 +163,8 @@
     <string name="select_an_action">Select an action</string>
     <string name="approval">Approval</string>
     <string name="reason">Reason</string>
+    <string name="rate">Rate</string>
+    <string name="quantity">Quantity</string>
 
 
 </resources>
