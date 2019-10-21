@@ -54,6 +54,7 @@ class AmcSignatureActivity : AppCompatActivity() {
     var message: String? = ""
     var status: String? = ""
     var amount: String? = ""
+    var tax: String? = ""
     var workArray: ArrayList<WorkListItem>? = null
     private var images: java.util.ArrayList<Packet>? = ArrayList()
 
@@ -72,6 +73,8 @@ class AmcSignatureActivity : AppCompatActivity() {
             workArray = intent.getParcelableArrayListExtra<WorkListItem>("workArray")
             message = intent.getStringExtra("message")
             amount = intent.getStringExtra("amount")
+            tax = intent.getStringExtra("tax")
+
             images = intent.getParcelableArrayListExtra<Packet>("images")
         }
 
@@ -117,6 +120,7 @@ class AmcSignatureActivity : AppCompatActivity() {
         params["status"] = status!!
         params["amount"] = amount!!
         params["reason"] = ""
+        params["tax"] = tax!!
 
         val baos1 = ByteArrayOutputStream()
         signatureBitmap.compress(Bitmap.CompressFormat.JPEG, QUALITY, baos1)

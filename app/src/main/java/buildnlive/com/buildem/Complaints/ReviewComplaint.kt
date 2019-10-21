@@ -344,6 +344,7 @@ class ReviewComplaint : AppCompatActivity() {
                         intent.putExtra("complaintId", complaintId)
                         intent.putExtra("status",status.selectedItem.toString())
                         intent.putExtra("amount", amountReceived.text.toString())
+                        intent.putExtra("tax", tax.selectedItem.toString())
 
                         alertDialog.dismiss()
                         alertDialogChooser1.dismiss()

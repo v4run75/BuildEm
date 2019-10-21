@@ -347,6 +347,7 @@ class ReviewAMC : AppCompatActivity() {
                         intent.putExtra("amcId", amcId)
                         intent.putExtra("status",status.selectedItem.toString())
                         intent.putExtra("amount", amountReceived.text.toString())
+                        intent.putExtra("tax", tax.selectedItem.toString())
 
                         alertDialog.dismiss()
                         alertDialogChooser1.dismiss()
