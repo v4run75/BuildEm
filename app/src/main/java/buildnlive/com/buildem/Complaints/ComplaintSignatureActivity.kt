@@ -31,7 +31,10 @@ import com.google.gson.Gson
 import com.williamww.silkysignature.views.SignaturePad
 import org.json.JSONArray
 import org.json.JSONException
-import java.io.*
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.set
@@ -46,6 +49,7 @@ class ComplaintSignatureActivity : AppCompatActivity() {
     private var utilityofActivity: UtilityofActivity? = null
     private var app: App? = null
 
+    private var imagePath: String? = null
     companion object {
         var complaintId: String? = ""
         val QUALITY = 10
@@ -99,15 +103,23 @@ class ComplaintSignatureActivity : AppCompatActivity() {
 
         mSaveButton!!.setOnClickListener {
             val signatureBitmap = mSignaturePad!!.signatureBitmap
+//            addJpgSignatureToGallery(signatureBitmap)
             saveComplaint(signatureBitmap)
-        }
+           }
     }
 
 
+    fun getStringImage(bmp: Bitmap): String? {
+        val baos = ByteArrayOutputStream()
+        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val imageBytes = baos.toByteArray()
+        val encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT)
+        return encodedImage
 
+    }
 
     private fun saveComplaint(signatureBitmap: Bitmap) {
-        val requestUrl = Config.SaveServiceUpdate
+        val requestUrl = Config.SaveComplaintUpdate
 
         val params = HashMap<String, String>()
 
@@ -121,6 +133,14 @@ class ComplaintSignatureActivity : AppCompatActivity() {
         params["reason"] = ""
         params["tax"] = tax!!
 
+/*
+        val baos1 = ByteArrayOutputStream()
+        signatureBitmap.compress(Bitmap.CompressFormat.JPEG, QUALITY, baos1)
+        val sign = baos1.toByteArray()
+        val signEncodedImage = Base64.encodeToString(sign, Base64.DEFAULT)
+*/
+
+//        val bm1= BitmapFactory.decodeFile(imagePath)
         val baos1 = ByteArrayOutputStream()
         signatureBitmap.compress(Bitmap.CompressFormat.JPEG, QUALITY, baos1)
         val sign = baos1.toByteArray()
@@ -141,10 +161,25 @@ class ComplaintSignatureActivity : AppCompatActivity() {
             }
         }
 
-
         params["images"] = array.toString()
         console.log("Service URL:  $requestUrl")
         console.log("Params:  $params")
+
+
+        if (params.toString().length > 4000) {
+            Log.v("PARAMS", "params.length = " + params.toString().length)
+            val chunkCount = params.toString().length / 4000     // integer division
+            for (i in 0..chunkCount) {
+                val max = 4000 * (i + 1)
+                if (max >= params.toString().length) {
+                    Log.v("PARAMS", "chunk " + i + " of " + chunkCount + ":" + params.toString().substring(4000 * i))
+                } else {
+                    Log.v("PARAMS", "chunk " + i + " of " + chunkCount + ":" + params.toString().substring(4000 * i, max))
+                }
+            }
+        } else {
+            Log.v("PARAMS", params.toString())
+        }
 
         app!!.sendNetworkRequest(requestUrl, Request.Method.POST, params, object : Interfaces.NetworkInterfaceListener {
             override fun onNetworkRequestStart() {
@@ -152,7 +187,6 @@ class ComplaintSignatureActivity : AppCompatActivity() {
             }
 
             override fun onNetworkRequestError(error: String) {
-
                 utilityofActivity!!.dismissProgressDialog()
                 console.error("Network request failed with error :$error")
                 Toast.makeText(context, "Check Network, Something went wrong", Toast.LENGTH_LONG).show()
@@ -177,6 +211,52 @@ class ComplaintSignatureActivity : AppCompatActivity() {
             }
         })
     }
+
+    fun getAlbumStorageDir(albumName: String): File {
+        // Get the directory for the user's public pictures directory.
+        val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        val file = File(storageDir, albumName)
+        if (!file.mkdirs()) {
+            Log.e("SignaturePad", "Directory not created")
+        }
+        return file
+    }
+
+
+    fun addJpgSignatureToGallery(signature: Bitmap): Boolean {
+        var result = false
+        try {
+            val photo = File(getAlbumStorageDir("SignaturePad"), String.format("Signature_%d.jpg", System.currentTimeMillis()))
+            saveBitmapToJPG(signature, photo)
+            scanMediaFile(photo)
+            imagePath=photo.absolutePath
+            result = true
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+
+        return result
+    }
+
+    @Throws(IOException::class)
+    fun saveBitmapToJPG(bitmap: Bitmap, photo: File) {
+        val newBitmap = Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(newBitmap)
+        canvas.drawColor(Color.WHITE)
+        canvas.drawBitmap(bitmap, 0f, 0f, null)
+        val stream = FileOutputStream(photo)
+        newBitmap.compress(Bitmap.CompressFormat.JPEG, 80, stream)
+        stream.close()
+    }
+
+    private fun scanMediaFile(photo: File) {
+        val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
+        val contentUri = Uri.fromFile(photo)
+        mediaScanIntent.data = contentUri
+        this@ComplaintSignatureActivity.sendBroadcast(mediaScanIntent)
+    }
+
+
 
 
 }

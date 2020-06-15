@@ -165,6 +165,48 @@
     <string name="reason">Reason</string>
     <string name="rate">Rate</string>
     <string name="quantity">Quantity</string>
+    <string name="biometric_title">Authenticate Attendance</string>
+    <string name="biometric_subtitle">Approve the update of attendance status</string>
+    <string name="biometric_description">Place your finger on the scanner to verify your identity.</string>
+    <string name="biometric_negative_button_text">Cancel</string>
+
+    <string name="biometric_error_sdk_not_supported">Sdk version not supported</string>
+    <string name="biometric_error_hardware_not_supported">Device does not support biometric authentication</string>
+    <string name="biometric_error_fingerprint_not_available">Fingerprint is not registered in device</string>
+    <string name="biometric_error_permission_not_granted">Permission is not granted by user</string>
+    <string name="biometric_failure">Login not successful!</string>
+    <string name="biometric_cancelled">Authentication cancelled by user</string>
+    <string name="biometric_success">Login Successful</string>
+    <string name="site_payment">Site Payment</string>
+    <string name="attendance">Attendance</string>
+
+    <string name="checkout">Checkout</string>
+    <string name="checkin">Checkin</string>
+    <string name="absent">Absent</string>
+    <string name="outduty">Out Duty</string>
+    <string name="upto">Up to(In Hrs):</string>
+    <string name="select_date">Select Date</string>
+    <string name="done">Done</string>
+    <string name="unknown_error">Unknown Error has occurred, Please Contact Support.</string>
+    <string name="http_error">%1$s %2$s</string>
+    <string name="error">Request Failed, Please Contact Support.</string>
+
+    <string name="internal_server_error">Internal Server Error</string>
+    <string name="server_error">Don\'t worry its not your fault. Server may be experiencing some issues, Please contact admin.</string>
 
 
+    <string-array name="absent">
+    <item>Select Status</item>
+    <item>Absent</item>
+    <item>Leave</item>
+    <item>Outduty</item>
+    </string-array>
+
+    <string name="hours">Hours</string>
+
+    <string-array name="work_hours">
+        <item>Select Work Hours</item>
+        <item>8 Hrs</item>
+        <item>12 Hrs</item>
+    </string-array>
 </resources>

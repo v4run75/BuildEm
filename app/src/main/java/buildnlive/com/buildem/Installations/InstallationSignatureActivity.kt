@@ -111,6 +111,8 @@ class InstallationSignatureActivity : AppCompatActivity() {
 
         params["signature"] = signEncodedImage
 
+        console.log("")
+
         console.log("Installation URL:  $requestUrl")
         console.log("Params:  $params")
 

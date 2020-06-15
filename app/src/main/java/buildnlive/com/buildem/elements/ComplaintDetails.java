@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-public class ComplaintDetails {
+public class ComplaintDetails implements Parcelable {
 
     @Expose
     @SerializedName("details")
@@ -19,6 +19,17 @@ public class ComplaintDetails {
     @Expose
     @SerializedName("show_on_job_button")
     private String jobButton;
+    @Expose
+    @SerializedName("show_add_work_button")
+    private String workButton;
+
+    public String getWorkButton() {
+        return workButton;
+    }
+
+    public void setWorkButton(String workButton) {
+        this.workButton = workButton;
+    }
 
     public String getJobButton() {
         return jobButton;
@@ -234,4 +245,39 @@ public class ComplaintDetails {
             }
         };
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeTypedList(this.details);
+        dest.writeParcelable(this.customerDetails, flags);
+        dest.writeString(this.jobButton);
+        dest.writeString(this.workButton);
+    }
+
+    public ComplaintDetails() {
+    }
+
+    protected ComplaintDetails(Parcel in) {
+        this.details = in.createTypedArrayList(Details.CREATOR);
+        this.customerDetails = in.readParcelable(CustomerDetails.class.getClassLoader());
+        this.jobButton = in.readString();
+        this.workButton = in.readString();
+    }
+
+    public static final Parcelable.Creator<ComplaintDetails> CREATOR = new Parcelable.Creator<ComplaintDetails>() {
+        @Override
+        public ComplaintDetails createFromParcel(Parcel source) {
+            return new ComplaintDetails(source);
+        }
+
+        @Override
+        public ComplaintDetails[] newArray(int size) {
+            return new ComplaintDetails[size];
+        }
+    };
 }

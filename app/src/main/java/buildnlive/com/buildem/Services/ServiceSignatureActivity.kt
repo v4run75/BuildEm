@@ -4,8 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.util.Base64
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
@@ -26,6 +31,9 @@ import com.williamww.silkysignature.views.SignaturePad
 import org.json.JSONArray
 import org.json.JSONException
 import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.set
@@ -39,6 +47,7 @@ class ServiceSignatureActivity : AppCompatActivity() {
     private var appCompatActivity: AppCompatActivity? = this
     private var utilityofActivity: UtilityofActivity? = null
     private var app: App? = null
+    private var imagePath: String? = null
 
     companion object {
         var serviceId: String? = ""
@@ -94,6 +103,8 @@ class ServiceSignatureActivity : AppCompatActivity() {
         mSaveButton!!.setOnClickListener {
             val signatureBitmap = mSignaturePad!!.signatureBitmap
             saveService(signatureBitmap)
+//            addJpgSignatureToGallery(signatureBitmap)
+
         }
     }
 
@@ -113,6 +124,7 @@ class ServiceSignatureActivity : AppCompatActivity() {
         params["reason"] = ""
         params["tax"] = tax!!
 
+//        val bm1= BitmapFactory.decodeFile(photo!!.absolutePath)
         val baos1 = ByteArrayOutputStream()
         signatureBitmap.compress(Bitmap.CompressFormat.JPEG, QUALITY, baos1)
         val sign = baos1.toByteArray()
@@ -168,6 +180,50 @@ class ServiceSignatureActivity : AppCompatActivity() {
 
             }
         })
+    }
+
+    fun getAlbumStorageDir(albumName: String): File {
+        // Get the directory for the user's public pictures directory.
+        val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        val file = File(storageDir, albumName)
+        if (!file.mkdirs()) {
+            Log.e("SignaturePad", "Directory not created")
+        }
+        return file
+    }
+
+
+    fun addJpgSignatureToGallery(signature: Bitmap): Boolean {
+        var result = false
+        try {
+            val photo = File(getAlbumStorageDir("SignaturePad"), String.format("Signature_%d.jpg", System.currentTimeMillis()))
+            saveBitmapToJPG(signature, photo)
+            scanMediaFile(photo)
+            imagePath=photo.absolutePath
+            result = true
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+
+        return result
+    }
+
+    @Throws(IOException::class)
+    fun saveBitmapToJPG(bitmap: Bitmap, photo: File) {
+        val newBitmap = Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(newBitmap)
+        canvas.drawColor(Color.WHITE)
+        canvas.drawBitmap(bitmap, 0f, 0f, null)
+        val stream = FileOutputStream(photo)
+        newBitmap.compress(Bitmap.CompressFormat.JPEG, 80, stream)
+        stream.close()
+    }
+
+    private fun scanMediaFile(photo: File) {
+        val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
+        val contentUri = Uri.fromFile(photo)
+        mediaScanIntent.data = contentUri
+        this@ServiceSignatureActivity.sendBroadcast(mediaScanIntent)
     }
 
 

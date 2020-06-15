@@ -16,15 +16,16 @@ import android.os.Build
 import android.os.Environment
 import android.provider.DocumentsContract
 import android.provider.MediaStore
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import buildnlive.com.buildem.R
 import java.io.IOException
 import java.lang.Long
+import java.util.*
 
 /**
  * Created by Server on 2/1/2018.
@@ -294,6 +295,29 @@ class UtilityofActivity(activity: AppCompatActivity) {
         appCompatActivity.setSupportActionBar(toolbar)
         appCompatActivity.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         appCompatActivity.supportActionBar!!.setDisplayShowHomeEnabled(true)
+    }
+
+
+    private var uniqueID: String? = null
+    private val PREF_UNIQUE_ID = "PREF_UNIQUE_ID"
+
+    @Synchronized
+    fun getUUID(context: Context): String? {
+
+        if (uniqueID == null) {
+            val sharedPrefs = context.getSharedPreferences(
+                    PREF_UNIQUE_ID, Context.MODE_PRIVATE
+            )
+            uniqueID = sharedPrefs.getString(PREF_UNIQUE_ID, null)
+            if (uniqueID == null) {
+                uniqueID = UUID.randomUUID().toString()
+                val editor = sharedPrefs.edit()
+                editor.putString(PREF_UNIQUE_ID, uniqueID)
+                editor.commit()
+            }
+        }
+
+        return uniqueID!!
     }
 
 

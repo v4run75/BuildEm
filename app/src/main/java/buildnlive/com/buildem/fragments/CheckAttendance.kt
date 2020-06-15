@@ -1,3 +1,4 @@
+/*
 package buildnlive.com.buildem.fragments
 
 
@@ -239,3 +240,4 @@ class CheckAttendance : Fragment() {
         }
     }
 }
+*/

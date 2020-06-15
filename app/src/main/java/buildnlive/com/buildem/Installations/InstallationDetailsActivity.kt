@@ -332,6 +332,8 @@ class InstallationDetailsActivity : AppCompatActivity() {
 
                 try {
                     if (response == "1") {
+                        finish()
+                        startActivity(intent)
                         utilityofActivity!!.toast("Job Successfully Started")
                     } else
                         utilityofActivity!!.toast("Some error occurred, Please try again")
@@ -376,6 +378,7 @@ class InstallationDetailsActivity : AppCompatActivity() {
                     val details = array.getJSONArray("details")
 //                    console.log("Details" +details)
                     val jobStatus = array.getString("show_on_job_button")
+                    val workStatus = array.getString("show_add_work_button")
 //                    console.log("jobStatus" +jobStatus)
 
                     for (i in 0 until details.length()) {
@@ -385,6 +388,12 @@ class InstallationDetailsActivity : AppCompatActivity() {
 
 
                     onJob.isEnabled = jobStatus == "1"
+
+                    if (workStatus == "1") {
+                        add.visibility = View.VISIBLE
+                    } else {
+                        add.visibility = View.GONE
+                    }
 
                     if (itemList.isEmpty()) {
 //                        Toast.makeText(mContext, "No Results", Toast.LENGTH_LONG).show()
@@ -555,6 +564,7 @@ class InstallationDetailsActivity : AppCompatActivity() {
 
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_CAPTURE_IMAGE) {
             if (resultCode == android.app.Activity.RESULT_OK) {
                 val packet = images!!.removeAt(0)

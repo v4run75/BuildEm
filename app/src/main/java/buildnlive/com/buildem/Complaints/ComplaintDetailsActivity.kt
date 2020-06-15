@@ -4,7 +4,6 @@ package buildnlive.com.buildem.Complaints
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
@@ -28,8 +27,8 @@ import buildnlive.com.buildem.activities.ViewCustomerData
 import buildnlive.com.buildem.adapters.ComplaintDetailsAdapter
 import buildnlive.com.buildem.console
 import buildnlive.com.buildem.elements.ComplaintDetails
-import buildnlive.com.buildem.elements.Packet
 import buildnlive.com.buildem.elements.InstallationActivityItem
+import buildnlive.com.buildem.elements.Packet
 import buildnlive.com.buildem.utils.Config
 import buildnlive.com.buildem.utils.GlideApp
 import buildnlive.com.buildem.utils.PrefernceFile
@@ -57,9 +56,9 @@ class ComplaintDetailsActivity : AppCompatActivity() {
     private var results: String? = null
     var quantity: String? = null
 
-    companion object{
-        var commentsHolder=""
-        var jobStatusHolder=""
+    companion object {
+        var commentsHolder = ""
+        var jobStatusHolder = ""
     }
 
 
@@ -253,8 +252,8 @@ class ComplaintDetailsActivity : AppCompatActivity() {
                     dialog.show()
                 } else {
                     utilityofActivity!!.showFetchLocationDialog()
-                    commentsHolder=message.text.toString()
-                    jobStatusHolder=spinner.selectedItem.toString()
+                    commentsHolder = message.text.toString()
+                    jobStatusHolder = spinner.selectedItem.toString()
                     startLocationUpdates()
                     alertDialog.dismiss()
                 }
@@ -305,6 +304,8 @@ class ComplaintDetailsActivity : AppCompatActivity() {
 
                 try {
                     if (response == "1") {
+                        finish()
+                        startActivity(intent)
                         utilityofActivity!!.toast("Job Successfully Started")
                     } else
                         utilityofActivity!!.toast("Some error occurred, Please try again")
@@ -356,6 +357,11 @@ class ComplaintDetailsActivity : AppCompatActivity() {
 
                     onJob.isEnabled = itemList!!.jobButton == "1"
 
+                    if (itemList!!.workButton == "1") {
+                        add.visibility = View.VISIBLE
+                    } else {
+                        add.visibility = View.GONE
+                    }
 
 
                     if (itemList!!.customerDetails.status == "Completed") {

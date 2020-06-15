@@ -5,13 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Canvas
-import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
 import android.util.Base64
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
@@ -31,7 +26,7 @@ import com.google.gson.Gson
 import com.williamww.silkysignature.views.SignaturePad
 import org.json.JSONArray
 import org.json.JSONException
-import java.io.*
+import java.io.ByteArrayOutputStream
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.set
@@ -108,7 +103,7 @@ class AmcSignatureActivity : AppCompatActivity() {
 
 
     private fun saveAmc(signatureBitmap: Bitmap) {
-        val requestUrl = Config.SaveServiceUpdate
+        val requestUrl = Config.SaveAMCUpdate
 
         val params = HashMap<String, String>()
 

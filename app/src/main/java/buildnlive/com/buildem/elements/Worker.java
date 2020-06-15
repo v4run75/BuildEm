@@ -19,12 +19,28 @@ public class Worker extends RealmObject {
     private String roleAssigned;
     private String type;
     private long checkInTime;
+    private String checkInTimeSelected;
+    private String checkOutTimeSelected;
     private long checkOutTime;
     private String projectAssigned;
     private boolean checkedIn;
     private boolean checkedOut;
     private String attendanceId;
     private String labour_present;
+    private String start_time;
+    private String end_time;
+    private String fix_time_in;
+    private String fix_time_out;
+    private boolean absentStatus;
+
+    public boolean getAbsentStatus() {
+        return absentStatus;
+    }
+
+    public void setAbsentStatus(boolean absentStatus) {
+        this.absentStatus = absentStatus;
+    }
+
     @Index
     private String belongsTo;
 
@@ -47,8 +63,67 @@ public class Worker extends RealmObject {
         setRoleAssigned(obj.getString("labour_role"));
         setType(obj.getString("labour_type"));
         setPresent(obj.getString("labour_present"));
+        setStart_time(obj.getString("start_time"));
+        setEnd_time(obj.getString("end_time"));
+        setFix_time_in(obj.getString("fix_time_in"));
+        setFix_time_out(obj.getString("fix_time_out"));
+        setAttendanceId(obj.getString("attendence_id"));
         setBelongsTo(App.belongsTo);
         return this;
+    }
+
+
+
+    public String getFix_time_in() {
+        return fix_time_in;
+    }
+
+    public String getFix_time_out() {
+        return fix_time_out;
+    }
+
+    public void setFix_time_in(String fix_time_in) {
+        this.fix_time_in = fix_time_in;
+    }
+
+    public void setFix_time_out(String fix_time_out) {
+        this.fix_time_out = fix_time_out;
+    }
+
+    public void setLabour_present(String labour_present) {
+        this.labour_present = labour_present;
+    }
+
+    public void setStart_time(String start_time) {
+        this.start_time = start_time;
+    }
+
+    public void setEnd_time(String end_time) {
+        this.end_time = end_time;
+    }
+
+    public String getStart_time() {
+        return start_time;
+    }
+
+    public String getEnd_time() {
+        return end_time;
+    }
+
+    public void setCheckOutTimeSelected(String checkOutTimeSelected) {
+        this.checkOutTimeSelected = checkOutTimeSelected;
+    }
+
+    public void setCheckInTimeSelected(String checkInTimeSelected) {
+        this.checkInTimeSelected = checkInTimeSelected;
+    }
+
+    public String getCheckInTimeSelected() {
+        return checkInTimeSelected;
+    }
+
+    public String getCheckOutTimeSelected() {
+        return checkOutTimeSelected;
     }
 
     private void setPresent(String labour_present) {this.labour_present=labour_present;

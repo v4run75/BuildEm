@@ -19,6 +19,17 @@ public class ServiceDetailsItem implements Parcelable {
     @Expose
     @SerializedName("show_on_job_button")
     private String jobButton;
+    @Expose
+    @SerializedName("show_on_work_button")
+    private String workButton;
+
+    public String getWorkButton() {
+        return workButton;
+    }
+
+    public void setWorkButton(String workButton) {
+        this.workButton = workButton;
+    }
 
     public String getJobButton() {
         return jobButton;
@@ -234,6 +245,9 @@ public class ServiceDetailsItem implements Parcelable {
         };
     }
 
+    public ServiceDetailsItem() {
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -243,17 +257,18 @@ public class ServiceDetailsItem implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeTypedList(this.details);
         dest.writeParcelable(this.customerDetails, flags);
-    }
-
-    public ServiceDetailsItem() {
+        dest.writeString(this.jobButton);
+        dest.writeString(this.workButton);
     }
 
     protected ServiceDetailsItem(Parcel in) {
         this.details = in.createTypedArrayList(Details.CREATOR);
         this.customerDetails = in.readParcelable(CustomerDetails.class.getClassLoader());
+        this.jobButton = in.readString();
+        this.workButton = in.readString();
     }
 
-    public static final Parcelable.Creator<ServiceDetailsItem> CREATOR = new Parcelable.Creator<ServiceDetailsItem>() {
+    public static final Creator<ServiceDetailsItem> CREATOR = new Creator<ServiceDetailsItem>() {
         @Override
         public ServiceDetailsItem createFromParcel(Parcel source) {
             return new ServiceDetailsItem(source);

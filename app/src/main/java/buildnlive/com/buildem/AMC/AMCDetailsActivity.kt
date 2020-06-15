@@ -3,7 +3,6 @@ package buildnlive.com.buildem.AMC
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
@@ -27,8 +26,6 @@ import buildnlive.com.buildem.activities.ViewCustomerData
 import buildnlive.com.buildem.adapters.AMCItemDetailsAdapter
 import buildnlive.com.buildem.console
 import buildnlive.com.buildem.elements.AMCItemDetails
-import buildnlive.com.buildem.elements.Packet
-import buildnlive.com.buildem.elements.InstallationActivityItem
 import buildnlive.com.buildem.utils.Config
 import buildnlive.com.buildem.utils.GlideApp
 import buildnlive.com.buildem.utils.PrefernceFile
@@ -39,9 +36,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_amc_details.*
 import kotlinx.android.synthetic.main.content_amc_details.*
-import org.json.JSONArray
 import org.json.JSONException
-import org.json.JSONObject
 import java.util.*
 
 class AMCDetailsActivity : AppCompatActivity() {
@@ -307,6 +302,8 @@ class AMCDetailsActivity : AppCompatActivity() {
 
                 try {
                     if (response == "1") {
+                        finish()
+                        startActivity(intent)
                         utilityofActivity!!.toast("Job Successfully Started")
                     } else
                         utilityofActivity!!.toast("Some error occurred, Please try again")
@@ -356,6 +353,12 @@ class AMCDetailsActivity : AppCompatActivity() {
                     mobileNo.text = String.format(getString(R.string.mobileholder), itemList!!.customerDetails.mobileNo)
                     comment.text = String.format(getString(R.string.commentholder), itemList!!.customerDetails.comment)
 
+
+                    if (itemList!!.workButton == "1") {
+                        add.visibility = View.VISIBLE
+                    } else {
+                        add.visibility = View.GONE
+                    }
 
 
 

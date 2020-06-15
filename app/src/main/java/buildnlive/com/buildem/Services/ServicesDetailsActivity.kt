@@ -302,6 +302,8 @@ class ServicesDetailsActivity : AppCompatActivity() {
 
                 try {
                     if (response == "1") {
+                        finish()
+                        startActivity(intent)
                         utilityofActivity!!.toast("Job Successfully Started")
                     } else
                         utilityofActivity!!.toast("Some error occurred, Please try again")
@@ -349,6 +351,12 @@ class ServicesDetailsActivity : AppCompatActivity() {
                     address.text = String.format(getString(R.string.addressHolder), itemList!!.customerDetails.address)
                     mobileNo.text = String.format(getString(R.string.mobileholder), itemList!!.customerDetails.mobileNo)
                     comment.text = String.format(getString(R.string.commentholder), itemList!!.customerDetails.comment)
+
+                    if (itemList!!.workButton == "1") {
+                        add.visibility = View.VISIBLE
+                    } else {
+                        add.visibility = View.GONE
+                    }
 
 
                     onJob.isEnabled = itemList!!.jobButton == "1"

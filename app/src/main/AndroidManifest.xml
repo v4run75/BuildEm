@@ -115,6 +115,8 @@
         <activity android:name=".AMC.AmcSignatureActivity" />
         <activity android:name=".Complaints.ComplaintSignatureActivity" />
         <activity android:name=".Installations.InstallationSignatureActivity" />
+        <activity android:name=".Server.HTTPResponseError" />
+        <activity android:name=".activities.CalendarViewActivity" />
 
 
         <service android:name=".Notifications.FirebaseMessagingService">

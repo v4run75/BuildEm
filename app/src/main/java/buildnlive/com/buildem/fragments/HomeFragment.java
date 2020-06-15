@@ -40,7 +40,6 @@ import buildnlive.com.buildem.console;
 import buildnlive.com.buildem.elements.Project;
 import buildnlive.com.buildem.elements.ProjectMember;
 import buildnlive.com.buildem.utils.Config;
-import buildnlive.com.buildem.utils.PrefernceFile;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -49,8 +48,8 @@ import static buildnlive.com.buildem.utils.Config.PREF_NAME;
 //import buildnlive.com.buildem.activities.Planning;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
-//    private TextView title;
-    private LinearLayout markAttendance, manageInventory, issuedItems, requestItems, workProgress, purchaseOrder,localPurchase,labourReport,planning,machine;
+    //    private TextView title;
+    private LinearLayout markAttendance, manageInventory, issuedItems, requestItems, workProgress, purchaseOrder, localPurchase, labourReport, planning, machine;
     private SharedPreferences pref;
     private Spinner projects;
     private static App app;
@@ -81,13 +80,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         requestItems = view.findViewById(R.id.request_items);
         projects = view.findViewById(R.id.projects);
 //        siteRequest=view.findViewById(R.id.request_list);
-        localPurchase=view.findViewById(R.id.local_purchase);
+        localPurchase = view.findViewById(R.id.local_purchase);
 //        labour=view.findViewById(R.id.labour);
-        labourReport=view.findViewById(R.id.manage_labour);
-        planning=view.findViewById(R.id.planning);
-        machine=view.findViewById(R.id.machine);
+        labourReport = view.findViewById(R.id.manage_labour);
+        planning = view.findViewById(R.id.planning);
+        machine = view.findViewById(R.id.machine);
 
-        badge=getActivity().findViewById(R.id.badge_notification);
+        badge = getActivity().findViewById(R.id.badge_notification);
 
         Realm realm = Realm.getDefaultInstance();
         final RealmResults<Project> projects = realm.where(Project.class).findAll();
@@ -102,7 +101,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 App.projectId = projects.get(position).getId();
                 App.belongsTo = App.projectId + App.userId;
-                App.projectName=projects.get(position).getName();
+                App.projectName = projects.get(position).getName();
                 syncProject();
             }
 
@@ -129,7 +128,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         planning.setOnClickListener(this);
         machine.setOnClickListener(this);
 
+        workProgress.setVisibility(View.VISIBLE);
+        planning.setVisibility(View.VISIBLE);
+        workProgress.setVisibility(View.VISIBLE);
+        labourReport.setVisibility(View.VISIBLE);
+        manageInventory.setVisibility(View.VISIBLE);
+        manageInventory.setVisibility(View.VISIBLE);
+        issuedItems.setVisibility(View.VISIBLE);
+        purchaseOrder.setVisibility(View.VISIBLE);
+        localPurchase.setVisibility(View.VISIBLE);
+        machine.setVisibility(View.VISIBLE);
+        requestItems.setVisibility(View.VISIBLE);
+        markAttendance.setVisibility(View.VISIBLE);
 
+/*
         ArrayList<String> permissionList = PrefernceFile.Companion.getInstance(getContext()).getArrayList("Perm");
 
         for (String permission : permissionList) {
@@ -184,6 +196,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 }
             }
         }
+*/
 
 /*
         switch (App.permissions) {
@@ -279,7 +292,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //                handler.postDelayed(new Runnable() {
 //                    @Override
 //                    public void run() {
-                        startActivity(new Intent(getContext(), MarkAttendanceKotlin.class));
+                startActivity(new Intent(getContext(), MarkAttendanceKotlin.class));
 //
 //                    }
 //                },2000);
@@ -309,7 +322,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //                startActivity(new Intent(getContext(),LabourActivity.class));
 //                break;
             case R.id.manage_labour:
-                startActivity(new Intent(getContext(),LabourReportActivity.class));
+                startActivity(new Intent(getContext(), LabourReportActivity.class));
                 break;
             case R.id.planning:
                 startActivity(new Intent(getContext(), PlanningLoc.class));
@@ -322,9 +335,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void sendRequest() throws JSONException {
-        App app= ((App)getActivity().getApplication());
+        App app = ((App) getActivity().getApplication());
         HashMap<String, String> params = new HashMap<>();
-        JSONObject jsonObject=new JSONObject();
+        JSONObject jsonObject = new JSONObject();
         jsonObject.put("project_id", App.projectId).put("user_id", App.userId);
         params.put("notification_count", jsonObject.toString());
         console.log("Res:" + params);
@@ -344,8 +357,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 console.log(response);
                 if (response.equals("0")) {
                     badge.setVisibility(View.GONE);
-                }
-                else{
+                } else {
                     badge.setVisibility(View.VISIBLE);
                     badge.setText(response);
                 }

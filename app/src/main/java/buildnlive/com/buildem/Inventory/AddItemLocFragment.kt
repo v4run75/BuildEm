@@ -94,12 +94,12 @@ class AddItemLocFragment : Fragment() {
         AddItemAdapter.ViewHolder.CHECKOUT = false
     }
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         mConetxt=context
         super.onAttach(context)
     }
 
-    override fun onAttach(activity: Activity?) {
+    override fun onAttach(activity: Activity) {
         appCompatActivity=activity as AppCompatActivity
         super.onAttach(activity)
     }

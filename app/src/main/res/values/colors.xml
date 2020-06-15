@@ -27,4 +27,7 @@
     <color name="c4">#f2ae4c</color>
     <color name="c5">#51b25c</color>
 
+    <color name="colorSchemeLow">#29abe2</color>
+    <color name="colorSchemeMid">#18659E</color>
+    <color name="colorSchemeHigh">#18659E</color>
 </resources>
