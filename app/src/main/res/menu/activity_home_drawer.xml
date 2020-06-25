@@ -13,6 +13,11 @@
             android:icon="@drawable/ic_assignment_black_24dp"
             android:title="Checkin/Checkout" />
         <item
+            android:id="@+id/take_leave"
+            android:icon="@drawable/ic_assignment_black_24dp"
+            android:title="@string/take_leave" />
+
+        <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_account_circle_black_24dp"
             android:title="Profile" />

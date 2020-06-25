@@ -235,6 +235,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 fragment = ProfileFragment.newInstance(app)
                 navigation.visibility = View.GONE
             }
+            R.id.take_leave -> {
+                fragment = TakeLeave.newInstance(app!!)
+            }
         }
 
 

@@ -18,8 +18,8 @@ android {
         applicationId "buildnlive.com.buildem"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 9
-        versionName "1.9.1"
+        versionCode 10
+        versionName "1.9.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

@@ -112,8 +112,8 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/amc"
                     android:visibility="gone"
+                    android:id="@+id/amc"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
@@ -142,7 +142,7 @@
                         android:layout_height="match_parent"
                         android:breakStrategy="high_quality"
                         android:padding="5dp"
-                        android:text="@string/amc"
+                        android:text="@string/servicing"
                         android:textAlignment="center"
                         android:textSize="18sp" />
                 </LinearLayout>

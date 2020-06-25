@@ -86,6 +86,9 @@ public class Config {
     public static final String SaveInstallationUpdate ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/SaveInstallationUpdate";
     public static final String UpdateUserSite ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/UpdateUserSite";
     public static final String ShowWork ="https://buildnlive.com/app/mobileapp_em/index.php?r=Site/ShowWork&user_id=[0]";
+    public static final String SaveLeaveRequest = "https://buildnlive.com/app/mobileapp_em/index.php?r=site/SaveLeaveRequest";
+    public static final String ViewLeaveRequest = "https://buildnlive.com/app/mobileapp_em/index.php?r=site/ViewLeaveRequest&user_id=[0]";
+    public static final String cancelLeaveRequest = "https://buildnlive.com/app/mobileapp_em/index.php?r=site/cancelLeaveRequest&leave_id=[0]";
 
 
 }

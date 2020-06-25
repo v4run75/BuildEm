@@ -41,6 +41,17 @@ class CalendarViewActivity : AppCompatActivity() {
     private var absentConnectedDays: ConnectedDays? = null
     private var outdutyConnectedDays: ConnectedDays? = null
 
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
+    }
+
+    override fun onBackPressed() {
+        finish()
+        super.onBackPressed()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendar_view)
@@ -140,7 +151,7 @@ class CalendarViewActivity : AppCompatActivity() {
                                             }
                                         }
 
-                                        val textColor1 = Color.parseColor("#00ff00")
+                                        val textColor1 = Color.parseColor("#003300")
                                         val selectedTextColor1 = Color.parseColor("#ff4000")
                                         val disabledTextColor1 = Color.parseColor("#ff8000")
                                         presentConnectedDays = ConnectedDays(presentDays, textColor1, selectedTextColor1, disabledTextColor1)
